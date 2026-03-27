@@ -1,0 +1,14 @@
+**/node_modules
+**/dist
+**/.next
+**/.turbo
+**/coverage
+# Stale TS incremental caches make tsc skip emit in the clean container build
+# (dist is excluded above, so a copied .tsbuildinfo leaves the build with no output).
+**/*.tsbuildinfo
+**/.git
+**/*.log
+uploads
+.env
+.env.*
+!.env.example
