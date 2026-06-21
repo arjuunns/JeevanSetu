@@ -1,0 +1,34 @@
+{
+  "patient": {
+    "name": "Karan Singh",
+    "age": 42,
+    "gender": "MALE",
+    "phone": "+919876123456",
+    "bloodGroup": "A_POSITIVE",
+    "heightCm": 178,
+    "weightKg": 79,
+    "allergies": [],
+    "existingDiseases": ["Hypertension"],
+    "medications": ["Amlodipine"]
+  },
+  "vitals": {
+    "temperatureC": 36.6,
+    "oxygenSaturation": 95,
+    "heartRate": 98,
+    "respiratoryRate": 20,
+    "systolicBp": 140,
+    "diastolicBp": 90,
+    "glasgowComaScale": 15,
+    "isUnconscious": false
+  },
+  "symptoms": {
+    "primarySymptom": {
+      "name": "Substernal Chest Pain",
+      "severity": "MODERATE",
+      "duration": "2 hours",
+      "notes": "Mild pressure chest pain, radiating to left arm."
+    },
+    "secondarySymptoms": []
+  },
+  "chiefComplaint": "Substernal chest pain radiating to left arm."
+}
