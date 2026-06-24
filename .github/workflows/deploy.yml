@@ -39,6 +39,7 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
             --build-arg NEXT_PUBLIC_API_URL=https://jeevansetu.arjuns.xyz:4000 \
+            --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="${{ secrets.CLERK_PUBLISHABLE_KEY }}" \
             -f docker/Dockerfile.web .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
