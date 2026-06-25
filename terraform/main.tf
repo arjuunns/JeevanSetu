@@ -117,6 +117,7 @@ resource "aws_instance" "neo4j" {
               systemctl enable docker
               docker run -d \
                 --name neo4j \
+                --restart always \
                 -p 7474:7474 -p 7687:7687 \
                 -e NEO4J_AUTH=neo4j/jeevansetu \
                 -e NEO4J_LABELS_AND_PROPERTIES_ENABLED=true \
