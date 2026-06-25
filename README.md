@@ -94,7 +94,7 @@ The platform runs **without** external AI/auth credentials in development:
 
 ## Roles & permissions (RBAC)
 
-| Role           | Key permissions                                              |
+| Role-          | Key permissions                                              |
 | -------------- | ----------------------------------------------------------- |
 | Nurse          | Register patients, record vitals & symptoms, view recs      |
 | Doctor         | Review triage, approve/modify/override, generate referrals  |
