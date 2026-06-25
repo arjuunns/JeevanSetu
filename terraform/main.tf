@@ -290,7 +290,7 @@ resource "aws_ecs_task_definition" "server" {
         { name = "PORT", value = "4000" },
         { name = "DATABASE_URL", value = "postgresql://jeevansetu:${var.db_password}@${aws_db_instance.postgres.endpoint}/jeevansetu?schema=public" },
         { name = "REDIS_URL", value = "redis://${aws_elasticache_cluster.redis.cache_nodes[0].address}:6379" },
-        { name = "NEO4J_URI", value = "bolt://${aws_instance.neo4j.public_ip}:7687" },
+        { name = "NEO4J_URI", value = "bolt://${aws_instance.neo4j.private_ip}:7687" },
         { name = "NEO4J_USER", value = "neo4j" },
         { name = "NEO4J_PASSWORD", value = "jeevansetu" },
         { name = "CLERK_PUBLISHABLE_KEY", value = var.clerk_publishable_key },

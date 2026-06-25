@@ -65,3 +65,4 @@ terraform.tfvars.json
 # Local Plans
 terraform_plan.md
 task.md
+docs/
