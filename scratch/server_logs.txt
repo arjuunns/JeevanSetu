@@ -1,0 +1,18 @@
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL via `apt-get update -y && apt-get install -y openssl` and try installing Prisma again. If you're running Prisma on Docker, add this command to your Dockerfile, or switch to an image that already has OpenSSL installed.
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "jeevansetu", schema "public" at "jeevansetu-postgres.cja202yukflj.ap-south-1.rds.amazonaws.com:5432"
+1 migration found in prisma/migrations
+No pending migrations to apply.
+npm notice
+npm notice New major version of npm available! 10.9.8 -> 11.17.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.17.0
+npm notice To update run: npm install -g npm@11.17.0
+npm notice
+{"level":30,"time":1782331157931,"pid":73,"hostname":"ip-10-0-2-118.ap-south-1.compute.internal","msg":"Redis connected"}
+{"level":40,"time":1782331158322,"pid":73,"hostname":"ip-10-0-2-118.ap-south-1.compute.internal","msg":"Clerk not configured — auth is DISABLED (dev only). Do not run like this in production."}
+{"level":30,"time":1782331158328,"pid":73,"hostname":"ip-10-0-2-118.ap-south-1.compute.internal","port":4000,"env":"production","msg":"JeevanSetu API listening on http://localhost:4000"}
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL via `apt-get update -y && apt-get install -y openssl` and try installing Prisma again. If you're running Prisma on Docker, add this command to your Dockerfile, or switch to an image that already has OpenSSL installed.

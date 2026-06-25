@@ -1,0 +1,98 @@
+! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.33.4.tgz
+> @jeevansetu/web@0.1.0 start /app/apps/web
+> next start -p 3000
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://169.254.172.2:3000
+ ✓ Starting...
+ ✓ Ready in 2.9s
+Error: @clerk/nextjs: Missing secretKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at Object.throwMissingSecretKeyError (.next/server/src/middleware.js:25:1581)
+    at <unknown> (.next/server/src/middleware.js:56:1702)
+    at <unknown> (.next/server/src/middleware.js:56:1642)
+    at <unknown> (.next/server/src/middleware.js:56:1648)
+Error: @clerk/nextjs: Missing secretKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at Object.throwMissingSecretKeyError (.next/server/src/middleware.js:25:1581)
+    at <unknown> (.next/server/src/middleware.js:56:1702)
+    at <unknown> (.next/server/src/middleware.js:56:1642)
+    at <unknown> (.next/server/src/middleware.js:56:1648)
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+Error: @clerk/nextjs: Missing secretKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at Object.throwMissingSecretKeyError (.next/server/src/middleware.js:25:1581)
+    at <unknown> (.next/server/src/middleware.js:56:1702)
+    at <unknown> (.next/server/src/middleware.js:56:1642)
+    at <unknown> (.next/server/src/middleware.js:56:1648)
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+Error: @clerk/nextjs: Missing secretKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at Object.throwMissingSecretKeyError (.next/server/src/middleware.js:25:1581)
+    at <unknown> (.next/server/src/middleware.js:56:1702)
+    at <unknown> (.next/server/src/middleware.js:56:1642)
+    at <unknown> (.next/server/src/middleware.js:56:1648)
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+Error: @clerk/nextjs: Missing secretKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at Object.throwMissingSecretKeyError (.next/server/src/middleware.js:25:1581)
+    at <unknown> (.next/server/src/middleware.js:56:1702)
+    at <unknown> (.next/server/src/middleware.js:56:1642)
+    at <unknown> (.next/server/src/middleware.js:56:1648)
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+Error: @clerk/nextjs: Missing secretKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.
+    at Object.throwMissingSecretKeyError (.next/server/src/middleware.js:25:1581)
+    at <unknown> (.next/server/src/middleware.js:56:1702)
+    at <unknown> (.next/server/src/middleware.js:56:1642)
+    at <unknown> (.next/server/src/middleware.js:56:1648)
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+ ⨯ Error: Cannot append headers after they are sent to the client
+    at p (.next/server/app/_not-found/page.js:2:4784)
+    at async M (.next/server/app/_not-found/page.js:2:6948) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}

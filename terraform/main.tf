@@ -136,7 +136,7 @@ resource "aws_lb" "main" {
   name               = "jeevansetu-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [var.ecs_sg_id]
+  security_groups    = [var.alb_sg_id]
   subnets            = var.subnet_ids
 }
 
@@ -167,7 +167,7 @@ resource "aws_lb_target_group" "server" {
   target_type = "ip"
 
   health_check {
-    path                = "/health"
+    path                = "/api/v1/health"
     healthy_threshold   = 3
     unhealthy_threshold = 3
     timeout             = 5
@@ -176,15 +176,20 @@ resource "aws_lb_target_group" "server" {
   }
 }
 
-# HTTP Web Listener (Port 80) -> Target Web (3000)
+# HTTP Web Listener (Port 80) -> Redirect to HTTPS (Port 443)
 resource "aws_lb_listener" "web" {
   load_balancer_arn = aws_lb.main.arn
   port              = "80"
   protocol          = "HTTP"
 
   default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.web.arn
+    type = "redirect"
+
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
   }
 }
 
@@ -199,6 +204,37 @@ resource "aws_lb_listener" "server" {
     target_group_arn = aws_lb_target_group.server.arn
   }
 }
+
+# SSL Certificate via AWS ACM
+resource "aws_acm_certificate" "cert" {
+  domain_name       = "jeevansetu.arjuns.xyz"
+  validation_method = "DNS"
+
+  tags = {
+    Name = "jeevansetu-cert"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+# HTTPS listener on Port 443
+resource "aws_lb_listener" "web_https" {
+  load_balancer_arn = aws_lb.main.arn
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = aws_acm_certificate.cert.arn
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.web.arn
+  }
+}
+
+
+
 
 # ==========================================
 # IAM ROLES FOR ECS
@@ -259,8 +295,24 @@ resource "aws_ecs_task_definition" "server" {
         { name = "NEO4J_PASSWORD", value = "jeevansetu" },
         { name = "CLERK_PUBLISHABLE_KEY", value = var.clerk_publishable_key },
         { name = "CLERK_SECRET_KEY", value = var.clerk_secret_key },
-        { name = "AUTH_DISABLED", value = "true" }
+        { name = "AUTH_DISABLED", value = "true" },
+        { name = "GEMINI_API_KEY", value = var.gemini_api_key },
+        { name = "GEMINI_TRIAGE_MODEL", value = "gemini-2.5-flash" },
+        { name = "PINECONE_API_KEY", value = var.pinecone_api_key },
+        { name = "PINECONE_INDEX", value = var.pinecone_index },
+        { name = "AWS_ACCESS_KEY_ID", value = var.aws_access_key_id },
+        { name = "AWS_SECRET_ACCESS_KEY", value = var.aws_secret_access_key },
+        { name = "AWS_REGION", value = var.aws_region },
+        { name = "AWS_S3_BUCKET", value = var.aws_s3_bucket }
       ]
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = "/ecs/jeevansetu"
+          "awslogs-region"        = var.aws_region
+          "awslogs-stream-prefix" = "server"
+        }
+      }
     }
   ])
 }
@@ -288,8 +340,18 @@ resource "aws_ecs_task_definition" "web" {
         { name = "NODE_ENV", value = "production" },
         { name = "PORT", value = "3000" },
         { name = "NEXT_PUBLIC_API_URL", value = "http://${aws_lb.main.dns_name}:4000" },
-        { name = "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY", value = var.next_public_clerk_publishable_key }
+        { name = "API_URL", value = "http://${aws_lb.main.dns_name}:4000" },
+        { name = "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY", value = var.next_public_clerk_publishable_key },
+        { name = "CLERK_SECRET_KEY", value = var.clerk_secret_key }
       ]
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = "/ecs/jeevansetu"
+          "awslogs-region"        = var.aws_region
+          "awslogs-stream-prefix" = "web"
+        }
+      }
     }
   ])
 }

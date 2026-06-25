@@ -14,6 +14,9 @@ import { logger } from '../../config/logger.js';
  */
 let _driver: Driver | null = null;
 let _available: boolean | null = null;
+/** Timestamp (ms) of the last availability check — re-probe every 60 s. */
+let _checkedAt = 0;
+const NEO4J_CHECK_TTL_MS = 60_000;
 
 export function getDriver(): Driver {
   if (!_driver) {
@@ -26,16 +29,25 @@ export function getDriver(): Driver {
   return _driver;
 }
 
-/** Returns true if Neo4j answered a connectivity check. Cached after first call. */
+/**
+ * Returns true if Neo4j answered a connectivity check.
+ * Result is cached for NEO4J_CHECK_TTL_MS so the service recovers
+ * automatically when Neo4j comes back online after a transient failure.
+ */
 export async function isNeo4jAvailable(): Promise<boolean> {
-  if (_available !== null) return _available;
+  const now = Date.now();
+  if (_available !== null && now - _checkedAt < NEO4J_CHECK_TTL_MS) return _available;
   try {
     await getDriver().verifyConnectivity();
     _available = true;
+    logger.info('Neo4j connectivity verified — using graph routing');
   } catch (err) {
     logger.warn({ err }, 'Neo4j unavailable — routing will fall back to PostgreSQL');
     _available = false;
+    // Reset driver so next check tries a fresh connection.
+    _driver = null;
   }
+  _checkedAt = Date.now();
   return _available;
 }
 

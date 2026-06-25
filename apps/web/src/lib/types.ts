@@ -33,11 +33,13 @@ export interface ReviewQueueItem {
   recommendedDepartment: string | null;
   riskFactors: string[];
   redFlags: string[];
+  createdAt: string;
   visit: {
     id: string;
     patient: { name: string; age: number; gender: string };
     routing?: {
       selectedHospital?: { name: string } | null;
+      rankedCandidates?: any[] | null;
     } | null;
   };
   citations: GuidelineCitation[];

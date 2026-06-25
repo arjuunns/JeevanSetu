@@ -19,6 +19,7 @@ export default function IntakePage() {
   const { t } = useTranslation();
   const [result, setResult] = useState<FullIntakeResultView | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [activeFormTab, setActiveFormTab] = useState<'DEMO' | 'VITALS' | 'HISTORY'>('DEMO');
 
   const [vitals, setVitals] = useState({
     temperatureC: '',
@@ -284,8 +285,8 @@ export default function IntakePage() {
     <div className="mx-auto max-w-3xl animate-fade-in">
       <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">{t('patientIntake')}</h1>
-          <p className="mt-1 text-sm text-slate-500">{t('subtitle')}</p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">{t('patientIntake')}</h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">{t('subtitle')}</p>
         </div>
         <div className="flex items-center gap-2">
           {isRecording ? (
@@ -354,9 +355,31 @@ export default function IntakePage() {
         </div>
       )}
 
+      <div className="flex border-b border-slate-200 dark:border-slate-800 mb-6 gap-6">
+        {[
+          { id: 'DEMO', label: '1. Demographics' },
+          { id: 'VITALS', label: '2. Vitals & Symptoms' },
+          { id: 'HISTORY', label: '3. Clinical History' }
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            type="button"
+            onClick={() => setActiveFormTab(tab.id as any)}
+            className={`pb-2.5 text-sm font-bold border-b-2 transition-all ${
+              activeFormTab === tab.id
+                ? 'border-brand-700 text-brand-700 dark:border-brand-500 dark:text-brand-500'
+                : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-350'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
       <form onSubmit={onSubmit} className="space-y-6">
-        <fieldset className="card space-y-4">
-          <legend className="px-1 text-sm font-semibold text-brand-700">{t('patientDemographics')}</legend>
+        {/* Tab 1: Demographics */}
+        <fieldset className={activeFormTab === 'DEMO' ? 'card space-y-4 animate-scale-in' : 'hidden'}>
+          <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">{t('patientDemographics')}</legend>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label={t('fullName')} name="name" required />
             <Field label={t('age')} name="age" type="number" required />
@@ -366,48 +389,93 @@ export default function IntakePage() {
             <Field label={t('guardianPhone')} name="guardianPhone" />
             <Select label={t('bloodGroup')} name="bloodGroup" options={['UNKNOWN', 'A_POSITIVE', 'A_NEGATIVE', 'B_POSITIVE', 'B_NEGATIVE', 'AB_POSITIVE', 'AB_NEGATIVE', 'O_POSITIVE', 'O_NEGATIVE']} />
           </div>
-          <Field label={t('allergies')} name="allergies" />
-          <Field label={t('existingDiseases')} name="existingDiseases" />
-          <Field label={t('medications')} name="medications" />
+          <div className="flex justify-end pt-4">
+            <button
+              type="button"
+              onClick={() => setActiveFormTab('VITALS')}
+              className="btn-primary"
+            >
+              Continue to Vitals
+            </button>
+          </div>
         </fieldset>
 
-        <fieldset className="card space-y-4">
-          <legend className="px-1 text-sm font-semibold text-brand-700">{t('vitalSigns')}</legend>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <Field label={t('temperature')} name="temperatureC" type="number" step="0.1" value={vitals.temperatureC} onChange={handleVitalsChange('temperatureC')} warning={getVitalsWarning('temperatureC', vitals.temperatureC)} />
-            <Field label={t('oxygenSaturation')} name="oxygenSaturation" type="number" value={vitals.oxygenSaturation} onChange={handleVitalsChange('oxygenSaturation')} warning={getVitalsWarning('oxygenSaturation', vitals.oxygenSaturation)} />
-            <Field label={t('heartRate')} name="heartRate" type="number" value={vitals.heartRate} onChange={handleVitalsChange('heartRate')} warning={getVitalsWarning('heartRate', vitals.heartRate)} />
-            <Field label={t('respiratoryRate')} name="respiratoryRate" type="number" value={vitals.respiratoryRate} onChange={handleVitalsChange('respiratoryRate')} warning={getVitalsWarning('respiratoryRate', vitals.respiratoryRate)} />
-            <Field label="Systolic BP" name="systolicBp" type="number" value={vitals.systolicBp} onChange={handleVitalsChange('systolicBp')} warning={getVitalsWarning('systolicBp', vitals.systolicBp)} />
-            <Field label="Diastolic BP" name="diastolicBp" type="number" value={vitals.diastolicBp} onChange={handleVitalsChange('diastolicBp')} />
-          </div>
-          <label className="flex items-center gap-2 text-sm text-slate-700">
-            <input type="checkbox" name="isUnconscious" className="h-4 w-4" /> {t('unconscious')}
-          </label>
-        </fieldset>
+        {/* Tab 2: Vitals & Symptoms */}
+        <div className={activeFormTab === 'VITALS' ? 'space-y-6 animate-scale-in' : 'hidden'}>
+          <fieldset className="card space-y-4">
+            <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">{t('vitalSigns')}</legend>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <Field label={t('temperature')} name="temperatureC" type="number" step="0.1" value={vitals.temperatureC} onChange={handleVitalsChange('temperatureC')} warning={getVitalsWarning('temperatureC', vitals.temperatureC)} />
+              <Field label={t('oxygenSaturation')} name="oxygenSaturation" type="number" value={vitals.oxygenSaturation} onChange={handleVitalsChange('oxygenSaturation')} warning={getVitalsWarning('oxygenSaturation', vitals.oxygenSaturation)} />
+              <Field label={t('heartRate')} name="heartRate" type="number" value={vitals.heartRate} onChange={handleVitalsChange('heartRate')} warning={getVitalsWarning('heartRate', vitals.heartRate)} />
+              <Field label={t('respiratoryRate')} name="respiratoryRate" type="number" value={vitals.respiratoryRate} onChange={handleVitalsChange('respiratoryRate')} warning={getVitalsWarning('respiratoryRate', vitals.respiratoryRate)} />
+              <Field label="Systolic BP" name="systolicBp" type="number" value={vitals.systolicBp} onChange={handleVitalsChange('systolicBp')} warning={getVitalsWarning('systolicBp', vitals.systolicBp)} />
+              <Field label="Diastolic BP" name="diastolicBp" type="number" value={vitals.diastolicBp} onChange={handleVitalsChange('diastolicBp')} />
+            </div>
+            <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+              <input type="checkbox" name="isUnconscious" className="h-4 w-4" /> {t('unconscious')}
+            </label>
+          </fieldset>
 
-        <fieldset className="card space-y-4">
-          <legend className="px-1 text-sm font-semibold text-brand-700">{t('symptoms')}</legend>
-          <Field label={t('chiefComplaint')} name="chiefComplaint" />
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Field label={t('primarySymptom')} name="primarySymptom" required />
-            <Select label={t('severity')} name="primarySeverity" options={['MILD', 'MODERATE', 'SEVERE']} />
+          <fieldset className="card space-y-4">
+            <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">{t('symptoms')}</legend>
+            <Field label={t('chiefComplaint')} name="chiefComplaint" />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label={t('primarySymptom')} name="primarySymptom" required />
+              <Select label={t('severity')} name="primarySeverity" options={['MILD', 'MODERATE', 'SEVERE']} />
+            </div>
+            <SymptomTagInput
+              label={t('secondarySymptoms')}
+              name="secondarySymptoms"
+              tags={secondarySymptoms}
+              onAddTag={(tag) => setSecondarySymptoms((prev) => [...prev, tag])}
+              onRemoveTag={(tag) => setSecondarySymptoms((prev) => prev.filter((t) => t !== tag))}
+            />
+          </fieldset>
+
+          <div className="flex justify-between pt-4">
+            <button
+              type="button"
+              onClick={() => setActiveFormTab('DEMO')}
+              className="btn-ghost"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveFormTab('HISTORY')}
+              className="btn-primary"
+            >
+              Continue to History
+            </button>
           </div>
-          <SymptomTagInput
-            label={t('secondarySymptoms')}
-            name="secondarySymptoms"
-            tags={secondarySymptoms}
-            onAddTag={(tag) => setSecondarySymptoms((prev) => [...prev, tag])}
-            onRemoveTag={(tag) => setSecondarySymptoms((prev) => prev.filter((t) => t !== tag))}
-          />
+        </div>
+
+        {/* Tab 3: Clinical History */}
+        <fieldset className={activeFormTab === 'HISTORY' ? 'card space-y-4 animate-scale-in' : 'hidden'}>
+          <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">Clinical History</legend>
+          <div className="space-y-4">
+            <Field label={t('allergies')} name="allergies" />
+            <Field label={t('existingDiseases')} name="existingDiseases" />
+            <Field label={t('medications')} name="medications" />
+          </div>
+          
+          <div className="flex justify-between pt-6 border-t border-slate-100 dark:border-slate-800">
+            <button
+              type="button"
+              onClick={() => setActiveFormTab('VITALS')}
+              className="btn-ghost"
+            >
+              Back
+            </button>
+            <button type="submit" className="btn-primary" disabled={mutation.isPending}>
+              {mutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+              {t('submit')}
+            </button>
+          </div>
         </fieldset>
 
         {errorMsg ? <p className="rounded-lg bg-red-50 p-3 text-sm text-critical">{errorMsg}</p> : null}
-
-        <button type="submit" className="btn-primary" disabled={mutation.isPending}>
-          {mutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-          {t('submit')}
-        </button>
       </form>
 
       {result ? <SafetyResultPanel result={result} /> : null}
@@ -610,14 +678,14 @@ function SymptomTagInput({
   return (
     <div>
       <label className="label">{label}</label>
-      <div className="flex flex-wrap gap-2 p-2 border border-slate-200 rounded-lg bg-white min-h-[42px] focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition duration-150">
+      <div className="flex flex-wrap gap-2 p-2 border border-slate-300 dark:border-zinc-800 rounded-lg bg-white dark:bg-zinc-800/80 min-h-[42px] outline-none focus-within:border-brand-600 focus-within:ring-2 focus-within:ring-brand-100 dark:focus-within:border-brand-500 dark:focus-within:ring-brand-900 transition duration-150">
         {tags.map((tag) => (
-          <span key={tag} className="inline-flex items-center gap-1 bg-brand-50 text-brand-800 text-xs font-semibold px-2 py-1 rounded-md border border-brand-100 animate-scale-in">
+          <span key={tag} className="inline-flex items-center gap-1 bg-brand-50 text-brand-900 text-xs font-semibold px-2 py-1 rounded-md border border-brand-100 animate-scale-in">
             {tag}
             <button
               type="button"
               onClick={() => onRemoveTag(tag)}
-              className="text-brand-500 hover:text-brand-800 font-bold transition ml-1"
+              className="text-brand-500 hover:text-brand-900 font-bold transition ml-1"
             >
               ×
             </button>
@@ -629,7 +697,7 @@ function SymptomTagInput({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder={tags.length === 0 ? "Type symptom and press Enter..." : ""}
-          className="flex-1 bg-transparent border-0 outline-none p-0.5 text-sm text-slate-800 min-w-[120px] focus:ring-0 focus:outline-none"
+          className="flex-1 bg-transparent border-0 outline-none p-0.5 text-sm text-slate-800 dark:text-zinc-150 min-w-[120px] focus:ring-0 focus:outline-none"
         />
       </div>
       <input type="hidden" name={name} value={tags.join(',')} />

@@ -1,0 +1,20 @@
+{
+    "events": [
+        {
+            "timestamp": 1782330079108,
+            "message": "! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.33.4.tgz",
+            "ingestionTime": 1782330083113
+        },
+        {
+            "timestamp": 1782330091915,
+            "message": "> @jeevansetu/web@0.1.0 start /app/apps/web",
+            "ingestionTime": 1782330093069
+        },
+        {
+            "timestamp": 1782330091915,
+            "message": "> next start -p 3000",
+            "ingestionTime": 1782330093069
+        },
+        {
+            "timestamp": 1782330094023,
+            "message": 

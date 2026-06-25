@@ -148,6 +148,13 @@ export async function runTriageForVisit(visitId: string, context: AuditContext) 
     return a;
   });
 
+  try {
+    const { publish } = await import('../../realtime/events.js');
+    publish('triage', { visitId });
+  } catch (err) {
+    logger.error({ err, visitId }, 'Failed to publish triage realtime event');
+  }
+
   await recordAudit({
     action: 'AI_TRIAGE_EXECUTED',
     entityType: 'Visit',

@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 
 /** Tailwind config for the JeevanSetu web app. */
 const config: Config = {
+  darkMode: 'class',
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {

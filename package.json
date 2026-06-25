@@ -24,6 +24,8 @@
     "docker:up": "docker compose -f docker/docker-compose.yml --env-file .env up -d",
     "docker:down": "docker compose -f docker/docker-compose.yml --env-file .env down",
     "docker:build": "docker compose -f docker/docker-compose.yml --env-file .env build",
+    "start:aws": "node -e \"const { spawn } = require('child_process'); const isWin = process.platform === 'win32'; const shell = isWin ? 'powershell.exe' : 'bash'; const script = isWin ? './scripts/start_aws_services.ps1' : './scripts/start_aws_services.sh'; spawn(shell, [script], { stdio: 'inherit' });\"",
+    "stop:aws": "node -e \"const { spawn } = require('child_process'); const isWin = process.platform === 'win32'; const shell = isWin ? 'powershell.exe' : 'bash'; const script = isWin ? './scripts/stop_aws_services.ps1' : './scripts/stop_aws_services.sh'; spawn(shell, [script], { stdio: 'inherit' });\"",
     "prepare": "husky"
   },
   "devDependencies": {

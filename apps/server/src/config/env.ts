@@ -25,7 +25,7 @@ const envSchema = z.object({
 
   // AI stack (optional — triage degrades gracefully without it)
   GEMINI_API_KEY: z.string().optional(),
-  GEMINI_TRIAGE_MODEL: z.string().default('gemini-2.5-flash'),
+  GEMINI_TRIAGE_MODEL: z.string().default('gemini-2.0-flash'),
   // text-embedding-004 was retired by Google; gemini-embedding-001 vectors
   // are truncated to EMBEDDING_DIMENSION (1024) to match the Pinecone index.
   GEMINI_EMBEDDING_MODEL: z.string().default('gemini-embedding-001'),

@@ -21,7 +21,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U jeevansetu']
+      test: [ 'CMD-SHELL', 'pg_isready -U jeevansetu' ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -35,7 +35,7 @@ services:
     volumes:
       - redis_data:/data
     healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
+      test: [ 'CMD', 'redis-cli', 'ping' ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -52,7 +52,7 @@ services:
     volumes:
       - neo4j_data:/data
     healthcheck:
-      test: ['CMD-SHELL', 'wget -qO- http://localhost:7474 || exit 1']
+      test: [ 'CMD-SHELL', 'wget -qO- http://localhost:7474 || exit 1' ]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -92,7 +92,6 @@ services:
         # The browser hits Next's /api/server/* rewrite, which proxies to the
         # server service inside the compose network.
         NEXT_PUBLIC_API_URL: http://server:4000
-        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     container_name: jeevansetu-web
     environment:
       NODE_ENV: production

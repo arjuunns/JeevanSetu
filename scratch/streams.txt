@@ -1,0 +1,105 @@
+{
+    "logStreams": [
+        {
+            "logStreamName": "server/jeevansetu-server/61a65f95eea84a9798c6680609f08baf",
+            "creationTime": 1782331657617,
+            "firstEventTimestamp": 1782331683367,
+            "lastEventTimestamp": 1782342986622,
+            "lastIngestionTime": 1782342988923,
+            "uploadSequenceToken": "49039859676848642434882916633698306659256184689610943837",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:server/jeevansetu-server/61a65f95eea84a9798c6680609f08baf",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "web/jeevansetu-web/aedeee6b2ee64731a7940b8d5371c677",
+            "creationTime": 1782330555443,
+            "firstEventTimestamp": 1782330574713,
+            "lastEventTimestamp": 1782337694785,
+            "lastIngestionTime": 1782337698902,
+            "uploadSequenceToken": "49039859676841610790871426517247413008294255206195227933",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:web/jeevansetu-web/aedeee6b2ee64731a7940b8d5371c677",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "server/jeevansetu-server/94ee18a51cfc489187c047cb7abb8091",
+            "creationTime": 1782331109414,
+            "firstEventTimestamp": 1782331145136,
+            "lastEventTimestamp": 1782331158336,
+            "lastIngestionTime": 1782331158526,
+            "uploadSequenceToken": "49039859676832917139989266752310254212747907468776140140",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:server/jeevansetu-server/94ee18a51cfc489187c047cb7abb8091",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "server/jeevansetu-server/0db093f7fd83454ab20150f6ffbf3210",
+            "creationTime": 1782327805698,
+            "firstEventTimestamp": 1782327830663,
+            "lastEventTimestamp": 1782331061053,
+            "lastIngestionTime": 1782331061814,
+            "uploadSequenceToken": "49039859676832788587691338401526354220063534443631177060",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:server/jeevansetu-server/0db093f7fd83454ab20150f6ffbf3210",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "web/jeevansetu-web/4f3e6b6c7b2a471085594daf2088fdb7",
+            "creationTime": 1782327798248,
+            "firstEventTimestamp": 1782327817142,
+            "lastEventTimestamp": 1782330992748,
+            "lastIngestionTime": 1782330996378,
+            "uploadSequenceToken": "49039859676832701608328206219771295169082564161718938954",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:web/jeevansetu-web/4f3e6b6c7b2a471085594daf2088fdb7",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "web/jeevansetu-web/01b53b0e04494ba4819acf67b1646516",
+            "creationTime": 1782330050643,
+            "firstEventTimestamp": 1782330079108,
+            "lastEventTimestamp": 1782330522351,
+            "lastIngestionTime": 1782330523066,
+            "uploadSequenceToken": "49039859676832072468767065269669659588391885939296923093",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:web/jeevansetu-web/01b53b0e04494ba4819acf67b1646516",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "web/web/140177f27f0b4797a95858dd31d5849e",
+            "creationTime": 1782070869397,
+            "firstEventTimestamp": 1782070886746,
+            "lastEventTimestamp": 1782144594184,
+            "lastIngestionTime": 1782144596136,
+            "uploadSequenceToken": "49039859676584933188240722921112384811589634615279840524",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:web/web/140177f27f0b4797a95858dd31d5849e",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "server/server/3b194e99d1504163aad37f7cea1117c8",
+            "creationTime": 1782070865390,
+            "firstEventTimestamp": 1782070884940,
+            "lastEventTimestamp": 1782143728393,
+            "lastIngestionTime": 1782143730945,
+            "uploadSequenceToken": "49039859676583783152141821773963391564287494028019330437",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:server/server/3b194e99d1504163aad37f7cea1117c8",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "web/web/189259f8b3034bc7b5e2b638ae927d22",
+            "creationTime": 1782070031580,
+            "firstEventTimestamp": 1782070049063,
+            "lastEventTimestamp": 1782071304315,
+            "lastIngestionTime": 1782071308454,
+            "uploadSequenceToken": "49039859676487517149580140666222258712933885257989713280",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:web/web/189259f8b3034bc7b5e2b638ae927d22",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "web/web/0baea07bf3c24ce1aae34d13b4c06a2d",
+            "creationTime": 1782069340245,
+            "firstEventTimestamp": 1782069358738,
+            "lastEventTimestamp": 1782070439937,
+            "lastIngestionTime": 1782070443148,
+            "uploadSequenceToken": "49039859676486366960620020003807940081982163114641288612",
+            "arn": "arn:aws:logs:ap-south-1:860711763950:log-group:/ecs/jeevansetu:log-stream:web/web/0baea07bf3c24ce1aae34d13b4c06a2d",
+            "storedBytes": 0
+        }
+    ],
+    "nextToken": "Kwfr0bfVKkYk4OrYazFRiZ544Z63QP4VzGv9TCUmw4UsIwZPLhwrEzbk42UqjNq7KoToHmMYc6L2UcVFxbZuh86XmTC2CmzNk6GW1JsH9M328sLfIwUvH_cuVp_ggjSFhjDgbxQv0ek-bz8XoBiqYbmhZZMntuiWIXlQ63phP4R22dR9wXnawUvITa_l2N6oryhU9BIov3fmNcPuLVwp3lAcnFrIZuogn4M9dOVwHwSubg_mO-ZVotbgH989nW0hNLqdyZysxklGKCS5nuk0lnckE1bqPGcyuDreoTGKDeRGtC_Lj09POxCZAXC72QO3yjmvyR8J9CXf_sbkFNmL-PNkKaYdddyCihYuMNTy5QqNI_I0WxeBluNXikiAXJyM35a8vPiVIPr0iVHQ514KQCVIm5I4BK8zRXnFy611QW4"
+}
