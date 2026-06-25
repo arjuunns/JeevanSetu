@@ -28,16 +28,6 @@ output "web_ecr_url" {
   description = "The URL of the ECR repository for the Next.js web app"
 }
 
-output "acm_validation_dns_records" {
-  value = [
-    for dvo in aws_acm_certificate.cert.domain_validation_options : {
-      name  = dvo.resource_record_name
-      type  = dvo.resource_record_type
-      value = dvo.resource_record_value
-    }
-  ]
-  description = "The CNAME records needed to validate the SSL certificate in your DNS provider (Hostinger)"
-}
 
 
 

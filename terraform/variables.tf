@@ -72,7 +72,7 @@ variable "next_public_clerk_publishable_key" {
 variable "acm_certificate_arn" {
   type        = string
   description = "The ARN of the ACM certificate created manually in the AWS Console"
-  default     = ""
+  default     = "arn:aws:acm:ap-south-1:860711763950:certificate/98793301-6e70-4683-9f31-8c822894664b"
 }
 
 variable "gemini_api_key" {

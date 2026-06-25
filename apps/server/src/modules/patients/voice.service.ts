@@ -29,8 +29,8 @@ export const voiceParsedIntakeSchema = z.object({
 export type VoiceParsedIntake = z.infer<typeof voiceParsedIntakeSchema>;
 
 export async function parseTranscriptToStructuredData(transcript: string): Promise<VoiceParsedIntake> {
-  // Use gemini-flash-latest — it has better free-tier rate limits than 2.0-flash
-  const model = getChatModel({ model: 'gemini-flash-latest', temperature: 0.1 })
+  // Use default GEMINI_TRIAGE_MODEL from env configurations
+  const model = getChatModel({ temperature: 0.1 })
     .withStructuredOutput(voiceParsedIntakeSchema, { name: 'voice_parsed_intake' });
 
   const messages = [

@@ -127,14 +127,6 @@ resource "aws_instance" "neo4j" {
   }
 }
 
-resource "aws_eip" "neo4j" {
-  instance = aws_instance.neo4j.id
-  domain   = "vpc"
-  tags = {
-    Name = "jeevansetu-neo4j-eip"
-  }
-}
-
 # ==========================================
 # APPLICATION LOAD BALANCER (ALB)
 # ==========================================
@@ -212,27 +204,13 @@ resource "aws_lb_listener" "server" {
   }
 }
 
-# SSL Certificate via AWS ACM
-resource "aws_acm_certificate" "cert" {
-  domain_name       = "jeevansetu.arjuns.xyz"
-  validation_method = "DNS"
-
-  tags = {
-    Name = "jeevansetu-cert"
-  }
-
-  lifecycle {
-    create_before_destroy = true
-  }
-}
-
 # HTTPS listener on Port 443
 resource "aws_lb_listener" "web_https" {
   load_balancer_arn = aws_lb.main.arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = aws_acm_certificate.cert.arn
+  certificate_arn   = var.acm_certificate_arn
 
   default_action {
     type             = "forward"
@@ -297,7 +275,7 @@ resource "aws_ecs_task_definition" "server" {
         { name = "PORT", value = "4000" },
         { name = "DATABASE_URL", value = "postgresql://jeevansetu:${var.db_password}@${aws_db_instance.postgres.endpoint}/jeevansetu?schema=public" },
         { name = "REDIS_URL", value = "redis://${aws_elasticache_cluster.redis.cache_nodes[0].address}:6379" },
-        { name = "NEO4J_URI", value = "bolt://${aws_eip.neo4j.public_ip}:7687" },
+        { name = "NEO4J_URI", value = "bolt://${aws_instance.neo4j.private_ip}:7687" },
         { name = "NEO4J_USER", value = "neo4j" },
         { name = "NEO4J_PASSWORD", value = "jeevansetu" },
         { name = "CLERK_PUBLISHABLE_KEY", value = var.clerk_publishable_key },
