@@ -41,6 +41,7 @@ export default function IntakePage() {
   // Refs to persist across recognition restarts without triggering re-renders
   const manuallyStopped = useRef(false);
   const accumulatedTranscript = useRef('');
+  const sessionAccumulated = useRef('');
 
   const startVoiceIntake = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -52,11 +53,13 @@ export default function IntakePage() {
     // Reset state on a fresh start
     manuallyStopped.current = false;
     accumulatedTranscript.current = '';
+    sessionAccumulated.current = '';
     setTranscript('');
     setInterimText('');
     setIsRecording(true);
 
     const launchRecognition = () => {
+      sessionAccumulated.current = accumulatedTranscript.current;
       const recognition = new SpeechRecognition();
       recognition.continuous = true;
       recognition.interimResults = true;
@@ -86,22 +89,26 @@ export default function IntakePage() {
       };
 
       recognition.onresult = (event: any) => {
-        let finalTranscript = '';
+        let currentFinal = '';
         let interimTranscript = '';
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
+        for (let i = 0; i < event.results.length; ++i) {
           if (event.results[i].isFinal) {
-            finalTranscript += event.results[i][0].transcript;
+            currentFinal += event.results[i][0].transcript;
           } else {
             interimTranscript += event.results[i][0].transcript;
           }
         }
-        if (finalTranscript) {
-          accumulatedTranscript.current += finalTranscript;
-          setTranscript(accumulatedTranscript.current);
-          setInterimText('');
-        } else {
-          setInterimText(interimTranscript);
+        
+        let full = sessionAccumulated.current;
+        if (currentFinal) {
+          if (full && !full.endsWith(' ') && !currentFinal.startsWith(' ')) {
+            full += ' ';
+          }
+          full += currentFinal;
         }
+        accumulatedTranscript.current = full;
+        setTranscript(full);
+        setInterimText(interimTranscript);
       };
 
       (window as any)._currentRecognition = recognition;
