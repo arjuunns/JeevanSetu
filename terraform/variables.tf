@@ -49,24 +49,24 @@ variable "neo4j_sg_id" {
 variable "db_password" {
   type        = string
   sensitive   = true
-  default     = "jeevansetu_secure_db_pass"
   description = "Database master password"
 }
 
 # Clerk credentials
 variable "clerk_publishable_key" {
-  type    = string
-  default = "pk_test_ZW5hYmxlZC1tYXJ0aW4tMjAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  type        = string
+  description = "Clerk publishable key"
 }
 
 variable "clerk_secret_key" {
-  type    = string
-  default = "sk_test_J3WvsMwAIxinP3IPmc5UTdMtfflMREqdt9xE68VOlG"
+  type        = string
+  sensitive   = true
+  description = "Clerk secret key"
 }
 
 variable "next_public_clerk_publishable_key" {
-  type    = string
-  default = "pk_test_ZW5hYmxlZC1tYXJ0aW4tMjAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  type        = string
+  description = "Next.js Clerk publishable key"
 }
 
 variable "acm_certificate_arn" {
@@ -76,34 +76,37 @@ variable "acm_certificate_arn" {
 }
 
 variable "gemini_api_key" {
-  type    = string
-  default = "AQ.Ab8RN6JZgwav71ETUXL5wS08gd8bwaIj-olmk9YD5lAUqT6v2w"
+  type        = string
+  sensitive   = true
+  description = "Gemini API key"
 }
 
 variable "pinecone_api_key" {
-  type    = string
-  default = "pcsk_5UV7Jv_KJAVWGteifTp3wjzUsXbWKLuteF57ErjKFvLoH7SHqb2ZYA3BqpTPJQvFGnszb1"
+  type        = string
+  sensitive   = true
+  description = "Pinecone API key"
 }
 
 variable "pinecone_index" {
-  type    = string
-  default = "jeevansetu-guidelines"
+  type        = string
+  default     = "jeevansetu-guidelines"
+  description = "Pinecone index name"
 }
 
 variable "aws_access_key_id" {
-  type    = string
-  default = "AKIA4QZTLH7XP25SKBMK"
+  type        = string
+  sensitive   = true
+  description = "AWS Access Key ID"
 }
 
 variable "aws_secret_access_key" {
-  type    = string
-  default = "+CD4KlIGcDsk5QZbKtnvVwBROgca2VZsh1xvIu0z"
+  type        = string
+  sensitive   = true
+  description = "AWS Secret Access Key"
 }
 
 variable "aws_s3_bucket" {
-  type    = string
-  default = "jeevansetu-documents"
+  type        = string
+  default     = "jeevansetu-documents"
+  description = "AWS S3 bucket name"
 }
-
-
-
