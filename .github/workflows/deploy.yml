@@ -38,7 +38,7 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
-            --build-arg NEXT_PUBLIC_API_URL=https://jeevansetu.arjuns.xyz:4000 \
+            --build-arg NEXT_PUBLIC_API_URL=http://jeevansetu.arjuns.xyz:4000 \
             -f docker/Dockerfile.web .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
