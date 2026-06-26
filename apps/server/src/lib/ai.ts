@@ -8,8 +8,32 @@ import { ServiceUnavailableError } from './errors.js';
  * Gemini key (intake + safety still work); any call that genuinely needs the
  * model throws a typed ServiceUnavailableError that the caller can degrade on.
  */
-let _chat: ChatGoogleGenerativeAI | null = null;
+let _chat: ResilientChatModel | null = null;
 let _embeddings: GeminiEmbeddings | null = null;
+
+export class ResilientChatModel {
+  constructor(
+    private readonly primary: ChatGoogleGenerativeAI,
+    private readonly fallbacks: ChatGoogleGenerativeAI[],
+  ) {}
+
+  async invoke(input: any, options?: any): Promise<any> {
+    const model = this.primary.withFallbacks({
+      fallbacks: this.fallbacks,
+    });
+    return model.invoke(input, options);
+  }
+
+  withStructuredOutput(schema: any, config?: any): any {
+    const primaryStructured = this.primary.withStructuredOutput(schema, config);
+    const fallbackStructureds = this.fallbacks.map((f) =>
+      f.withStructuredOutput(schema, config)
+    );
+    return primaryStructured.withFallbacks({
+      fallbacks: fallbackStructureds,
+    });
+  }
+}
 
 /**
  * Must match the dimension of the Pinecone index (jeevansetu-guidelines) and
@@ -69,16 +93,37 @@ function normalize(values: number[]): number[] {
   return norm === 0 ? values : values.map((v) => v / norm);
 }
 
-export function getChatModel(overrides?: { temperature?: number; model?: string }): ChatGoogleGenerativeAI {
+export function getChatModel(overrides?: { temperature?: number; model?: string }): ResilientChatModel {
   if (!features.ai) throw new ServiceUnavailableError('Gemini');
   if (!_chat || overrides) {
-    return new ChatGoogleGenerativeAI({
+    const primaryModelName = overrides?.model ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.5-flash';
+    
+    // Fallback order: gemini-2.5-flash, gemini-2.0-flash, gemini-3.5-flash, gemini-2.5-pro
+    const fallbackNames = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-3.5-flash', 'gemini-2.5-pro']
+      .filter((m) => m !== primaryModelName);
+
+    const primary = new ChatGoogleGenerativeAI({
       apiKey: env.GEMINI_API_KEY,
-      model: overrides?.model ?? env.GEMINI_TRIAGE_MODEL,
-      // Low temperature: clinical reasoning should be reproducible, not creative.
+      model: primaryModelName,
       temperature: overrides?.temperature ?? 0.1,
-      maxRetries: 2,
+      maxRetries: 1,
     });
+
+    const fallbacks = fallbackNames.map((modelName) => {
+      return new ChatGoogleGenerativeAI({
+        apiKey: env.GEMINI_API_KEY,
+        model: modelName,
+        temperature: overrides?.temperature ?? 0.1,
+        maxRetries: 1,
+      });
+    });
+
+    const resilientModel = new ResilientChatModel(primary, fallbacks);
+
+    if (!overrides) {
+      _chat = resilientModel;
+    }
+    return resilientModel;
   }
   return _chat;
 }
