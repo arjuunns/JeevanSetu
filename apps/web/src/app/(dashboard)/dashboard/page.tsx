@@ -17,7 +17,6 @@ interface HealthStatus {
   status: string;
   dependencies: {
     postgres: 'up' | 'down';
-    redis: 'up' | 'down';
     neo4j: 'up' | 'down';
   };
 }
@@ -319,31 +318,7 @@ export default function OverviewPage() {
                 )}
               </div>
 
-              {/* Cache / PubSub */}
-              <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-zinc-950 border border-slate-200/40 dark:border-zinc-900/60">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-1.5 bg-red-500/10 text-red-550 dark:text-red-400 rounded-md">
-                    <Zap className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-xs text-slate-800 dark:text-zinc-200">Cache & Broker</h3>
-                    <p className="text-[9px] text-slate-400 dark:text-zinc-500">Redis PubSub queue</p>
-                  </div>
-                </div>
-                {isHealthLoading ? (
-                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300 animate-pulse"></span>
-                ) : health?.dependencies.redis === 'up' ? (
-                  <div className="flex items-center gap-1.5 text-emerald-600 text-xs font-bold">
-                    <CheckCircle2 className="h-4 w-4" />
-                    <span className="hidden sm:inline">Active</span>
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-1.5 text-red-650 text-xs font-bold animate-pulse">
-                    <XCircle className="h-4 w-4" />
-                    <span className="hidden sm:inline">Offline</span>
-                  </div>
-                )}
-              </div>
+
             </div>
           </div>
 

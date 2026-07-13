@@ -8,10 +8,6 @@ output "postgres_endpoint" {
   description = "The endpoint of the RDS PostgreSQL instance"
 }
 
-output "redis_endpoint" {
-  value       = aws_elasticache_cluster.redis.cache_nodes[0].address
-  description = "The hostname of the ElastiCache Redis cluster"
-}
 
 output "neo4j_public_ip" {
   value       = aws_instance.neo4j.public_ip

@@ -72,22 +72,6 @@ resource "aws_db_instance" "postgres" {
 # ELASTICACHE REDIS
 # ==========================================
 
-resource "aws_elasticache_subnet_group" "redis" {
-  name       = "jeevansetu-redis-subnet-group"
-  subnet_ids = var.subnet_ids
-}
-
-resource "aws_elasticache_cluster" "redis" {
-  cluster_id           = "jeevansetu-redis"
-  engine               = "redis"
-  node_type            = "cache.t4g.micro"
-  num_cache_nodes      = 1
-  parameter_group_name = "default.redis7"
-  port                 = 6379
-  security_group_ids   = [var.redis_sg_id]
-  subnet_group_name    = aws_elasticache_subnet_group.redis.name
-}
-
 # ==========================================
 # EC2 NEO4J CONTAINER HOST
 # ==========================================
@@ -274,7 +258,6 @@ resource "aws_ecs_task_definition" "server" {
         { name = "NODE_ENV", value = "production" },
         { name = "PORT", value = "4000" },
         { name = "DATABASE_URL", value = "postgresql://jeevansetu:${var.db_password}@${aws_db_instance.postgres.endpoint}/jeevansetu?schema=public" },
-        { name = "REDIS_URL", value = "redis://${aws_elasticache_cluster.redis.cache_nodes[0].address}:6379" },
         { name = "NEO4J_URI", value = "bolt://${aws_instance.neo4j.private_ip}:7687" },
         { name = "NEO4J_USER", value = "neo4j" },
         { name = "NEO4J_PASSWORD", value = "jeevansetu" },

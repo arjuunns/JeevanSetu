@@ -34,11 +34,6 @@ variable "rds_sg_id" {
   description = "Security Group ID for RDS Postgres database"
 }
 
-variable "redis_sg_id" {
-  type        = string
-  default     = "sg-0443289d920aa2e35"
-  description = "Security Group ID for ElastiCache Redis"
-}
 
 variable "neo4j_sg_id" {
   type        = string
@@ -72,7 +67,7 @@ variable "next_public_clerk_publishable_key" {
 variable "acm_certificate_arn" {
   type        = string
   description = "The ARN of the ACM certificate created manually in the AWS Console"
-  default     = "arn:aws:acm:ap-south-1:860711763950:certificate/98793301-6e70-4683-9f31-8c822894664b"
+  default     = "arn:aws:acm:ap-south-1:860711763950:certificate/2950d205-8f93-4fcf-be80-1ce392eee2b2"
 }
 
 variable "gemini_api_key" {

@@ -21,10 +21,9 @@ const envSchema = z.object({
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace']).default('info'),
 
   DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
-  REDIS_URL: z.string().default('redis://localhost:6379'),
 
   // AI stack (optional — triage degrades gracefully without it)
-  GEMINI_API_KEY: z.string().optional(),
+  GEMINI_API_KEY: z.string().default('DUMMY_GEMINI_KEY'),
   GEMINI_TRIAGE_MODEL: z.string().default('gemini-2.0-flash'),
   // text-embedding-004 was retired by Google; gemini-embedding-001 vectors
   // are truncated to EMBEDDING_DIMENSION (1024) to match the Pinecone index.

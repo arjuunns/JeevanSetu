@@ -4,7 +4,6 @@ import { createApp } from './app.js';
 import { env } from './config/env.js';
 import { logger } from './config/logger.js';
 import { disconnectPrisma } from './lib/prisma.js';
-import { connectRedis, redis } from './lib/redis.js';
 import { closeNeo4j } from './modules/routing/neo4j.js';
 import { attachRealtime } from './realtime/socket.js';
 
@@ -13,8 +12,6 @@ import { attachRealtime } from './realtime/socket.js';
  * connects Redis, and installs graceful-shutdown handlers (Phase 17).
  */
 async function main(): Promise<void> {
-  await connectRedis();
-
   const app = createApp();
   const httpServer = createServer(app);
   attachRealtime(httpServer);
@@ -29,7 +26,7 @@ async function main(): Promise<void> {
   const shutdown = (signal: string): void => {
     logger.info({ signal }, 'Shutting down gracefully');
     httpServer.close(() => {
-      void Promise.allSettled([disconnectPrisma(), redis.quit(), closeNeo4j()]).then(() => {
+      void Promise.allSettled([disconnectPrisma(), closeNeo4j()]).then(() => {
         logger.info('Shutdown complete');
         process.exit(0);
       });

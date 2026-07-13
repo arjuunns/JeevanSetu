@@ -3,7 +3,6 @@ import { Router } from 'express';
 import { features } from '../../config/env.js';
 import { asyncHandler, sendOk } from '../../lib/http.js';
 import { prisma } from '../../lib/prisma.js';
-import { redis } from '../../lib/redis.js';
 import { isNeo4jAvailable } from '../routing/neo4j.js';
 
 /**
@@ -21,11 +20,10 @@ healthRouter.get(
   asyncHandler(async (_req, res) => {
     const checks = await Promise.allSettled([
       prisma.$queryRaw`SELECT 1`,
-      redis.status === 'ready' ? Promise.resolve('ready') : redis.ping(),
       isNeo4jAvailable(),
     ]);
 
-    const [db, cache, graph] = checks;
+    const [db, graph] = checks;
     const ready = db.status === 'fulfilled';
     sendOk(
       res,
@@ -33,7 +31,6 @@ healthRouter.get(
         status: ready ? 'ready' : 'degraded',
         dependencies: {
           postgres: db.status === 'fulfilled' ? 'up' : 'down',
-          redis: cache.status === 'fulfilled' ? 'up' : 'down',
           neo4j: graph.status === 'fulfilled' && graph.value ? 'up' : 'down',
           features,
         },
