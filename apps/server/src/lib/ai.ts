@@ -96,10 +96,10 @@ function normalize(values: number[]): number[] {
 export function getChatModel(overrides?: { temperature?: number; model?: string }): ResilientChatModel {
   if (!features.ai) throw new ServiceUnavailableError('Gemini');
   if (!_chat || overrides) {
-    const primaryModelName = overrides?.model ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.5-flash';
+    const primaryModelName = overrides?.model ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.0-flash';
     
-    // Fallback order: gemini-2.5-flash, gemini-2.0-flash, gemini-3.5-flash, gemini-2.5-pro
-    const fallbackNames = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-3.5-flash', 'gemini-2.5-pro']
+    // Fallback order: gemini-2.0-flash, gemini-1.5-flash, gemini-2.5-pro
+    const fallbackNames = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-2.5-pro']
       .filter((m) => m !== primaryModelName);
 
     const primary = new ChatGoogleGenerativeAI({

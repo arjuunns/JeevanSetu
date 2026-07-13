@@ -4,7 +4,7 @@ client = boto3.client('logs', region_name='ap-south-1')
 try:
     response = client.get_log_events(
         logGroupName='/ecs/jeevansetu',
-        logStreamName='server/jeevansetu-server/61a65f95eea84a9798c6680609f08baf',
+        logStreamName='server/jeevansetu-server/e71488dab3544664b2f53ae18aef52fa',
         limit=100
     )
     
