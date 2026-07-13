@@ -2,7 +2,7 @@
 
 import { fullIntakeSchema, type FullIntake } from '@jeevansetu/types';
 import { useMutation } from '@tanstack/react-query';
-import { AlertTriangle, CheckCircle2, Loader2, Megaphone, Mic, MicOff } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Loader2, Megaphone, Mic, MicOff, X, ChevronLeft, ChevronRight, Volume2 } from 'lucide-react';
 import { useState, useRef } from 'react';
 
 import { api, ApiClientError } from '@/lib/api';
@@ -38,12 +38,51 @@ export default function IntakePage() {
   const [isParsingVoice, setIsParsingVoice] = useState(false);
   const [voiceError, setVoiceError] = useState<string | null>(null);
 
+  // New Voice Wizard States
+  const [showVoiceWizard, setShowVoiceWizard] = useState(false);
+  const [currentVoiceStep, setCurrentVoiceStep] = useState(0);
+  const [voiceStepTranscripts, setVoiceStepTranscripts] = useState<string[]>(['', '', '', '', '']);
+
+  const wizardSteps = [
+    {
+      id: 'demo',
+      title: 'Patient Demographics',
+      question: "What is the patient's Name, Age, and Gender?",
+      example: "e.g. 'John Doe, forty-five years old, male'",
+    },
+    {
+      id: 'vitals',
+      title: 'Vital Signs',
+      question: "What are the patient's Vitals? (Temp, SpO2, Heart Rate, BP, Respiratory Rate)",
+      example: "e.g. 'Temperature is 37 degrees, oxygen level is 98 percent, pulse is 75, blood pressure is 120 over 80'",
+    },
+    {
+      id: 'complaint',
+      title: 'Chief Complaint & Primary Symptom',
+      question: "What is the Chief Complaint and Primary Symptom (with severity)?",
+      example: "e.g. 'Severe chest pain radiating to left arm for the past two hours, severity is severe'",
+    },
+    {
+      id: 'secondary',
+      title: 'Secondary Symptoms',
+      question: "Are there any other Secondary Symptoms?",
+      example: "e.g. 'Experiencing mild nausea, shortness of breath, and cold sweats'",
+    },
+    {
+      id: 'history',
+      title: 'Medical History & Allergies',
+      question: "Does the patient have Allergies, Existing Diseases, or current Medications?",
+      example: "e.g. 'Allergic to penicillin, history of hypertension, currently taking amlodipine'",
+    },
+  ];
+
   // Refs to persist across recognition restarts without triggering re-renders
   const manuallyStopped = useRef(false);
   const accumulatedTranscript = useRef('');
   const sessionAccumulated = useRef('');
+  const pendingNextStep = useRef<number | null>(null);
 
-  const startVoiceIntake = () => {
+  const startVoiceIntake = (stepIndex: number) => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) {
       alert("Speech recognition is not supported in this browser. Please use Chrome.");
@@ -76,15 +115,20 @@ export default function IntakePage() {
       };
 
       recognition.onend = () => {
-        // If not manually stopped, auto-restart to keep recording through silences
-        if (!manuallyStopped.current) {
+        setIsRecording(false);
+        // If there is a pending step change, run it now that the previous session has officially ended
+        if (pendingNextStep.current !== null) {
+          const nextStep = pendingNextStep.current;
+          pendingNextStep.current = null;
+          setCurrentVoiceStep(nextStep);
+          startVoiceIntake(nextStep);
+        } else if (!manuallyStopped.current) {
+          // If not manually stopped, auto-restart to keep recording through silences
           try {
             launchRecognition();
           } catch {
             setIsRecording(false);
           }
-        } else {
-          setIsRecording(false);
         }
       };
 
@@ -109,6 +153,13 @@ export default function IntakePage() {
         accumulatedTranscript.current = full;
         setTranscript(full);
         setInterimText(interimTranscript);
+
+        // Save progress to specific step
+        setVoiceStepTranscripts((prev) => {
+          const next = [...prev];
+          next[stepIndex] = (full + ' ' + interimTranscript).trim();
+          return next;
+        });
       };
 
       (window as any)._currentRecognition = recognition;
@@ -118,16 +169,89 @@ export default function IntakePage() {
     launchRecognition();
   };
 
-  const stopVoiceIntake = () => {
+  const startVoiceWizard = () => {
+    pendingNextStep.current = null;
+    setShowVoiceWizard(true);
+    setCurrentVoiceStep(0);
+    setVoiceStepTranscripts(['', '', '', '', '']);
+    setVoiceError(null);
+    startVoiceIntake(0);
+  };
+
+  const nextVoiceStep = () => {
+    // Save final step transcript
+    const stepText = (accumulatedTranscript.current + ' ' + interimText).trim();
+    setVoiceStepTranscripts((prev) => {
+      const next = [...prev];
+      next[currentVoiceStep] = stepText;
+      return next;
+    });
+
+    const nextStep = currentVoiceStep + 1;
+    pendingNextStep.current = nextStep;
+
+    // Stop current recognition and let onend trigger the next step
+    manuallyStopped.current = true;
+    if ((window as any)._currentRecognition) {
+      ((window as any)._currentRecognition).stop();
+    }
+  };
+
+  const prevVoiceStep = () => {
+    // Save final step transcript
+    const stepText = (accumulatedTranscript.current + ' ' + interimText).trim();
+    setVoiceStepTranscripts((prev) => {
+      const next = [...prev];
+      next[currentVoiceStep] = stepText;
+      return next;
+    });
+
+    const prevStep = currentVoiceStep - 1;
+    pendingNextStep.current = prevStep;
+
+    // Stop current recognition and let onend trigger the previous step
+    manuallyStopped.current = true;
+    if ((window as any)._currentRecognition) {
+      ((window as any)._currentRecognition).stop();
+    }
+  };
+
+  const finishVoiceWizard = () => {
+    pendingNextStep.current = null;
     manuallyStopped.current = true;
     if ((window as any)._currentRecognition) {
       ((window as any)._currentRecognition).stop();
     }
     setIsRecording(false);
-    // Use the ref value which has the full accumulated transcript
-    const finalText = (accumulatedTranscript.current + ' ' + interimText).trim();
-    void handleParseTranscript(finalText);
+    setShowVoiceWizard(false);
+
+    // Save final step transcript
+    const stepText = (accumulatedTranscript.current + ' ' + interimText).trim();
+    const finalTranscripts = [...voiceStepTranscripts];
+    finalTranscripts[currentVoiceStep] = stepText;
+
+    // Combine all transcripts together with helpful labels for parsing
+    const finalAggregate = wizardSteps
+      .map((step, idx) => {
+        const answer = finalTranscripts[idx]?.trim();
+        return answer ? `${step.title}: ${answer}` : '';
+      })
+      .filter(Boolean)
+      .join('\n');
+
+    void handleParseTranscript(finalAggregate);
   };
+
+  const cancelVoiceWizard = () => {
+    pendingNextStep.current = null;
+    manuallyStopped.current = true;
+    if ((window as any)._currentRecognition) {
+      ((window as any)._currentRecognition).stop();
+    }
+    setIsRecording(false);
+    setShowVoiceWizard(false);
+  };
+
 
   const handleParseTranscript = async (text: string) => {
     const cleaned = text.trim();
@@ -296,54 +420,21 @@ export default function IntakePage() {
           <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">{t('subtitle')}</p>
         </div>
         <div className="flex items-center gap-2">
-          {isRecording ? (
-            <button
-              type="button"
-              onClick={stopVoiceIntake}
-              className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-sm transition animate-pulse-glow"
-            >
-              <MicOff className="h-4 w-4" />
-              <span>Stop Listening</span>
-            </button>
-          ) : (
-            <button
-              type="button"
-              disabled={isParsingVoice}
-              onClick={startVoiceIntake}
-              className="flex items-center gap-2 px-4 py-2 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-lg shadow-sm disabled:opacity-50 transition"
-            >
-              {isParsingVoice ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <Mic className="h-4 w-4" />
-              )}
-              <span>{isParsingVoice ? 'Structuring Voice...' : 'Voice Intake'}</span>
-            </button>
-          )}
+          <button
+            type="button"
+            disabled={isParsingVoice || isRecording}
+            onClick={startVoiceWizard}
+            className="flex items-center gap-2 px-4 py-2 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-lg shadow-sm disabled:opacity-50 transition"
+          >
+            {isParsingVoice ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Mic className="h-4 w-4" />
+            )}
+            <span>{isParsingVoice ? 'Structuring Voice...' : 'Voice Intake'}</span>
+          </button>
         </div>
       </div>
-
-      {isRecording && (
-        <div className="mb-6 p-4 rounded-xl border border-red-200 bg-red-50/40 flex flex-col gap-2 animate-slide-in">
-          <div className="flex items-center gap-2 text-red-600 font-semibold text-xs uppercase tracking-wider">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
-            </span>
-            <span>Microphone Listening... Speak clinical details now</span>
-          </div>
-          <p className="text-sm text-slate-700 italic select-text leading-relaxed">
-            {transcript || interimText ? (
-              <>
-                <span>{transcript}</span>
-                <span className="text-slate-400 font-normal">{interimText}</span>
-              </>
-            ) : (
-              "Start speaking patient vitals, name, age, gender, symptoms..."
-            )}
-          </p>
-        </div>
-      )}
 
       {isParsingVoice && (
         <div className="mb-6 p-4 rounded-xl border border-brand-200 bg-brand-50/30 flex items-center gap-3 animate-slide-in">
@@ -486,6 +577,126 @@ export default function IntakePage() {
       </form>
 
       {result ? <SafetyResultPanel result={result} /> : null}
+
+      {showVoiceWizard && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm bg-slate-900/60 transition-opacity duration-300">
+          <div className="bg-white dark:bg-zinc-900 border border-slate-200/50 dark:border-zinc-800/80 shadow-2xl rounded-2xl p-6 max-w-lg w-full transform transition-all duration-300 animate-scale-in flex flex-col gap-5">
+            
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-3">
+              <div className="flex items-center gap-2 text-brand-700 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                </span>
+                <span>Interactive Voice Intake</span>
+              </div>
+              <button
+                type="button"
+                onClick={cancelVoiceWizard}
+                className="text-slate-400 hover:text-slate-700 dark:hover:text-zinc-200 transition"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Stepper Progress */}
+            <div className="flex items-center justify-between text-[11px] text-slate-400 dark:text-zinc-550 font-bold">
+              <span>Step {currentVoiceStep + 1} of {wizardSteps.length}</span>
+              <span>{wizardSteps[currentVoiceStep]?.title || ''}</span>
+            </div>
+            <div className="w-full bg-slate-100 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+              <div
+                className="bg-brand-600 dark:bg-brand-500 h-1.5 transition-all duration-300"
+                style={{ width: `${((currentVoiceStep + 1) / wizardSteps.length) * 100}%` }}
+              ></div>
+            </div>
+
+            {/* Question Panel */}
+            <div className="bg-slate-50/50 dark:bg-zinc-950/40 rounded-xl p-4 border border-slate-100 dark:border-zinc-900/60 flex flex-col gap-2">
+              <h2 className="text-base font-bold text-slate-800 dark:text-zinc-200">
+                {wizardSteps[currentVoiceStep]?.question || ''}
+              </h2>
+              <span className="text-[11px] italic text-slate-400 dark:text-zinc-500 flex items-center gap-1.5">
+                <Volume2 className="h-3.5 w-3.5" />
+                {wizardSteps[currentVoiceStep]?.example || ''}
+              </span>
+            </div>
+
+            {/* Live Transcript Panel */}
+            <div className="min-h-[100px] border border-slate-200 dark:border-zinc-800 rounded-xl p-4 bg-white dark:bg-zinc-955/80 shadow-inner flex flex-col justify-between">
+              <p className="text-sm text-slate-700 dark:text-zinc-300 italic leading-relaxed">
+                {voiceStepTranscripts[currentVoiceStep] || transcript || interimText ? (
+                  <>
+                    <span>{voiceStepTranscripts[currentVoiceStep] || transcript}</span>
+                    {interimText && <span className="text-slate-400 font-normal"> {interimText}</span>}
+                  </>
+                ) : (
+                  <span className="text-slate-400 font-normal select-none">Start speaking to record your answer...</span>
+                )}
+              </p>
+              
+              <div className="flex items-center gap-1.5 text-[10px] text-red-500 font-bold uppercase tracking-wider mt-3 select-none">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-600 animate-pulse"></span>
+                <span>Microphone Active</span>
+              </div>
+            </div>
+
+            {/* Navigation Actions */}
+            <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-zinc-800">
+              <button
+                type="button"
+                onClick={cancelVoiceWizard}
+                className="text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-zinc-350 transition"
+              >
+                Cancel
+              </button>
+
+              <div className="flex items-center gap-3">
+                {currentVoiceStep > 0 && (
+                  <button
+                    type="button"
+                    onClick={prevVoiceStep}
+                    className="flex items-center gap-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-700 dark:text-zinc-200 text-xs font-semibold rounded-lg shadow-sm transition"
+                  >
+                    <ChevronLeft className="h-3.5 w-3.5" />
+                    <span>Back</span>
+                  </button>
+                )}
+
+                {currentVoiceStep < wizardSteps.length - 1 ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={nextVoiceStep}
+                      className="px-3 py-1.5 text-slate-500 hover:text-slate-800 dark:hover:text-zinc-350 text-xs font-semibold transition"
+                    >
+                      Skip Step
+                    </button>
+                    <button
+                      type="button"
+                      onClick={nextVoiceStep}
+                      className="flex items-center gap-1 px-4 py-2 bg-brand-700 hover:bg-brand-600 text-white text-xs font-semibold rounded-lg shadow-sm transition"
+                    >
+                      <span>Next Step</span>
+                      <ChevronRight className="h-3.5 w-3.5" />
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={finishVoiceWizard}
+                    className="flex items-center gap-1 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm transition animate-scale-in"
+                  >
+                    <span>Finish & Parse</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      )}
     </div>
   );
 }
