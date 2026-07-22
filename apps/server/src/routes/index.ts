@@ -13,6 +13,7 @@ import { reviewRouter } from '../modules/review/review.routes.js';
 import { routingRouter } from '../modules/routing/routing.routes.js';
 import { triageRouter } from '../modules/triage/triage.routes.js';
 import { usersRouter } from '../modules/users/users.routes.js';
+import { genaiRouter } from '../modules/genai/genai.routes.js';
 
 /** Mounts every module router under the /api/v1 prefix. */
 export const apiRouter: Router = Router();
@@ -30,3 +31,4 @@ apiRouter.use('/agents', agentsRouter);
 apiRouter.use('/notifications', notificationRouter);
 apiRouter.use('/dashboard', dashboardRouter);
 apiRouter.use('/audit', auditRouter);
+apiRouter.use('/genai', genaiRouter);

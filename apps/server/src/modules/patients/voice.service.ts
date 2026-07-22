@@ -1,4 +1,6 @@
 import { getChatModel } from '../../lib/ai.js';
+import { AppError } from '../../lib/errors.js';
+import { logGenAiUsage } from '../../lib/genaiLogger.js';
 import { SystemMessage, HumanMessage } from '@langchain/core/messages';
 import { z } from 'zod';
 
@@ -46,15 +48,40 @@ Convert symptoms severity to MILD, MODERATE, or SEVERE.`
     new HumanMessage(transcript),
   ];
 
+  const startTime = Date.now();
   try {
     const response = await model.invoke(messages);
+    const latencyMs = Date.now() - startTime;
+    const usage = (response as any)?.usage_metadata || (response as any)?.response_metadata?.tokenUsage;
+
+    logGenAiUsage({
+      feature: 'VOICE_PARSING',
+      model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+      latencyMs,
+      status: 'SUCCESS',
+      promptTokens: usage?.prompt_tokens || usage?.input_tokens || usage?.inputTokens || 0,
+      responseTokens: usage?.candidates_tokens || usage?.output_tokens || usage?.outputTokens || 0,
+      totalTokens: usage?.total_tokens || usage?.totalTokens || 0,
+    });
+
     return response;
   } catch (err: any) {
+    const latencyMs = Date.now() - startTime;
+    logGenAiUsage({
+      feature: 'VOICE_PARSING',
+      model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+      latencyMs,
+      status: 'FAILED',
+      errorMessage: err.message || String(err),
+    });
+
     // Provide a clearer error for quota issues
     if (err?.status === 429) {
-      const error = new Error('Gemini API rate limit exceeded. Please wait a moment and try again.');
-      (error as any).status = 429;
-      throw error;
+      throw new AppError(
+        'RATE_LIMIT_EXCEEDED',
+        'Gemini API rate limit exceeded. Please wait a moment and try again.',
+        429,
+      );
     }
     throw err;
   }

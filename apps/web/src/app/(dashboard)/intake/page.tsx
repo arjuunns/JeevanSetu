@@ -325,8 +325,8 @@ export default function IntakePage() {
       setVoiceError(null);
     } catch (err: any) {
       console.error(err);
-      const msg = err?.message?.includes('rate limit') || err?.message?.includes('quota')
-        ? 'Gemini quota exceeded — please wait ~30 seconds and try again.'
+      const msg = err?.statusCode === 429 || err?.status === 429 || err?.message?.toLowerCase().includes('rate limit') || err?.message?.toLowerCase().includes('quota')
+        ? 'Gemini rate limit exceeded — please wait ~30 seconds and try again.'
         : 'Failed to parse clinical transcript. Please try again.';
       setVoiceError(msg);
     } finally {

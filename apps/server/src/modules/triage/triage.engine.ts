@@ -10,6 +10,7 @@ import { Annotation, END, START, StateGraph } from '@langchain/langgraph';
 import { features } from '../../config/env.js';
 import { logger } from '../../config/logger.js';
 import { getChatModel } from '../../lib/ai.js';
+import { logGenAiUsage } from '../../lib/genaiLogger.js';
 import { retrieveGuidelines } from '../rag/rag.service.js';
 import {
   buildTriageUserPrompt,
@@ -75,12 +76,35 @@ async function assessNode(state: State): Promise<Partial<State>> {
 
   let lastError: unknown;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const startTime = Date.now();
     try {
       const raw = await model.invoke(messages);
+      const latencyMs = Date.now() - startTime;
+      const usage = (raw as any)?.usage_metadata || (raw as any)?.response_metadata?.tokenUsage;
+
+      logGenAiUsage({
+        feature: 'TRIAGE',
+        model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+        latencyMs,
+        status: 'SUCCESS',
+        promptTokens: usage?.prompt_tokens || usage?.input_tokens || usage?.inputTokens || 0,
+        responseTokens: usage?.candidates_tokens || usage?.output_tokens || usage?.outputTokens || 0,
+        totalTokens: usage?.total_tokens || usage?.totalTokens || 0,
+      });
+
       // Structured output already conforms, but we re-validate defensively.
       const parsed = triageResultSchema.parse(raw);
       return { result: parsed, rawOutput: raw, attempts: attempt, usedFallback: false };
-    } catch (err) {
+    } catch (err: any) {
+      const latencyMs = Date.now() - startTime;
+      logGenAiUsage({
+        feature: 'TRIAGE',
+        model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+        latencyMs,
+        status: 'FAILED',
+        errorMessage: err.message || String(err),
+      });
+
       lastError = err;
       logger.warn({ err, attempt }, 'Triage assessment attempt failed; retrying');
       messages.push(

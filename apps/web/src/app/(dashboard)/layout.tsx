@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Activity, ClipboardList, LayoutDashboard, Stethoscope, Hospital, BarChart3, Languages, Sun, Moon, Menu, X } from 'lucide-react';
+import { Activity, ClipboardList, LayoutDashboard, Stethoscope, Hospital, BarChart3, Languages, Sun, Moon, Menu, X, Sparkles } from 'lucide-react';
 import { type ReactNode, useState, useEffect } from 'react';
 
 import { cn } from '@/lib/utils';
@@ -16,6 +16,7 @@ const navItems = [
   { href: '/review', translationKey: 'doctorReview' as const, icon: Stethoscope },
   { href: '/hospitals', translationKey: 'hospitals' as const, icon: Hospital },
   { href: '/analytics', translationKey: 'cmoAnalytics' as const, icon: BarChart3 },
+  { href: '/genai-usage', translationKey: 'genaiUsage' as const, icon: Sparkles },
 ];
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
