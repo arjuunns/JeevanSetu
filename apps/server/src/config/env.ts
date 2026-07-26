@@ -29,6 +29,11 @@ const envSchema = z.object({
   // are truncated to EMBEDDING_DIMENSION (1024) to match the Pinecone index.
   GEMINI_EMBEDDING_MODEL: z.string().default('gemini-embedding-001'),
 
+  // LLM Abstraction config
+  AI_PROVIDER: z.enum(['gemini', 'ollama']).default('gemini'),
+  AI_MODEL_NAME: z.string().default('gemini-2.0-flash'),
+  AI_BASE_URL: z.string().default('http://localhost:11434'),
+
   // RAG
   PINECONE_API_KEY: z.string().optional(),
   PINECONE_INDEX: z.string().default('jeevansetu-guidelines'),

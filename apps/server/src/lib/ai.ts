@@ -1,10 +1,26 @@
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { ChatOllama } from '@langchain/ollama';
 
 import { env, features } from '../config/env.js';
 import { ServiceUnavailableError } from './errors.js';
 
 /**
- * Lazily-constructed Gemini clients. The platform is designed to run without a
+ * Custom wrapper for Ollama models (like deepseek-r1) that output thinking
+ * process inside <think>...</think> tags, which breaks LangChain's JSON parsers.
+ */
+class DeepSeekOllama extends ChatOllama {
+  async invoke(input: any, options?: any): Promise<any> {
+    const res = await super.invoke(input, options);
+    if (res && typeof res.content === 'string') {
+      // Strip <think>...</think> tags and clean up the result
+      res.content = res.content.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+    }
+    return res;
+  }
+}
+
+/**
+ * Lazily-constructed AI clients. The platform is designed to run without a
  * Gemini key (intake + safety still work); any call that genuinely needs the
  * model throws a typed ServiceUnavailableError that the caller can degrade on.
  */
@@ -13,8 +29,8 @@ let _embeddings: GeminiEmbeddings | null = null;
 
 export class ResilientChatModel {
   constructor(
-    private readonly primary: ChatGoogleGenerativeAI,
-    private readonly fallbacks: ChatGoogleGenerativeAI[],
+    private readonly primary: any,
+    private readonly fallbacks: any[],
   ) {}
 
   async invoke(input: any, options?: any): Promise<any> {
@@ -26,7 +42,7 @@ export class ResilientChatModel {
 
   withStructuredOutput(schema: any, config?: any): any {
     const primaryStructured = this.primary.withStructuredOutput(schema, config);
-    const fallbackStructureds = this.fallbacks.map((f) =>
+    const fallbackStructureds = this.fallbacks.map((f: any) =>
       f.withStructuredOutput(schema, config)
     );
     return primaryStructured.withFallbacks({
@@ -94,29 +110,46 @@ function normalize(values: number[]): number[] {
 }
 
 export function getChatModel(overrides?: { temperature?: number; model?: string }): ResilientChatModel {
-  if (!features.ai) throw new ServiceUnavailableError('Gemini');
+  if (!features.ai) throw new ServiceUnavailableError('AI not configured');
+  
   if (!_chat || overrides) {
-    const primaryModelName = overrides?.model ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.0-flash';
-    
-    // Fallback order: gemini-2.0-flash, gemini-1.5-flash, gemini-2.5-pro
-    const fallbackNames = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-2.5-pro']
-      .filter((m) => m !== primaryModelName);
+    let primary: any;
+    let fallbacks: any[] = [];
 
-    const primary = new ChatGoogleGenerativeAI({
-      apiKey: env.GEMINI_API_KEY,
-      model: primaryModelName,
-      temperature: overrides?.temperature ?? 0.1,
-      maxRetries: 1,
-    });
-
-    const fallbacks = fallbackNames.map((modelName) => {
-      return new ChatGoogleGenerativeAI({
-        apiKey: env.GEMINI_API_KEY,
+    if (env.AI_PROVIDER === 'ollama') {
+      const modelName = overrides?.model ?? env.AI_MODEL_NAME;
+      const config = {
+        baseUrl: env.AI_BASE_URL,
         model: modelName,
+        temperature: overrides?.temperature ?? 0.1,
+      };
+
+      // Wrap in DeepSeekOllama if it is a reasoning model to handle <think> tags
+      const isDeepSeek = modelName.toLowerCase().includes('deepseek') || modelName.toLowerCase().includes('r1');
+      primary = isDeepSeek ? new DeepSeekOllama(config) : new ChatOllama(config);
+    } else {
+      const primaryModelName = overrides?.model ?? env.AI_MODEL_NAME ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.0-flash';
+      
+      // Fallback order: gemini-2.0-flash, gemini-1.5-flash, gemini-2.5-pro
+      const fallbackNames = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-2.5-pro']
+        .filter((m) => m !== primaryModelName);
+
+      primary = new ChatGoogleGenerativeAI({
+        apiKey: env.GEMINI_API_KEY,
+        model: primaryModelName,
         temperature: overrides?.temperature ?? 0.1,
         maxRetries: 1,
       });
-    });
+
+      fallbacks = fallbackNames.map((modelName) => {
+        return new ChatGoogleGenerativeAI({
+          apiKey: env.GEMINI_API_KEY,
+          model: modelName,
+          temperature: overrides?.temperature ?? 0.1,
+          maxRetries: 1,
+        });
+      });
+    }
 
     const resilientModel = new ResilientChatModel(primary, fallbacks);
 
