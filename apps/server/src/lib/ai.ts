@@ -128,10 +128,10 @@ export function getChatModel(overrides?: { temperature?: number; model?: string 
       const isDeepSeek = modelName.toLowerCase().includes('deepseek') || modelName.toLowerCase().includes('r1');
       primary = isDeepSeek ? new DeepSeekOllama(config) : new ChatOllama(config);
     } else {
-      const primaryModelName = overrides?.model ?? env.AI_MODEL_NAME ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.0-flash';
-      
-      // Fallback order: gemini-2.0-flash, gemini-1.5-flash, gemini-2.5-pro
-      const fallbackNames = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-2.5-pro']
+      const primaryModelName = overrides?.model ?? env.AI_MODEL_NAME ?? env.GEMINI_TRIAGE_MODEL ?? 'gemini-3.6-flash';
+
+      // Every name here must be live — a retired model 404s and burns a fallback slot.
+      const fallbackNames = ['gemini-3.6-flash', 'gemini-flash-latest', 'gemini-3.5-flash']
         .filter((m) => m !== primaryModelName);
 
       primary = new ChatGoogleGenerativeAI({

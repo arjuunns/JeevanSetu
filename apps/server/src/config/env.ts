@@ -24,14 +24,18 @@ const envSchema = z.object({
 
   // AI stack (optional — triage degrades gracefully without it)
   GEMINI_API_KEY: z.string().default('DUMMY_GEMINI_KEY'),
-  GEMINI_TRIAGE_MODEL: z.string().default('gemini-2.0-flash'),
+  // The 2.0/1.5 series are retired and the 2.5 series is closed to projects
+  // created after its sunset, so both 404. Verify a name with a real
+  // generateContent call before changing this — `GET /v1beta/models` lists
+  // models the project cannot actually invoke.
+  GEMINI_TRIAGE_MODEL: z.string().default('gemini-3.6-flash'),
   // text-embedding-004 was retired by Google; gemini-embedding-001 vectors
   // are truncated to EMBEDDING_DIMENSION (1024) to match the Pinecone index.
   GEMINI_EMBEDDING_MODEL: z.string().default('gemini-embedding-001'),
 
   // LLM Abstraction config
   AI_PROVIDER: z.enum(['gemini', 'ollama']).default('gemini'),
-  AI_MODEL_NAME: z.string().default('gemini-2.0-flash'),
+  AI_MODEL_NAME: z.string().default('gemini-3.6-flash'),
   AI_BASE_URL: z.string().default('http://localhost:11434'),
 
   // RAG

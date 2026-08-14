@@ -265,7 +265,7 @@ resource "aws_ecs_task_definition" "server" {
         { name = "CLERK_SECRET_KEY", value = var.clerk_secret_key },
         { name = "AUTH_DISABLED", value = "true" },
         { name = "GEMINI_API_KEY", value = var.gemini_api_key },
-        { name = "GEMINI_TRIAGE_MODEL", value = "gemini-2.0-flash" },
+        { name = "GEMINI_TRIAGE_MODEL", value = "gemini-3.6-flash" },
         { name = "PINECONE_API_KEY", value = var.pinecone_api_key },
         { name = "PINECONE_INDEX", value = var.pinecone_index },
         { name = "AWS_ACCESS_KEY_ID", value = var.aws_access_key_id },

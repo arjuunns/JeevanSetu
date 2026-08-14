@@ -32,7 +32,22 @@ export async function routeVisit(req: RoutingRequest, context: AuditContext): Pr
   if (!visit) throw new NotFoundError('Visit');
 
   const useGraph = await isNeo4jAvailable();
-  const raw = useGraph ? await candidatesFromGraph(req) : await candidatesFromPostgres(req);
+  let raw = useGraph ? await candidatesFromGraph(req) : await candidatesFromPostgres(req);
+  let engine = useGraph ? 'neo4j' : 'postgres';
+
+  // isNeo4jAvailable() only proves Neo4j answered — not that the graph holds
+  // hospitals. A reachable but empty or stale graph would otherwise black-hole
+  // every routing request while PostgreSQL has the hospitals all along.
+  if (useGraph && raw.length === 0) {
+    raw = await candidatesFromPostgres(req);
+    engine = 'postgres-fallback';
+    if (raw.length > 0) {
+      logger.warn(
+        { visitId: req.visitId, candidates: raw.length },
+        'Neo4j returned no candidates but PostgreSQL did — graph is empty or stale; run syncAllHospitalsToGraph()',
+      );
+    }
+  }
 
   const weights = weightsForSeverity(req.severity);
   const candidates: HospitalRouteCandidate[] = rankCandidates(raw, weights, req.maxResults);
@@ -76,7 +91,7 @@ export async function routeVisit(req: RoutingRequest, context: AuditContext): Pr
     action: 'ROUTING_EXECUTED',
     entityType: 'Visit',
     entityId: req.visitId,
-    newState: { top: candidates[0]?.hospitalName, count: candidates.length, engine: useGraph ? 'neo4j' : 'postgres' },
+    newState: { top: candidates[0]?.hospitalName, count: candidates.length, engine },
     context,
   });
 
@@ -156,6 +171,23 @@ async function candidatesFromPostgres(req: RoutingRequest): Promise<CandidateInp
       emergencyTier: EMERGENCY_TIER[h.emergencyLevel] ?? 1,
     } satisfies CandidateInput;
   });
+}
+
+/**
+ * Backfill every active hospital into the graph. The per-hospital sync only runs
+ * on hospital mutations, so a freshly seeded database (or a wiped Neo4j volume)
+ * leaves the graph empty. Returns the number of hospitals synced.
+ */
+export async function syncAllHospitalsToGraph(): Promise<number> {
+  if (!(await isNeo4jAvailable())) return 0;
+  const hospitals = await prisma.hospital.findMany({
+    where: { deletedAt: null },
+    select: { id: true },
+  });
+  for (const h of hospitals) {
+    await syncHospitalToGraph(h.id);
+  }
+  return hospitals.length;
 }
 
 /**

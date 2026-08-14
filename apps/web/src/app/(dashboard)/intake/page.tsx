@@ -325,8 +325,11 @@ export default function IntakePage() {
       setVoiceError(null);
     } catch (err: any) {
       console.error(err);
-      const msg = err?.statusCode === 429 || err?.status === 429 || err?.message?.toLowerCase().includes('rate limit') || err?.message?.toLowerCase().includes('quota')
-        ? 'Gemini rate limit exceeded — please wait ~30 seconds and try again.'
+      // The server already sends a specific, nurse-readable reason (quota
+      // exhausted, rate limited, AI not configured); a generic message here
+      // would hide it and send them retrying a call that cannot succeed.
+      const msg = err instanceof ApiClientError
+        ? err.message
         : 'Failed to parse clinical transcript. Please try again.';
       setVoiceError(msg);
     } finally {
