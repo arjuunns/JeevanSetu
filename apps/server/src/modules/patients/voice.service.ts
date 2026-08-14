@@ -1,3 +1,4 @@
+import { env } from '../../config/env.js';
 import { getChatModel } from '../../lib/ai.js';
 import { AppError } from '../../lib/errors.js';
 import { logGenAiUsage } from '../../lib/genaiLogger.js';
@@ -56,7 +57,7 @@ Convert symptoms severity to MILD, MODERATE, or SEVERE.`
 
     logGenAiUsage({
       feature: 'VOICE_PARSING',
-      model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+      model: env.GEMINI_TRIAGE_MODEL,
       latencyMs,
       status: 'SUCCESS',
       promptTokens: usage?.prompt_tokens || usage?.input_tokens || usage?.inputTokens || 0,
@@ -69,14 +70,23 @@ Convert symptoms severity to MILD, MODERATE, or SEVERE.`
     const latencyMs = Date.now() - startTime;
     logGenAiUsage({
       feature: 'VOICE_PARSING',
-      model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+      model: env.GEMINI_TRIAGE_MODEL,
       latencyMs,
       status: 'FAILED',
       errorMessage: err.message || String(err),
     });
 
-    // Provide a clearer error for quota issues
-    if (err?.status === 429) {
+    // Quota issues. Depleted credits are permanent until billing is topped up —
+    // telling the nurse to "wait and retry" would be a lie, so they're distinct.
+    const message = err?.message ?? String(err);
+    if (err?.status === 429 || /\b429\b|RESOURCE_EXHAUSTED/.test(message)) {
+      if (/credits are depleted|billing|quota/i.test(message)) {
+        throw new AppError(
+          'AI_QUOTA_EXHAUSTED',
+          'Gemini API credits are exhausted for this project. Top up billing in AI Studio, then retry.',
+          429,
+        );
+      }
       throw new AppError(
         'RATE_LIMIT_EXCEEDED',
         'Gemini API rate limit exceeded. Please wait a moment and try again.',
