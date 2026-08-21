@@ -7,7 +7,7 @@ import {
 import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 import { Annotation, END, START, StateGraph } from '@langchain/langgraph';
 
-import { features } from '../../config/env.js';
+import { env, features } from '../../config/env.js';
 import { logger } from '../../config/logger.js';
 import { getChatModel } from '../../lib/ai.js';
 import { logGenAiUsage } from '../../lib/genaiLogger.js';
@@ -84,7 +84,7 @@ async function assessNode(state: State): Promise<Partial<State>> {
 
       logGenAiUsage({
         feature: 'TRIAGE',
-        model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+        model: env.LLM_PROVIDER === 'ollama' ? env.OLLAMA_MODEL : env.GEMINI_TRIAGE_MODEL,
         latencyMs,
         status: 'SUCCESS',
         promptTokens: usage?.prompt_tokens || usage?.input_tokens || usage?.inputTokens || 0,
@@ -99,7 +99,7 @@ async function assessNode(state: State): Promise<Partial<State>> {
       const latencyMs = Date.now() - startTime;
       logGenAiUsage({
         feature: 'TRIAGE',
-        model: process.env.GEMINI_TRIAGE_MODEL || 'gemini-2.0-flash',
+        model: env.LLM_PROVIDER === 'ollama' ? env.OLLAMA_MODEL : env.GEMINI_TRIAGE_MODEL,
         latencyMs,
         status: 'FAILED',
         errorMessage: err.message || String(err),

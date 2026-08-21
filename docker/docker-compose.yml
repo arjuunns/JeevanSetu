@@ -77,6 +77,8 @@ services:
       NEO4J_PASSWORD: jeevansetu
     ports:
       - '4000:4000'
+    volumes:
+      - uploads_data:/app/apps/server/uploads
     depends_on:
       postgres:
         condition: service_healthy
@@ -106,3 +108,5 @@ volumes:
   postgres_data:
   redis_data:
   neo4j_data:
+  uploads_data:
+

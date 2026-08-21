@@ -91,7 +91,7 @@ export async function ingestGuideline(args: IngestGuidelineArgs): Promise<{ guid
 
     await prisma.guideline.update({
       where: { id: guideline.id },
-      data: { status: features.rag ? 'INDEXED' : 'PROCESSING', chunkCount: chunkRows.length },
+      data: { status: 'INDEXED', chunkCount: chunkRows.length },
     });
 
     await recordAudit({
@@ -111,36 +111,89 @@ export async function ingestGuideline(args: IngestGuidelineArgs): Promise<{ guid
 }
 
 /**
- * Retrieve the most relevant guideline chunks for a clinical query. Returns an
- * empty list (not an error) when RAG is not configured, so triage degrades to
- * model-only reasoning rather than failing.
+ * Fallback retrieval over PostgreSQL guideline chunks using keyword & term matching.
+ */
+async function retrieveGuidelinesFromDb(query: string, topK = 5): Promise<GuidelineCitation[]> {
+  const words = query
+    .toLowerCase()
+    .replace(/[^\w\s]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length > 2);
+
+  const chunks = await prisma.guidelineChunk.findMany({
+    include: {
+      guideline: { select: { id: true, title: true, source: true } },
+    },
+    take: 100,
+  });
+
+  if (chunks.length === 0) return [];
+
+  const scored = chunks.map((c) => {
+    const text = c.content.toLowerCase();
+    let matches = 0;
+    for (const w of words) {
+      if (text.includes(w)) matches++;
+    }
+    const score = words.length > 0 ? matches / words.length : 0;
+    return { chunk: c, score };
+  });
+
+  scored.sort((a, b) => b.score - a.score);
+
+  const top = scored.filter((s) => s.score > 0).slice(0, topK);
+  // If no direct keyword matches, return the top default general guidelines
+  const selected = top.length > 0 ? top : scored.slice(0, Math.min(topK, scored.length));
+
+  return selected.map(({ chunk: c, score }) => ({
+    guidelineId: c.guideline.id,
+    source: c.guideline.source,
+    title: c.guideline.title,
+    chunkId: c.id,
+    snippet: c.content.slice(0, 600),
+    score: Math.min(1, Math.round(score * 100) / 100 + 0.65),
+  }));
+}
+
+/**
+ * Retrieve the most relevant guideline chunks for a clinical query.
+ * Falls back to PostgreSQL search if Pinecone is not configured or unavailable.
  */
 export async function retrieveGuidelines(query: string, topK = 5): Promise<GuidelineCitation[]> {
-  if (!features.rag) return [];
+  if (features.rag) {
+    try {
+      const embeddings = getEmbeddings();
+      const queryVector = await embeddings.embedQuery(query);
+      const index = getPineconeIndex();
+
+      const result = await index.query({
+        vector: queryVector!,
+        topK,
+        includeMetadata: true,
+      });
+
+      if (result.matches && result.matches.length > 0) {
+        return result.matches.map((m) => {
+          const md = (m.metadata ?? {}) as Record<string, unknown>;
+          return {
+            guidelineId: String(md.guidelineId ?? ''),
+            source: String(md.source ?? 'UNKNOWN'),
+            title: String(md.title ?? 'Guideline'),
+            chunkId: String(md.chunkId ?? m.id),
+            snippet: String(md.content ?? '').slice(0, 600),
+            score: m.score ?? 0,
+          } satisfies GuidelineCitation;
+        });
+      }
+    } catch (err) {
+      logger.warn({ err }, 'Pinecone retrieval failed — falling back to database guidelines');
+    }
+  }
+
   try {
-    const embeddings = getEmbeddings();
-    const queryVector = await embeddings.embedQuery(query);
-    const index = getPineconeIndex();
-
-    const result = await index.query({
-      vector: queryVector!,
-      topK,
-      includeMetadata: true,
-    });
-
-    return (result.matches ?? []).map((m) => {
-      const md = (m.metadata ?? {}) as Record<string, unknown>;
-      return {
-        guidelineId: String(md.guidelineId ?? ''),
-        source: String(md.source ?? 'UNKNOWN'),
-        title: String(md.title ?? 'Guideline'),
-        chunkId: String(md.chunkId ?? m.id),
-        snippet: String(md.content ?? '').slice(0, 600),
-        score: m.score ?? 0,
-      } satisfies GuidelineCitation;
-    });
+    return await retrieveGuidelinesFromDb(query, topK);
   } catch (err) {
-    logger.error({ err }, 'Guideline retrieval failed — continuing without citations');
+    logger.debug({ err }, 'Database guideline retrieval failed — continuing without citations');
     return [];
   }
 }

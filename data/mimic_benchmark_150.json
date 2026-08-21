@@ -1,0 +1,6542 @@
+[
+  {
+    "stayId": "37887480",
+    "subjectId": "10014729",
+    "patientName": "Preeti Singh",
+    "age": 71,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919825492573",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "FEVER",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 37.3,
+      "oxygenSaturation": 100,
+      "heartRate": 90,
+      "respiratoryRate": 26,
+      "systolicBp": 86,
+      "diastolicBp": 61,
+      "glasgowComaScale": 10,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "FEVER",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "SEPTICEMIA NOS",
+      "SEPTIC SHOCK",
+      "SEVERE SEPSIS ",
+      "ADV EFF MEDICINAL NOS"
+    ]
+  },
+  {
+    "stayId": "39430108",
+    "subjectId": "10021666",
+    "patientName": "Manoj Reddy",
+    "age": 53,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919891178885",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "SDH/SAH",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 97,
+      "heartRate": 69,
+      "respiratoryRate": 20,
+      "systolicBp": 133,
+      "diastolicBp": 74,
+      "glasgowComaScale": 10,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "SDH",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "SAH",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "TRAUM SUBARACHNOID HEM",
+      "TRAUMATIC SUBDURAL HEM",
+      "FALL ON STAIR/STEP NEC"
+    ]
+  },
+  {
+    "stayId": "30272878",
+    "subjectId": "10038999",
+    "patientName": "Rahul Gupta",
+    "age": 31,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919877834855",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Transfer",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 37.4,
+      "oxygenSaturation": 86,
+      "heartRate": 135,
+      "respiratoryRate": 16,
+      "systolicBp": 143,
+      "diastolicBp": 104,
+      "glasgowComaScale": 10,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Pericardial effusion (noninflammatory)"
+    ]
+  },
+  {
+    "stayId": "34391979",
+    "subjectId": "10004720",
+    "patientName": "Karan Roy",
+    "age": 72,
+    "gender": "MALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919822388090",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Cardiac arrest, Transfer",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 1.6,
+      "oxygenSaturation": 98,
+      "heartRate": 77,
+      "respiratoryRate": 20,
+      "systolicBp": 140,
+      "diastolicBp": 74,
+      "glasgowComaScale": 3,
+      "isUnconscious": true
+    },
+    "symptoms": [
+      {
+        "name": "Cardiac arrest",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Respiratory arrest",
+      "Other pneumothorax"
+    ]
+  },
+  {
+    "stayId": "35224843",
+    "subjectId": "10037861",
+    "patientName": "Suresh Patel",
+    "age": 63,
+    "gender": "MALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919827558317",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ICH",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 100,
+      "heartRate": 59,
+      "respiratoryRate": 17,
+      "systolicBp": 80,
+      "diastolicBp": 45,
+      "glasgowComaScale": 10,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ICH",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Nontraumatic acute subdural hemorrhage"
+    ]
+  },
+  {
+    "stayId": "37036523",
+    "subjectId": "10037928",
+    "patientName": "Sunita Singh",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919884045292",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "HYPOTHERMIA",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": -0.1,
+      "oxygenSaturation": 99,
+      "heartRate": 49,
+      "respiratoryRate": 18,
+      "systolicBp": 114,
+      "diastolicBp": 46,
+      "glasgowComaScale": 11,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "HYPOTHERMIA",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPOTHERMIA",
+      "IDDM W SPEC MANIFESTATION",
+      "EXCESSIVE COLD NOS"
+    ]
+  },
+  {
+    "stayId": "31660580",
+    "subjectId": "10010471",
+    "patientName": "Sneha Sharma",
+    "age": 38,
+    "gender": "FEMALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919883227889",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "s/p cardiac arrest",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 98,
+      "heartRate": 88,
+      "respiratoryRate": 19,
+      "systolicBp": 119,
+      "diastolicBp": 63,
+      "glasgowComaScale": 4,
+      "isUnconscious": true
+    },
+    "symptoms": [
+      {
+        "name": "s",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "p cardiac arrest",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Cardiac arrest, cause unspecified"
+    ]
+  },
+  {
+    "stayId": "38433139",
+    "subjectId": "10015860",
+    "patientName": "Rahul Nair",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919829876811",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dizziness",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 99,
+      "heartRate": 101,
+      "respiratoryRate": 18,
+      "systolicBp": 94,
+      "diastolicBp": 62,
+      "glasgowComaScale": 12,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dizziness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "VERTIGO/DIZZINESS",
+      "ADV EFF VASODILATORS NEC"
+    ]
+  },
+  {
+    "stayId": "39297781",
+    "subjectId": "10029291",
+    "patientName": "Priya Patel",
+    "age": 73,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919858024342",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Transfer, PE",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 37.0,
+      "oxygenSaturation": 99,
+      "heartRate": 124,
+      "respiratoryRate": 32,
+      "systolicBp": 105,
+      "diastolicBp": 76,
+      "glasgowComaScale": 8,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "PE",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Saddle embolus of pulmonary artery w/o acute cor pulmonale"
+    ]
+  },
+  {
+    "stayId": "38797992",
+    "subjectId": "10020640",
+    "patientName": "Pooja Chawla",
+    "age": 67,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919857469942",
+    "existingDiseases": [
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "SOB/ABNL LABS",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 37.3,
+      "oxygenSaturation": 94,
+      "heartRate": 130,
+      "respiratoryRate": 32,
+      "systolicBp": 106,
+      "diastolicBp": 74,
+      "glasgowComaScale": 8,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "SOB",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "ABNL LABS",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "PNEUMONIA,ORGANISM UNSPECIFIED",
+      "HYPOSMOLALITY/HYPONATREMIA",
+      "ALZHEIMER'S DISEASE",
+      "DIABETES UNCOMPL ADULT",
+      "DEMENTIA IN CONDITIONS CLASSIFIED ELSEWHERE WITHOUT BEHAVIROAL DISTURBANCE"
+    ]
+  },
+  {
+    "stayId": "39467106",
+    "subjectId": "10035631",
+    "patientName": "Karan Das",
+    "age": 43,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919893303777",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea, Hypoxia",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 78,
+      "heartRate": 99,
+      "respiratoryRate": 23,
+      "systolicBp": 98,
+      "diastolicBp": 60,
+      "glasgowComaScale": 11,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hypoxia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Pneumonia, unspecified organism"
+    ]
+  },
+  {
+    "stayId": "39738665",
+    "subjectId": "10020944",
+    "patientName": "Karan Roy",
+    "age": 46,
+    "gender": "MALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919831810617",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Altered mental status",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 91,
+      "heartRate": 75,
+      "respiratoryRate": 24,
+      "systolicBp": 154,
+      "diastolicBp": 67,
+      "glasgowComaScale": 9,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Altered mental status",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "SEPTICEMIA NOS",
+      "SEPSIS ",
+      "ACCIDENT NOS"
+    ]
+  },
+  {
+    "stayId": "30915333",
+    "subjectId": "10039708",
+    "patientName": "Anita Singh",
+    "age": 25,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919813326769",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Hypotension",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 100,
+      "heartRate": 90,
+      "respiratoryRate": 18,
+      "systolicBp": 70,
+      "diastolicBp": 42,
+      "glasgowComaScale": 11,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hypotension",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Anemia, unspecified",
+      "Hypotension, unspecified",
+      "Gastrointestinal hemorrhage, unspecified"
+    ]
+  },
+  {
+    "stayId": "33678912",
+    "subjectId": "10003400",
+    "patientName": "Preeti Kumar",
+    "age": 52,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919899913412",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Tachycardia, Hypoxia",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 100,
+      "heartRate": 157,
+      "respiratoryRate": 18,
+      "systolicBp": 115,
+      "diastolicBp": 81,
+      "glasgowComaScale": 11,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Tachycardia",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hypoxia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ATRIAL FIBRILLATION",
+      "ABNORMAL COAGULATION PROFILE"
+    ]
+  },
+  {
+    "stayId": "32587478",
+    "subjectId": "10039708",
+    "patientName": "Anita Gupta",
+    "age": 25,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919831367172",
+    "existingDiseases": [
+      "Acute kidney failure, unspecified"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abnormal labs, ETOH, Hypotension",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 100,
+      "heartRate": 76,
+      "respiratoryRate": 16,
+      "systolicBp": 86,
+      "diastolicBp": 51,
+      "glasgowComaScale": 10,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abnormal labs",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "ETOH",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "Hypotension",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Acute kidney failure, unspecified"
+    ]
+  },
+  {
+    "stayId": "37977734",
+    "subjectId": "10015860",
+    "patientName": "Vikram Mehta",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919873174945",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "N/V, Tachycardia",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 37.9,
+      "oxygenSaturation": 95,
+      "heartRate": 140,
+      "respiratoryRate": 20,
+      "systolicBp": 139,
+      "diastolicBp": 70,
+      "glasgowComaScale": 8,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "N",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "V",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "Tachycardia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CELLULITIS OF LEG"
+    ]
+  },
+  {
+    "stayId": "36180820",
+    "subjectId": "10016742",
+    "patientName": "Rekha Roy",
+    "age": 69,
+    "gender": "FEMALE",
+    "bloodGroup": "O_POSITIVE",
+    "phone": "+919856930359",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Transfer, Dyspnea",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 95,
+      "heartRate": 100,
+      "respiratoryRate": 20,
+      "systolicBp": 190,
+      "diastolicBp": 100,
+      "glasgowComaScale": 11,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Pneumonia, unspecified organism"
+    ]
+  },
+  {
+    "stayId": "30683757",
+    "subjectId": "10023239",
+    "patientName": "Anita Das",
+    "age": 66,
+    "gender": "FEMALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919839920292",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "N/V, Hyperglycemia",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 1,
+    "groundTruthSeverity": "CRITICAL",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 95,
+      "heartRate": 130,
+      "respiratoryRate": 16,
+      "systolicBp": 118,
+      "diastolicBp": 70,
+      "glasgowComaScale": 9,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "N",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "V",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "Hyperglycemia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "PNEUMONIA,ORGANISM UNSPECIFIED",
+      "DIAB KETOACIDOSIS IDDM"
+    ]
+  },
+  {
+    "stayId": "34558830",
+    "subjectId": "10005866",
+    "patientName": "Rohan Verma",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919813356886",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain, LEAKING ASCITES",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 93,
+      "respiratoryRate": 10,
+      "systolicBp": 115,
+      "diastolicBp": 75,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "LEAKING ASCITES",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "UMBILICAL HERNIA"
+    ]
+  },
+  {
+    "stayId": "34820898",
+    "subjectId": "10014354",
+    "patientName": "Sunil Gupta",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919823756669",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus with hypoglycemia without coma"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Dizziness, Diplopia",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 69,
+      "respiratoryRate": 17,
+      "systolicBp": 139,
+      "diastolicBp": 108,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dizziness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Diplopia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Weakness",
+      "Long term (current) use of insulin",
+      "Type 1 diabetes mellitus with hypoglycemia without coma"
+    ]
+  },
+  {
+    "stayId": "35758326",
+    "subjectId": "10016810",
+    "patientName": "Preeti Reddy",
+    "age": 72,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919821668732",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.1,
+      "oxygenSaturation": 90,
+      "heartRate": 72,
+      "respiratoryRate": 18,
+      "systolicBp": 98,
+      "diastolicBp": 48,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ACUTE APPENDICITIS NOS"
+    ]
+  },
+  {
+    "stayId": "39348852",
+    "subjectId": "10023239",
+    "patientName": "Priya Sharma",
+    "age": 66,
+    "gender": "FEMALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919822575562",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus with ketoacidosis without coma"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "DKA, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 99,
+      "heartRate": 115,
+      "respiratoryRate": 20,
+      "systolicBp": 92,
+      "diastolicBp": 42,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "DKA",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Long term (current) use of insulin",
+      "Type 1 diabetes mellitus with ketoacidosis without coma"
+    ]
+  },
+  {
+    "stayId": "39169528",
+    "subjectId": "10020740",
+    "patientName": "Aarav Nair",
+    "age": 37,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919813561597",
+    "existingDiseases": [
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Psych eval",
+    "arrivalTransport": "WALK IN",
+    "disposition": "TRANSFER",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 99,
+      "heartRate": 95,
+      "respiratoryRate": 18,
+      "systolicBp": 149,
+      "diastolicBp": 74,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Psych eval",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "PSYCHOSIS NOS",
+      "DIABETES UNCOMPL ADULT"
+    ]
+  },
+  {
+    "stayId": "39621946",
+    "subjectId": "10014354",
+    "patientName": "Manoj Chawla",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919883140807",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Fever, Neutropenia",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 99,
+      "heartRate": 57,
+      "respiratoryRate": 18,
+      "systolicBp": 161,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Fever",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Neutropenia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Fever, unspecified"
+    ]
+  },
+  {
+    "stayId": "32891808",
+    "subjectId": "10037928",
+    "patientName": "Simran Nair",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919847338124",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "S/P FALL",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 99,
+      "heartRate": 81,
+      "respiratoryRate": 18,
+      "systolicBp": 161,
+      "diastolicBp": 55,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "S",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "P FALL",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL ADULT",
+      "HEAD INJURY UNSPECIFIED",
+      "UNSPECIFIED FALL"
+    ]
+  },
+  {
+    "stayId": "30094124",
+    "subjectId": "10014354",
+    "patientName": "Rajesh Deshmukh",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919831429110",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Fatigue, s/p Fall",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.3,
+      "oxygenSaturation": 99,
+      "heartRate": 80,
+      "respiratoryRate": 18,
+      "systolicBp": 138,
+      "diastolicBp": 78,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Fatigue",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "s",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "p Fall",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Dehydration",
+      "Weakness"
+    ]
+  },
+  {
+    "stayId": "38488295",
+    "subjectId": "10039708",
+    "patientName": "Meera Patel",
+    "age": 25,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919830868105",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Altered mental status",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 35.9,
+      "oxygenSaturation": 99,
+      "heartRate": 55,
+      "respiratoryRate": 16,
+      "systolicBp": 159,
+      "diastolicBp": 80,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Altered mental status",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Other fatigue"
+    ]
+  },
+  {
+    "stayId": "31626291",
+    "subjectId": "10015860",
+    "patientName": "Anil Kumar",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919823718431",
+    "existingDiseases": [
+      "Acute kidney failure, unspecified",
+      "Type 1 diabetes mellitus with ketoacidosis without coma"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Coffee ground emesis",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.8,
+      "oxygenSaturation": 99,
+      "heartRate": 128,
+      "respiratoryRate": 20,
+      "systolicBp": 151,
+      "diastolicBp": 73,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Coffee ground emesis",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Acidosis",
+      "Gastrointestinal hemorrhage, unspecified",
+      "Acute kidney failure, unspecified",
+      "Long term (current) use of insulin",
+      "Type 1 diabetes mellitus with ketoacidosis without coma"
+    ]
+  },
+  {
+    "stayId": "33347721",
+    "subjectId": "10003400",
+    "patientName": "Anjali Kumar",
+    "age": 52,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919856164955",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ELEVATED INR",
+    "arrivalTransport": "OTHER",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.3,
+      "oxygenSaturation": 99,
+      "heartRate": 43,
+      "respiratoryRate": 16,
+      "systolicBp": 140,
+      "diastolicBp": 100,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ELEVATED INR",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "URIN TRACT INFECTION NOS",
+      "ATRIAL FIBRILLATION",
+      "ABNORMAL COAGULATION PROFILE",
+      "LONG TERM USE ANTIGOAGULANT"
+    ]
+  },
+  {
+    "stayId": "30804580",
+    "subjectId": "10005866",
+    "patientName": "Anil Sharma",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919871662963",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain, N/V",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.3,
+      "oxygenSaturation": 99,
+      "heartRate": 66,
+      "respiratoryRate": 18,
+      "systolicBp": 111,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "N",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "V",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unspecified intestinal obstruction"
+    ]
+  },
+  {
+    "stayId": "37323830",
+    "subjectId": "10018845",
+    "patientName": "Karan Mehta",
+    "age": 27,
+    "gender": "MALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919820576383",
+    "existingDiseases": [
+      "CHRONIC KIDNEY DISEASE, STAGE V"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "s/p Fall, SDH",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 99,
+      "heartRate": 70,
+      "respiratoryRate": 16,
+      "systolicBp": 155,
+      "diastolicBp": 86,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "s",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "p Fall",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "SDH",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERLIPIDEMIA NEC/NOS",
+      "CHRONIC KIDNEY DISEASE, STAGE V",
+      "SUBDURAL HEM W/O COMA",
+      "UNSPECIFIED FALL"
+    ]
+  },
+  {
+    "stayId": "39571461",
+    "subjectId": "10026406",
+    "patientName": "Suresh Chawla",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "O_POSITIVE",
+    "phone": "+919893016315",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Lower back pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.1,
+      "oxygenSaturation": 99,
+      "heartRate": 118,
+      "respiratoryRate": 22,
+      "systolicBp": 131,
+      "diastolicBp": 89,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Lower back pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "LUMBAGO"
+    ]
+  },
+  {
+    "stayId": "39661025",
+    "subjectId": "10007928",
+    "patientName": "Meera Nair",
+    "age": 30,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919835808537",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "VOMITING BLOOD",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 99,
+      "heartRate": 98,
+      "respiratoryRate": 15,
+      "systolicBp": 102,
+      "diastolicBp": 59,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "VOMITING BLOOD",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HEMATEMESIS"
+    ]
+  },
+  {
+    "stayId": "38801518",
+    "subjectId": "10014354",
+    "patientName": "Rajesh Chawla",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919840587988",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Cough, Dyspnea",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.9,
+      "oxygenSaturation": 99,
+      "heartRate": 106,
+      "respiratoryRate": 20,
+      "systolicBp": 142,
+      "diastolicBp": 73,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Cough",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Fever, unspecified"
+    ]
+  },
+  {
+    "stayId": "39898790",
+    "subjectId": "10023117",
+    "patientName": "Vikram Das",
+    "age": 74,
+    "gender": "MALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919841244663",
+    "existingDiseases": [
+      "CONGESTIVE HEART FAILURE, UNSPEC",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Weakness, Abnormal labs",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.5,
+      "oxygenSaturation": 99,
+      "heartRate": 79,
+      "respiratoryRate": 20,
+      "systolicBp": 100,
+      "diastolicBp": 58,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Weakness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Abnormal labs",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CONGESTIVE HEART FAILURE, UNSPEC",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED"
+    ]
+  },
+  {
+    "stayId": "35357090",
+    "subjectId": "10010471",
+    "patientName": "Riya Patel",
+    "age": 38,
+    "gender": "FEMALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919870855700",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Weakness, Atrial fibrillation, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 99,
+      "heartRate": 126,
+      "respiratoryRate": 22,
+      "systolicBp": 136,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Weakness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Atrial fibrillation",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unspecified atrial fibrillation"
+    ]
+  },
+  {
+    "stayId": "34387871",
+    "subjectId": "10039997",
+    "patientName": "Meera Singh",
+    "age": 54,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919859684848",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Leg weakness, Abnormal CT",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 99,
+      "heartRate": 52,
+      "respiratoryRate": 17,
+      "systolicBp": 134,
+      "diastolicBp": 57,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Leg weakness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Abnormal CT",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HEADACHE"
+    ]
+  },
+  {
+    "stayId": "34478228",
+    "subjectId": "10037928",
+    "patientName": "Kavita Patel",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919896977837",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL JUVEN"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "RIGHT EAR PAIN/DRAINAGE",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 94,
+      "heartRate": 96,
+      "respiratoryRate": 16,
+      "systolicBp": 121,
+      "diastolicBp": 65,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "RIGHT EAR PAIN",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "DRAINAGE",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL JUVEN",
+      "INFEC OTITIS EXTERNA NOS"
+    ]
+  },
+  {
+    "stayId": "36836328",
+    "subjectId": "10018081",
+    "patientName": "Rohan Singh",
+    "age": 43,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919881691040",
+    "existingDiseases": [
+      "CONGESTIVE HEART FAILURE, UNSPEC"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.3,
+      "oxygenSaturation": 94,
+      "heartRate": 84,
+      "respiratoryRate": 18,
+      "systolicBp": 139,
+      "diastolicBp": 65,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CONGESTIVE HEART FAILURE, UNSPEC"
+    ]
+  },
+  {
+    "stayId": "39140069",
+    "subjectId": "10014354",
+    "patientName": "Amit Joshi",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919860929647",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Epigastric pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.4,
+      "oxygenSaturation": 98,
+      "heartRate": 80,
+      "respiratoryRate": 18,
+      "systolicBp": 158,
+      "diastolicBp": 72,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Epigastric pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Dorsalgia, unspecified",
+      "Unspecified atrial fibrillation",
+      "Epigastric pain"
+    ]
+  },
+  {
+    "stayId": "36250263",
+    "subjectId": "10014354",
+    "patientName": "Karan Chawla",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919884752529",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "BRBPR",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.3,
+      "oxygenSaturation": 98,
+      "heartRate": 100,
+      "respiratoryRate": 22,
+      "systolicBp": 122,
+      "diastolicBp": 80,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "BRBPR",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Hemorrhage of anus and rectum"
+    ]
+  },
+  {
+    "stayId": "39501852",
+    "subjectId": "10015931",
+    "patientName": "Rahul Das",
+    "age": 38,
+    "gender": "MALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919817507864",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 98,
+      "heartRate": 82,
+      "respiratoryRate": 28,
+      "systolicBp": 124,
+      "diastolicBp": 83,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Dyspnea, unspecified"
+    ]
+  },
+  {
+    "stayId": "33922323",
+    "subjectId": "10040025",
+    "patientName": "Priya Deshmukh",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919852339391",
+    "existingDiseases": [
+      "CONGESTIVE HEART FAILURE, UNSPEC"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Palpitations",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 98,
+      "heartRate": 122,
+      "respiratoryRate": 18,
+      "systolicBp": 182,
+      "diastolicBp": 78,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Palpitations",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CONGESTIVE HEART FAILURE, UNSPEC",
+      "ATRIAL FIBRILLATION"
+    ]
+  },
+  {
+    "stayId": "30952335",
+    "subjectId": "10019777",
+    "patientName": "Vikram Gupta",
+    "age": 49,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919886125617",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Hematemesis",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 90,
+      "respiratoryRate": 18,
+      "systolicBp": 110,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hematemesis",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "GASTROINTEST HEMORR NOS"
+    ]
+  },
+  {
+    "stayId": "33335871",
+    "subjectId": "10016742",
+    "patientName": "Meera Gupta",
+    "age": 69,
+    "gender": "FEMALE",
+    "bloodGroup": "O_POSITIVE",
+    "phone": "+919897971488",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea, Transfer",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 35.6,
+      "oxygenSaturation": 98,
+      "heartRate": 84,
+      "respiratoryRate": 20,
+      "systolicBp": 124,
+      "diastolicBp": 80,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Pneumonia, unspecified organism"
+    ]
+  },
+  {
+    "stayId": "32719751",
+    "subjectId": "10005909",
+    "patientName": "Preeti Roy",
+    "age": 26,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919896282117",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "L Leg DVT",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 106,
+      "respiratoryRate": 18,
+      "systolicBp": 121,
+      "diastolicBp": 81,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Leg DVT",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": []
+  },
+  {
+    "stayId": "32405286",
+    "subjectId": "10004457",
+    "patientName": "Sanjay Singh",
+    "age": 69,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919843101783",
+    "existingDiseases": [
+      "HYPERTENSION NOS"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "? AORTIC DISECTION",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 98,
+      "heartRate": 103,
+      "respiratoryRate": 16,
+      "systolicBp": 138,
+      "diastolicBp": 72,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "? AORTIC DISECTION",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "CAD UNSPEC VESSEL, NATIVE OR GRAFT",
+      "JOINT PAIN-SHLDER",
+      "ABN CARDIOVASC STUDY NEC"
+    ]
+  },
+  {
+    "stayId": "33007927",
+    "subjectId": "10018081",
+    "patientName": "Aarav Patel",
+    "age": 43,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919888461803",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Wound eval, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.3,
+      "oxygenSaturation": 98,
+      "heartRate": 100,
+      "respiratoryRate": 16,
+      "systolicBp": 131,
+      "diastolicBp": 55,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Wound eval",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "PERSIST POSTOP FISTULA",
+      "OTHER POST-OP INFECTION",
+      "ABN REACT-PROCEDURE NOS"
+    ]
+  },
+  {
+    "stayId": "39057874",
+    "subjectId": "10018423",
+    "patientName": "Kabir Mehta",
+    "age": 60,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919858586340",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 84,
+      "respiratoryRate": 16,
+      "systolicBp": 142,
+      "diastolicBp": 97,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Other chest pain"
+    ]
+  },
+  {
+    "stayId": "39633384",
+    "subjectId": "10014354",
+    "patientName": "Amit Reddy",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919876238574",
+    "existingDiseases": [
+      "Type 2 diabetes mellitus with hyperglycemia"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Hyperglycemia, Overdose",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 72,
+      "respiratoryRate": 16,
+      "systolicBp": 140,
+      "diastolicBp": 71,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hyperglycemia",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Overdose",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Long term (current) use of insulin",
+      "Type 2 diabetes mellitus with hyperglycemia",
+      "Oth places as the place of occurrence of the external cause",
+      "Poisoning by insulin and oral hypoglycemic drugs, acc, init"
+    ]
+  },
+  {
+    "stayId": "39760810",
+    "subjectId": "10040025",
+    "patientName": "Priya Das",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919824716857",
+    "existingDiseases": [
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "EYE EVAL",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 98,
+      "heartRate": 80,
+      "respiratoryRate": 19,
+      "systolicBp": 182,
+      "diastolicBp": 74,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "EYE EVAL",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "DIABETES UNCOMPL ADULT",
+      "CONJUNCTIVAL HEMORRHAGE",
+      "LONG TERM USE ANTIGOAGULANT",
+      "LONG-TERM (CURRENT) USE OF INSULIN"
+    ]
+  },
+  {
+    "stayId": "39394858",
+    "subjectId": "10014354",
+    "patientName": "Amit Deshmukh",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919866661351",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 83,
+      "respiratoryRate": 20,
+      "systolicBp": 159,
+      "diastolicBp": 105,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Other chest pain"
+    ]
+  },
+  {
+    "stayId": "39968716",
+    "subjectId": "10012853",
+    "patientName": "Riya Mehta",
+    "age": 80,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919889978790",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Dizziness, Weakness",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 77,
+      "respiratoryRate": 18,
+      "systolicBp": 100,
+      "diastolicBp": 43,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dizziness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Weakness",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERCHOLESTEROLEMIA",
+      "HYPERTENSION NOS",
+      "URIN TRACT INFECTION NOS",
+      "DIABETES UNCOMPL ADULT",
+      "OTHER MALAISE AND FATIGUE"
+    ]
+  },
+  {
+    "stayId": "39399961",
+    "subjectId": "10000032",
+    "patientName": "Sneha Patel",
+    "age": 64,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919884252722",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abdominal distention, Abd pain, LETHAGIC",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.1,
+      "oxygenSaturation": 98,
+      "heartRate": 77,
+      "respiratoryRate": 16,
+      "systolicBp": 96,
+      "diastolicBp": 50,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abdominal distention",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Abd pain",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "LETHAGIC",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ENCEPHALOPATHY, UNSPECIFIED",
+      "ALTERED MENTAL STATUS "
+    ]
+  },
+  {
+    "stayId": "38233644",
+    "subjectId": "10020740",
+    "patientName": "Rajesh Chawla",
+    "age": 37,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919825374874",
+    "existingDiseases": [
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Psychiatric hold, Altered mental status",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 86,
+      "respiratoryRate": 17,
+      "systolicBp": 124,
+      "diastolicBp": 74,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Psychiatric hold",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Altered mental status",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "DIABETES UNCOMPL ADULT",
+      "SCHIZOAFFECTIVE-UNSPEC",
+      "LONG-TERM (CURRENT) USE OF INSULIN"
+    ]
+  },
+  {
+    "stayId": "37376268",
+    "subjectId": "10002428",
+    "patientName": "Sneha Deshmukh",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919845812670",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "BRBPR",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 98,
+      "heartRate": 98,
+      "respiratoryRate": 14,
+      "systolicBp": 158,
+      "diastolicBp": 89,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "BRBPR",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Gastrointestinal hemorrhage, unspecified"
+    ]
+  },
+  {
+    "stayId": "39105638",
+    "subjectId": "10014354",
+    "patientName": "Rahul Verma",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919849392920",
+    "existingDiseases": [
+      "Essential (primary) hypertension"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Confusion, s/p Fall",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 104,
+      "respiratoryRate": 16,
+      "systolicBp": 160,
+      "diastolicBp": 80,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Confusion",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "s",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "p Fall",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Headache",
+      "Prsnl hx of TIA (TIA), and cereb infrc w/o resid deficits",
+      "Fall on same level, unspecified, initial encounter"
+    ]
+  },
+  {
+    "stayId": "38967799",
+    "subjectId": "10007058",
+    "patientName": "Deepak Sharma",
+    "age": 70,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919845351479",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain, Transfer",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.0,
+      "oxygenSaturation": 98,
+      "heartRate": 62,
+      "respiratoryRate": 18,
+      "systolicBp": 121,
+      "diastolicBp": 78,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Non-ST elevation (NSTEMI) myocardial infarction",
+      "Dissection of unspecified site of aorta"
+    ]
+  },
+  {
+    "stayId": "38020791",
+    "subjectId": "10019003",
+    "patientName": "Anita Singh",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919878139880",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abnormal CT, LUQ abd pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 93,
+      "heartRate": 97,
+      "respiratoryRate": 16,
+      "systolicBp": 117,
+      "diastolicBp": 60,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abnormal CT",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "LUQ abd pain",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Infarction of spleen"
+    ]
+  },
+  {
+    "stayId": "38890884",
+    "subjectId": "10021938",
+    "patientName": "Suresh Chawla",
+    "age": 65,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919850056581",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Tachycardia",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.7,
+      "oxygenSaturation": 93,
+      "heartRate": 110,
+      "respiratoryRate": 18,
+      "systolicBp": 178,
+      "diastolicBp": 85,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Tachycardia",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERKALEMIA"
+    ]
+  },
+  {
+    "stayId": "39054681",
+    "subjectId": "10040025",
+    "patientName": "Sneha Nair",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919836697396",
+    "existingDiseases": [
+      "Acute kidney failure, unspecified"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea, Productive cough",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 93,
+      "heartRate": 71,
+      "respiratoryRate": 16,
+      "systolicBp": 168,
+      "diastolicBp": 60,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Productive cough",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Acute kidney failure, unspecified"
+    ]
+  },
+  {
+    "stayId": "32259566",
+    "subjectId": "10037928",
+    "patientName": "Anita Singh",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919882394227",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ILI",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.7,
+      "oxygenSaturation": 88,
+      "heartRate": 97,
+      "respiratoryRate": 32,
+      "systolicBp": 176,
+      "diastolicBp": 86,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ILI",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "URIN TRACT INFECTION NOS"
+    ]
+  },
+  {
+    "stayId": "34646141",
+    "subjectId": "10010867",
+    "patientName": "Preeti Reddy",
+    "age": 44,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919810076758",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.4,
+      "oxygenSaturation": 97,
+      "heartRate": 84,
+      "respiratoryRate": 18,
+      "systolicBp": 128,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Dyspnea, unspecified"
+    ]
+  },
+  {
+    "stayId": "35958431",
+    "subjectId": "10015860",
+    "patientName": "Deepak Sharma",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919825014631",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abnormal labs",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.8,
+      "oxygenSaturation": 97,
+      "heartRate": 103,
+      "respiratoryRate": 18,
+      "systolicBp": 138,
+      "diastolicBp": 84,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abnormal labs",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Bacteremia"
+    ]
+  },
+  {
+    "stayId": "32204198",
+    "subjectId": "10021938",
+    "patientName": "Karan Das",
+    "age": 65,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919851273847",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 97,
+      "heartRate": 89,
+      "respiratoryRate": 18,
+      "systolicBp": 217,
+      "diastolicBp": 116,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "GASTROINTEST HEMORR NOS"
+    ]
+  },
+  {
+    "stayId": "35766268",
+    "subjectId": "10020187",
+    "patientName": "Pooja Roy",
+    "age": 69,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919886149359",
+    "existingDiseases": [
+      "Essential (primary) hypertension"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Facial numbness",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 97,
+      "heartRate": 95,
+      "respiratoryRate": 18,
+      "systolicBp": 190,
+      "diastolicBp": 117,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Facial numbness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Other disturbances of skin sensation"
+    ]
+  },
+  {
+    "stayId": "37802225",
+    "subjectId": "10014354",
+    "patientName": "Vikram Kapoor",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919875228535",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain, NSTEMI, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 97,
+      "heartRate": 85,
+      "respiratoryRate": 18,
+      "systolicBp": 137,
+      "diastolicBp": 86,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "NSTEMI",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Chest pain, unspecified"
+    ]
+  },
+  {
+    "stayId": "32952584",
+    "subjectId": "10000032",
+    "patientName": "Anita Reddy",
+    "age": 64,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919826879290",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Hypotension",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 97,
+      "heartRate": 87,
+      "respiratoryRate": 14,
+      "systolicBp": 71,
+      "diastolicBp": 43,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hypotension",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ASYMPTOMATIC HIV INFECTION",
+      "HYPOTENSION NOS",
+      "UNSPECIFIED VIRAL HEPATITIS C WITHOUT HEPATIC COMA"
+    ]
+  },
+  {
+    "stayId": "37965024",
+    "subjectId": "10020306",
+    "patientName": "Simran Reddy",
+    "age": 58,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919832162965",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Cough, Dyspnea",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.2,
+      "oxygenSaturation": 97,
+      "heartRate": 95,
+      "respiratoryRate": 18,
+      "systolicBp": 138,
+      "diastolicBp": 70,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Cough",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Dyspnea",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Cough",
+      "Unsp combined systolic and diastolic (congestive) hrt fail",
+      "Dyspnea, unspecified"
+    ]
+  },
+  {
+    "stayId": "39910144",
+    "subjectId": "10002930",
+    "patientName": "Rekha Nair",
+    "age": 37,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919866792612",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "SI",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.5,
+      "oxygenSaturation": 97,
+      "heartRate": 103,
+      "respiratoryRate": 18,
+      "systolicBp": 137,
+      "diastolicBp": 87,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "SI",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Human immunodeficiency virus [HIV] disease",
+      "Alcohol abuse with intoxication, unspecified",
+      "Suicidal ideations"
+    ]
+  },
+  {
+    "stayId": "30324772",
+    "subjectId": "10019385",
+    "patientName": "Karan Reddy",
+    "age": 47,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919836998038",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain, Jaw pain, L Arm pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 97,
+      "heartRate": 55,
+      "respiratoryRate": 14,
+      "systolicBp": 120,
+      "diastolicBp": 59,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Jaw pain",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "L Arm pain",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Chest pain, unspecified"
+    ]
+  },
+  {
+    "stayId": "32039794",
+    "subjectId": "10012853",
+    "patientName": "Riya Chawla",
+    "age": 80,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919897225156",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "DVT, Transfer",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 97,
+      "heartRate": 72,
+      "respiratoryRate": 16,
+      "systolicBp": 173,
+      "diastolicBp": 60,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "DVT",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Acute embolism and thrombosis of deep veins of l up extrem"
+    ]
+  },
+  {
+    "stayId": "36686656",
+    "subjectId": "10019003",
+    "patientName": "Preeti Reddy",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919870597444",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Anemia, Neutropenia, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.0,
+      "oxygenSaturation": 97,
+      "heartRate": 98,
+      "respiratoryRate": 16,
+      "systolicBp": 105,
+      "diastolicBp": 43,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Anemia",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Neutropenia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Hematuria, unspecified",
+      "Other pancytopenia"
+    ]
+  },
+  {
+    "stayId": "31254712",
+    "subjectId": "10019003",
+    "patientName": "Pooja Verma",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919855377076",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Weakness, Hypotension",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 97,
+      "heartRate": 96,
+      "respiratoryRate": 15,
+      "systolicBp": 98,
+      "diastolicBp": 56,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Weakness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hypotension",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Sepsis, unspecified organism",
+      "Dehydration",
+      "Urinary tract infection, site not specified",
+      "Chronic myeloid leuk, BCR/ABL-positive, not achieve remis"
+    ]
+  },
+  {
+    "stayId": "36428628",
+    "subjectId": "10014354",
+    "patientName": "Aarav Gupta",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919888979095",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Transfer, CVA",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 97,
+      "heartRate": 63,
+      "respiratoryRate": 16,
+      "systolicBp": 118,
+      "diastolicBp": 49,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "CVA",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Weakness"
+    ]
+  },
+  {
+    "stayId": "33032677",
+    "subjectId": "10018423",
+    "patientName": "Vikram Kapoor",
+    "age": 60,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919894705205",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Chest pain, Dizziness",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 97,
+      "heartRate": 84,
+      "respiratoryRate": 16,
+      "systolicBp": 135,
+      "diastolicBp": 84,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Dizziness",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Chest pain, unspecified"
+    ]
+  },
+  {
+    "stayId": "38133986",
+    "subjectId": "10015860",
+    "patientName": "Vikram Roy",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919814216175",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus with hyperglycemia"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Abnormal labs, Hyperglycemia",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 97,
+      "heartRate": 110,
+      "respiratoryRate": 18,
+      "systolicBp": 179,
+      "diastolicBp": 108,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abnormal labs",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hyperglycemia",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Abn lev hormones in specimens from female genital organs",
+      "Long term (current) use of insulin",
+      "Type 1 diabetes mellitus with hyperglycemia"
+    ]
+  },
+  {
+    "stayId": "35716124",
+    "subjectId": "10023117",
+    "patientName": "Vikram Reddy",
+    "age": 74,
+    "gender": "MALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919841944441",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.0,
+      "oxygenSaturation": 97,
+      "heartRate": 115,
+      "respiratoryRate": 18,
+      "systolicBp": 95,
+      "diastolicBp": 65,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Chest pain, unspecified"
+    ]
+  },
+  {
+    "stayId": "34176810",
+    "subjectId": "10018328",
+    "patientName": "Simran Gupta",
+    "age": 30,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919882374753",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Syncope, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.5,
+      "oxygenSaturation": 96,
+      "heartRate": 74,
+      "respiratoryRate": 20,
+      "systolicBp": 133,
+      "diastolicBp": 65,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Syncope",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Syncope and collapse"
+    ]
+  },
+  {
+    "stayId": "38260469",
+    "subjectId": "10019003",
+    "patientName": "Preeti Roy",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "B_NEGATIVE",
+    "phone": "+919887337818",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Weakness, GI bleed",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.3,
+      "oxygenSaturation": 96,
+      "heartRate": 96,
+      "respiratoryRate": 17,
+      "systolicBp": 114,
+      "diastolicBp": 66,
+      "glasgowComaScale": 12,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Weakness",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "GI bleed",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Gastrointestinal hemorrhage, unspecified"
+    ]
+  },
+  {
+    "stayId": "31945330",
+    "subjectId": "10040025",
+    "patientName": "Anita Joshi",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919864634663",
+    "existingDiseases": [
+      "HYPERTENSION NOS"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Allergic reaction",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.4,
+      "oxygenSaturation": 96,
+      "heartRate": 78,
+      "respiratoryRate": 18,
+      "systolicBp": 208,
+      "diastolicBp": 86,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Allergic reaction",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "ALLERGY, UNSPECIFIED",
+      "ADV EFF MEDICINAL NOS"
+    ]
+  },
+  {
+    "stayId": "35205519",
+    "subjectId": "10014354",
+    "patientName": "Vikram Chawla",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919867854710",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 37.2,
+      "oxygenSaturation": 96,
+      "heartRate": 120,
+      "respiratoryRate": 16,
+      "systolicBp": 120,
+      "diastolicBp": 71,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "SEVERE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "SEVERE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Pericardial effusion (noninflammatory)",
+      "Chest pain, unspecified",
+      "Unspecified atrial fibrillation"
+    ]
+  },
+  {
+    "stayId": "33473053",
+    "subjectId": "10015272",
+    "patientName": "Riya Joshi",
+    "age": 29,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919817270733",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "PE",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 2,
+    "groundTruthSeverity": "HIGH",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 96,
+      "heartRate": 118,
+      "respiratoryRate": 18,
+      "systolicBp": 100,
+      "diastolicBp": 56,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "PE",
+        "severity": "SEVERE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Other pulmonary embolism without acute cor pulmonale"
+    ]
+  },
+  {
+    "stayId": "31270431",
+    "subjectId": "10023239",
+    "patientName": "Sneha Mehta",
+    "age": 66,
+    "gender": "FEMALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919881969657",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Back pain, Decreased PO intake, R Ear pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 35.7,
+      "oxygenSaturation": 99,
+      "heartRate": 123,
+      "respiratoryRate": 18,
+      "systolicBp": 123,
+      "diastolicBp": 69,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Back pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Decreased PO intake",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "R Ear pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Type 1 diabetes mellitus without complications",
+      "Enlarged lymph nodes, unspecified",
+      "Nonspec elev of levels of transamns & lactic acid dehydrgnse",
+      "Long term (current) use of insulin",
+      "Other fatigue"
+    ]
+  },
+  {
+    "stayId": "34205403",
+    "subjectId": "10038999",
+    "patientName": "Rajesh Verma",
+    "age": 31,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919845059710",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "s/p Fall, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 99,
+      "heartRate": 116,
+      "respiratoryRate": 14,
+      "systolicBp": 140,
+      "diastolicBp": 78,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "s",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "p Fall",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "Transfer",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Oth fracture of lower end of right tibia, init for clos fx",
+      "Fall same lev from slip/trip w/o strike against object, init"
+    ]
+  },
+  {
+    "stayId": "30279522",
+    "subjectId": "10014354",
+    "patientName": "Sanjay Sharma",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919824549543",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Weakness",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 99,
+      "heartRate": 73,
+      "respiratoryRate": 20,
+      "systolicBp": 122,
+      "diastolicBp": 60,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Weakness",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Weakness"
+    ]
+  },
+  {
+    "stayId": "35942924",
+    "subjectId": "10023239",
+    "patientName": "Meera Kapoor",
+    "age": 66,
+    "gender": "FEMALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919852101056",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Presyncope, Weakness",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 99,
+      "heartRate": 75,
+      "respiratoryRate": 16,
+      "systolicBp": 112,
+      "diastolicBp": 61,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Presyncope",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Weakness",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Syncope and collapse",
+      "Sarcoidosis of lung",
+      "Hypothyroidism, unspecified",
+      "Type 1 diabetes mellitus without complications",
+      "Long term (current) use of insulin",
+      "Pure hypercholesterolemia, unspecified"
+    ]
+  },
+  {
+    "stayId": "38566596",
+    "subjectId": "10015860",
+    "patientName": "Aarav Verma",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919861700055",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "RIGHT FOOT INFECTION",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.8,
+      "oxygenSaturation": 99,
+      "heartRate": 119,
+      "respiratoryRate": 16,
+      "systolicBp": 107,
+      "diastolicBp": 73,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "RIGHT FOOT INFECTION",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "LOCAL SKIN INFECTION NOS",
+      "IDDM W SPEC MANIFESTATION"
+    ]
+  },
+  {
+    "stayId": "34161260",
+    "subjectId": "10004720",
+    "patientName": "Sunil Patel",
+    "age": 72,
+    "gender": "MALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919815957459",
+    "existingDiseases": [
+      "HYPERTENSION NOS"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "s/p Fall, R Wrist pain, R Wrist injury",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 99,
+      "heartRate": 106,
+      "respiratoryRate": 18,
+      "systolicBp": 133,
+      "diastolicBp": 87,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "s",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "p Fall",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "R Wrist pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "R Wrist injury",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "FX LOW RADIUS W ULNA-CL",
+      "FALL FROM OTHER SLIPPING,TRIPPING,STUMBLING"
+    ]
+  },
+  {
+    "stayId": "39346340",
+    "subjectId": "10022281",
+    "patientName": "Rajesh Reddy",
+    "age": 83,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919882269803",
+    "existingDiseases": [
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "LOWER EXTREMITY PAIN",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 99,
+      "heartRate": 64,
+      "respiratoryRate": 16,
+      "systolicBp": 177,
+      "diastolicBp": 76,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "LOWER EXTREMITY PAIN",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "DIABETES UNCOMPL ADULT",
+      "DISS ABDOM AORTIC ANEURYSM"
+    ]
+  },
+  {
+    "stayId": "33863177",
+    "subjectId": "10015860",
+    "patientName": "Manoj Kapoor",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919836445607",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "L Arm pain, L Arm swelling",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 99,
+      "heartRate": 77,
+      "respiratoryRate": 18,
+      "systolicBp": 154,
+      "diastolicBp": 76,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Arm pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "L Arm swelling",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Cellulitis of left lower limb"
+    ]
+  },
+  {
+    "stayId": "35681380",
+    "subjectId": "10005866",
+    "patientName": "Vikram Chawla",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919854318698",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "RLQ abdominal pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 99,
+      "heartRate": 76,
+      "respiratoryRate": 18,
+      "systolicBp": 147,
+      "diastolicBp": 92,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "RLQ abdominal pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Right lower quadrant pain"
+    ]
+  },
+  {
+    "stayId": "38237602",
+    "subjectId": "10026406",
+    "patientName": "Rohan Das",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "O_POSITIVE",
+    "phone": "+919826726926",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ETOH, SI",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 99,
+      "heartRate": 98,
+      "respiratoryRate": 20,
+      "systolicBp": 133,
+      "diastolicBp": 110,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ETOH",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "SI",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Alcohol abuse with intoxication, unspecified",
+      "Suicidal ideations",
+      "Unsp superficial injury of unsp part of head, init encntr",
+      "Fall (on) (from) unspecified stairs and steps, init encntr"
+    ]
+  },
+  {
+    "stayId": "32281632",
+    "subjectId": "10005866",
+    "patientName": "Sanjay Reddy",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919851511484",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "TRANSFER",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 99,
+      "heartRate": 63,
+      "respiratoryRate": 18,
+      "systolicBp": 149,
+      "diastolicBp": 72,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unspecified abdominal pain"
+    ]
+  },
+  {
+    "stayId": "39930808",
+    "subjectId": "10020740",
+    "patientName": "Rahul Mehta",
+    "age": 37,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919849682169",
+    "existingDiseases": [
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Insomnia",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 99,
+      "heartRate": 82,
+      "respiratoryRate": 18,
+      "systolicBp": 125,
+      "diastolicBp": 75,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Insomnia",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "DIABETES UNCOMPL ADULT",
+      "SCHIZOAFFECTIVE-UNSPEC",
+      "INSOMNIA NEC"
+    ]
+  },
+  {
+    "stayId": "38000722",
+    "subjectId": "10015860",
+    "patientName": "Sunil Mehta",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919899245317",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "R LEG CELLULITIS",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 97,
+      "respiratoryRate": 16,
+      "systolicBp": 180,
+      "diastolicBp": 96,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R LEG CELLULITIS",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CELLULITIS OF LEG",
+      "IDDM W SPEC MANIFESTATION"
+    ]
+  },
+  {
+    "stayId": "36132883",
+    "subjectId": "10040025",
+    "patientName": "Kavita Kapoor",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919833357554",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 1 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "L Foot swelling, L Foot pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ELOPED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 98,
+      "heartRate": 83,
+      "respiratoryRate": 18,
+      "systolicBp": 137,
+      "diastolicBp": 84,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Foot swelling",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "L Foot pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 1 diabetes mellitus without complications",
+      "Localized edema",
+      "Long term (current) use of insulin",
+      "Unspecified atrial fibrillation",
+      "Long term (current) use of anticoagulants"
+    ]
+  },
+  {
+    "stayId": "32840887",
+    "subjectId": "10040025",
+    "patientName": "Sunita Mehta",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919883542887",
+    "existingDiseases": [
+      "Hypertensive chronic kidney disease w stg 1-4/unsp chr kdny",
+      "Chronic kidney disease, unspecified",
+      "Type 2 diabetes mellitus w diabetic chronic kidney disease"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "B Leg swelling",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 105,
+      "respiratoryRate": 18,
+      "systolicBp": 168,
+      "diastolicBp": 99,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "B Leg swelling",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Hypothyroidism, unspecified",
+      "Hypertensive chronic kidney disease w stg 1-4/unsp chr kdny",
+      "Chronic kidney disease, unspecified",
+      "Long term (current) use of insulin",
+      "Type 2 diabetes mellitus w diabetic chronic kidney disease",
+      "Pure hypercholesterolemia, unspecified",
+      "Other specified soft tissue disorders"
+    ]
+  },
+  {
+    "stayId": "34922474",
+    "subjectId": "10003400",
+    "patientName": "Sunita Patel",
+    "age": 52,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919838210242",
+    "existingDiseases": [
+      "HYPERTENSION NOS"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Rectal pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.1,
+      "oxygenSaturation": 98,
+      "heartRate": 124,
+      "respiratoryRate": 16,
+      "systolicBp": 136,
+      "diastolicBp": 82,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Rectal pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "MALIGNANT NEOPL RECTUM",
+      "HYPERTENSION NOS",
+      "RECTAL & ANAL HEMORRHAGE"
+    ]
+  },
+  {
+    "stayId": "34617920",
+    "subjectId": "10014354",
+    "patientName": "Kabir Nair",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919897873101",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain, Dysuria",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.9,
+      "oxygenSaturation": 98,
+      "heartRate": 73,
+      "respiratoryRate": 15,
+      "systolicBp": 149,
+      "diastolicBp": 53,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Dysuria",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Fever, unspecified"
+    ]
+  },
+  {
+    "stayId": "37202404",
+    "subjectId": "10026406",
+    "patientName": "Deepak Joshi",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "O_POSITIVE",
+    "phone": "+919838682516",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Assault",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 105,
+      "respiratoryRate": 20,
+      "systolicBp": 153,
+      "diastolicBp": 77,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Assault",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "NASAL BONE FX-CLOSED",
+      "ALCOHOL WITHDRAWAL",
+      "AC ALCOHOL INTOX-UNSPEC",
+      "ASSAULT NEC"
+    ]
+  },
+  {
+    "stayId": "39300221",
+    "subjectId": "10001217",
+    "patientName": "Anita Roy",
+    "age": 79,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919832775593",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "PICC LINE INFECTION",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 75,
+      "respiratoryRate": 20,
+      "systolicBp": 132,
+      "diastolicBp": 95,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "PICC LINE INFECTION",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "REMOVAL VASCULAR CATHETER"
+    ]
+  },
+  {
+    "stayId": "34992024",
+    "subjectId": "10037928",
+    "patientName": "Sunita Reddy",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919854988206",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Head injury, s/p Fall",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 2.5,
+      "oxygenSaturation": 98,
+      "heartRate": 95,
+      "respiratoryRate": 18,
+      "systolicBp": 150,
+      "diastolicBp": 56,
+      "glasgowComaScale": 12,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Head injury",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "s",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "p Fall",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Long term (current) use of insulin",
+      "Laceration w/o foreign body of oth part of head, init encntr",
+      "Other specified injuries of head, initial encounter",
+      "Fall same lev from slip/trip w/o strike against object, init"
+    ]
+  },
+  {
+    "stayId": "39740242",
+    "subjectId": "10037928",
+    "patientName": "Anita Gupta",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919851663795",
+    "existingDiseases": [
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "DIABETES UNCOMPL JUVEN"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Cough, Dyspnea",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.1,
+      "oxygenSaturation": 98,
+      "heartRate": 108,
+      "respiratoryRate": 22,
+      "systolicBp": 151,
+      "diastolicBp": 55,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Cough",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Dyspnea",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ACUTE URI NOS",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "DIABETES UNCOMPL JUVEN"
+    ]
+  },
+  {
+    "stayId": "31226423",
+    "subjectId": "10040025",
+    "patientName": "Pooja Singh",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919813278320",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "N/V",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 98,
+      "heartRate": 93,
+      "respiratoryRate": 18,
+      "systolicBp": 135,
+      "diastolicBp": 72,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "N",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "V",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Nausea with vomiting, unspecified",
+      "Diarrhea, unspecified",
+      "Long term (current) use of insulin",
+      "Long term (current) use of anticoagulants"
+    ]
+  },
+  {
+    "stayId": "31640785",
+    "subjectId": "10014354",
+    "patientName": "Deepak Nair",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919819774839",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Epigastric pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.5,
+      "oxygenSaturation": 98,
+      "heartRate": 75,
+      "respiratoryRate": 18,
+      "systolicBp": 180,
+      "diastolicBp": 74,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Epigastric pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Type 1 diabetes mellitus without complications",
+      "Long term (current) use of insulin",
+      "Epigastric pain"
+    ]
+  },
+  {
+    "stayId": "39202185",
+    "subjectId": "10014354",
+    "patientName": "Karan Chawla",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919887265240",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Acute kidney failure, unspecified"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "R Leg pain, R Leg swelling",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.5,
+      "oxygenSaturation": 98,
+      "heartRate": 78,
+      "respiratoryRate": 19,
+      "systolicBp": 158,
+      "diastolicBp": 44,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R Leg pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "R Leg swelling",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Acute kidney failure, unspecified",
+      "Long term (current) use of insulin",
+      "Chronic lymphocytic leuk of B-cell type not achieve remis",
+      "Pure hypercholesterolemia, unspecified",
+      "Other specified soft tissue disorders"
+    ]
+  },
+  {
+    "stayId": "32095131",
+    "subjectId": "10040025",
+    "patientName": "Shweta Mehta",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919876354180",
+    "existingDiseases": [
+      "Type 2 diabetes mellitus with foot ulcer"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "L Foot pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 35.9,
+      "oxygenSaturation": 98,
+      "heartRate": 78,
+      "respiratoryRate": 16,
+      "systolicBp": 126,
+      "diastolicBp": 87,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Foot pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Long term (current) use of insulin",
+      "Type 2 diabetes mellitus with foot ulcer"
+    ]
+  },
+  {
+    "stayId": "34918384",
+    "subjectId": "10039708",
+    "patientName": "Neha Chawla",
+    "age": 25,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919810744212",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Hypotension",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 98,
+      "heartRate": 89,
+      "respiratoryRate": 16,
+      "systolicBp": 98,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hypotension",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Sepsis, unspecified organism",
+      "Acute pancreatitis, unspecified"
+    ]
+  },
+  {
+    "stayId": "34236274",
+    "subjectId": "10026255",
+    "patientName": "Suresh Deshmukh",
+    "age": 27,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919824305904",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "R Leg pain, Weakness",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.7,
+      "oxygenSaturation": 98,
+      "heartRate": 95,
+      "respiratoryRate": 28,
+      "systolicBp": 150,
+      "diastolicBp": 101,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R Leg pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Weakness",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ATRIAL FIBRILLATION"
+    ]
+  },
+  {
+    "stayId": "37953392",
+    "subjectId": "10037928",
+    "patientName": "Pooja Singh",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919879519112",
+    "existingDiseases": [
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Altered mental status",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 98,
+      "heartRate": 76,
+      "respiratoryRate": 16,
+      "systolicBp": 144,
+      "diastolicBp": 56,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Altered mental status",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "URIN TRACT INFECTION NOS",
+      "DIABETES UNCOMPL ADULT",
+      "SEMICOMA/STUPOR",
+      "LONG-TERM (CURRENT) USE OF INSULIN"
+    ]
+  },
+  {
+    "stayId": "35547415",
+    "subjectId": "10012853",
+    "patientName": "Sneha Gupta",
+    "age": 80,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919826288475",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Urinary retention, Lower abdominal pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 97,
+      "heartRate": 96,
+      "respiratoryRate": 16,
+      "systolicBp": 189,
+      "diastolicBp": 78,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Urinary retention",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Lower abdominal pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "COMP D/TO GU DEVICE/GRAFT",
+      "ACCIDENT NOS"
+    ]
+  },
+  {
+    "stayId": "31960365",
+    "subjectId": "10021487",
+    "patientName": "Anil Joshi",
+    "age": 69,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919899600766",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ABD PAIN",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.7,
+      "oxygenSaturation": 97,
+      "heartRate": 106,
+      "respiratoryRate": 16,
+      "systolicBp": 110,
+      "diastolicBp": 69,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ABD PAIN",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "FEVER, UNSPECIFIED"
+    ]
+  },
+  {
+    "stayId": "30836087",
+    "subjectId": "10040025",
+    "patientName": "Sneha Nair",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919852587010",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "CHRONIC KIDNEY DISEASE, UNSPECIFIED"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "LEFT EYE SWELLING, REDNESS",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 97,
+      "heartRate": 77,
+      "respiratoryRate": 16,
+      "systolicBp": 197,
+      "diastolicBp": 59,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "LEFT EYE SWELLING",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "REDNESS",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "ACUTE KIDNEY FAILURE, UNSPECIFIED",
+      "CHRONIC KIDNEY DISEASE, UNSPECIFIED",
+      "CELLULITIS OF FACE",
+      "DIABETES UNCOMPL ADULT",
+      "LONG-TERM (CURRENT) USE OF INSULIN"
+    ]
+  },
+  {
+    "stayId": "37145382",
+    "subjectId": "10014354",
+    "patientName": "Karan Joshi",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919892228802",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "R Leg pain, R Leg swelling",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "LEFT WITHOUT BEING SEEN",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 97,
+      "heartRate": 76,
+      "respiratoryRate": 16,
+      "systolicBp": 136,
+      "diastolicBp": 65,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R Leg pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "R Leg swelling",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Pain in left lower leg"
+    ]
+  },
+  {
+    "stayId": "33256413",
+    "subjectId": "10012853",
+    "patientName": "Preeti Reddy",
+    "age": 80,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919867276174",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Hematuria",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.3,
+      "oxygenSaturation": 97,
+      "heartRate": 77,
+      "respiratoryRate": 16,
+      "systolicBp": 137,
+      "diastolicBp": 48,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hematuria",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Urinary tract infection, site not specified",
+      "Hematuria, unspecified",
+      "Unspecified atrial fibrillation"
+    ]
+  },
+  {
+    "stayId": "33258284",
+    "subjectId": "10000032",
+    "patientName": "Sneha Joshi",
+    "age": 64,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919831361812",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain, Abdominal distention",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 97,
+      "heartRate": 70,
+      "respiratoryRate": 16,
+      "systolicBp": 106,
+      "diastolicBp": 63,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Abdominal distention",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ASYMPTOMATIC HIV INFECTION",
+      "OTH SEQUELA, CHR LIV DIS",
+      "UNSPECIFIED VIRAL HEPATITIS C WITHOUT HEPATIC COMA",
+      "OTHER ASCITES"
+    ]
+  },
+  {
+    "stayId": "38216551",
+    "subjectId": "10002428",
+    "patientName": "Simran Joshi",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919844788100",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "s/p Fall, L Shoulder pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 97,
+      "heartRate": 100,
+      "respiratoryRate": 16,
+      "systolicBp": 172,
+      "diastolicBp": 100,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "s",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "p Fall",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "L Shoulder pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Hypothyroidism, unspecified",
+      "Ocular pain, bilateral",
+      "Sicca syndrome, unspecified"
+    ]
+  },
+  {
+    "stayId": "38112554",
+    "subjectId": "10000032",
+    "patientName": "Rekha Chawla",
+    "age": 64,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919847220099",
+    "existingDiseases": [
+      "CIRRHOSIS OF LIVER NOS"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abdominal distention",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.2,
+      "oxygenSaturation": 97,
+      "heartRate": 88,
+      "respiratoryRate": 18,
+      "systolicBp": 116,
+      "diastolicBp": 88,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abdominal distention",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ASYMPTOMATIC HIV INFECTION",
+      "CIRRHOSIS OF LIVER NOS",
+      "UNSPECIFIED VIRAL HEPATITIS C WITHOUT HEPATIC COMA",
+      "OTHER ASCITES"
+    ]
+  },
+  {
+    "stayId": "31153288",
+    "subjectId": "10015860",
+    "patientName": "Aarav Joshi",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919894120751",
+    "existingDiseases": [
+      "Hyp chr kidney disease w stage 5 chr kidney disease or ESRD"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Diarrhea, Hypotension",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.7,
+      "oxygenSaturation": 97,
+      "heartRate": 96,
+      "respiratoryRate": 18,
+      "systolicBp": 134,
+      "diastolicBp": 70,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Diarrhea",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hypotension",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Hyp chr kidney disease w stage 5 chr kidney disease or ESRD",
+      "End stage renal disease",
+      "Diarrhea, unspecified",
+      "Dependence on renal dialysis",
+      "Elevated white blood cell count, unspecified"
+    ]
+  },
+  {
+    "stayId": "39866888",
+    "subjectId": "10001217",
+    "patientName": "Simran Verma",
+    "age": 79,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919848349783",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "LEFT HAND PAINS",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.2,
+      "oxygenSaturation": 97,
+      "heartRate": 81,
+      "respiratoryRate": 16,
+      "systolicBp": 160,
+      "diastolicBp": 102,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "LEFT HAND PAINS",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "FEVER, UNSPECIFIED",
+      "OTHER MALAISE AND FATIGUE"
+    ]
+  },
+  {
+    "stayId": "37401157",
+    "subjectId": "10040025",
+    "patientName": "Meera Kumar",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919882498004",
+    "existingDiseases": [
+      "CONGESTIVE HEART FAILURE, UNSPEC"
+    ],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Dyspnea, Foot swelling",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 92,
+      "heartRate": 87,
+      "respiratoryRate": 15,
+      "systolicBp": 160,
+      "diastolicBp": 62,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Foot swelling",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CONGESTIVE HEART FAILURE, UNSPEC"
+    ]
+  },
+  {
+    "stayId": "34982171",
+    "subjectId": "10002428",
+    "patientName": "Neha Gupta",
+    "age": 55,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919861410126",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "LEFT HIP FX",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 96,
+      "heartRate": 100,
+      "respiratoryRate": 16,
+      "systolicBp": 126,
+      "diastolicBp": 74,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "LEFT HIP FX",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "FX NECK OF FEMUR NOS-CL",
+      "UNSPECIFIED FALL"
+    ]
+  },
+  {
+    "stayId": "37593892",
+    "subjectId": "10018081",
+    "patientName": "Manoj Gupta",
+    "age": 43,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919818620650",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "DISLODGED ABD TUBE",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.3,
+      "oxygenSaturation": 96,
+      "heartRate": 67,
+      "respiratoryRate": 16,
+      "systolicBp": 126,
+      "diastolicBp": 72,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "DISLODGED ABD TUBE",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ATRIAL FIBRILLATION",
+      "COMP D/TO GRAFT/IMPLANT",
+      "ACCIDENT NOS",
+      "LONG TERM USE ANTIGOAGULANT"
+    ]
+  },
+  {
+    "stayId": "37483564",
+    "subjectId": "10037928",
+    "patientName": "Meera Reddy",
+    "age": 65,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919872535301",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain, n/v/d",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 96,
+      "heartRate": 105,
+      "respiratoryRate": 24,
+      "systolicBp": 177,
+      "diastolicBp": 69,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "n",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "v",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "d",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unspecified acute appendicitis"
+    ]
+  },
+  {
+    "stayId": "35968195",
+    "subjectId": "10000032",
+    "patientName": "Pooja Das",
+    "age": 64,
+    "gender": "FEMALE",
+    "bloodGroup": "A_POSITIVE",
+    "phone": "+919866390708",
+    "existingDiseases": [
+      "CIRRHOSIS OF LIVER NOS"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "n/v/d, Abd pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.4,
+      "oxygenSaturation": 96,
+      "heartRate": 105,
+      "respiratoryRate": 18,
+      "systolicBp": 106,
+      "diastolicBp": 57,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "n",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "v",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "d",
+        "severity": "MODERATE",
+        "isPrimary": false
+      },
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ASYMPTOMATIC HIV INFECTION",
+      "CIRRHOSIS OF LIVER NOS",
+      "ABDOMINAL PAIN UNSPEC SITE"
+    ]
+  },
+  {
+    "stayId": "35958096",
+    "subjectId": "10015860",
+    "patientName": "Anil Nair",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919812621534",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL JUVEN"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "R FOOT ULCER/CELLULITIS",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.6,
+      "oxygenSaturation": 96,
+      "heartRate": 120,
+      "respiratoryRate": 18,
+      "systolicBp": 158,
+      "diastolicBp": 83,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R FOOT ULCER",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "CELLULITIS",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS",
+      "CELLULITIS OF FOOT",
+      "DIABETES UNCOMPL JUVEN",
+      "DIAB W MANIF NEC ADULT",
+      "ULCER OF OTHER PART OF FOOT"
+    ]
+  },
+  {
+    "stayId": "35452640",
+    "subjectId": "10014354",
+    "patientName": "Anil Nair",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919861053877",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Chest pain, Transfer",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 96,
+      "heartRate": 64,
+      "respiratoryRate": 16,
+      "systolicBp": 123,
+      "diastolicBp": 63,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Transfer",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Pure hypercholesterolemia",
+      "Chest pain, unspecified"
+    ]
+  },
+  {
+    "stayId": "37714209",
+    "subjectId": "10021487",
+    "patientName": "Rahul Patel",
+    "age": 69,
+    "gender": "MALE",
+    "bloodGroup": "O_NEGATIVE",
+    "phone": "+919862343121",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ABDOMINAL MASS, FEVER",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 35.9,
+      "oxygenSaturation": 96,
+      "heartRate": 114,
+      "respiratoryRate": 14,
+      "systolicBp": 119,
+      "diastolicBp": 93,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ABDOMINAL MASS",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "FEVER",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "PERITONEAL ABSCESS"
+    ]
+  },
+  {
+    "stayId": "32259573",
+    "subjectId": "10006580",
+    "patientName": "Rekha Mehta",
+    "age": 47,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919882238741",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Neck pain, Med refill",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 96,
+      "heartRate": 89,
+      "respiratoryRate": 18,
+      "systolicBp": 131,
+      "diastolicBp": 90,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Neck pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Med refill",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "CERVICALGIA"
+    ]
+  },
+  {
+    "stayId": "31628990",
+    "subjectId": "10009049",
+    "patientName": "Aarav Deshmukh",
+    "age": 46,
+    "gender": "MALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919890967191",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Chest pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.2,
+      "oxygenSaturation": 96,
+      "heartRate": 87,
+      "respiratoryRate": 18,
+      "systolicBp": 126,
+      "diastolicBp": 68,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Chest pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "PNEUMONIA,ORGANISM UNSPECIFIED"
+    ]
+  },
+  {
+    "stayId": "32579239",
+    "subjectId": "10040025",
+    "patientName": "Simran Gupta",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919846632757",
+    "existingDiseases": [
+      "Acute kidney failure, unspecified"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Urinary retention",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.2,
+      "oxygenSaturation": 96,
+      "heartRate": 77,
+      "respiratoryRate": 18,
+      "systolicBp": 107,
+      "diastolicBp": 58,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Urinary retention",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Acute kidney failure, unspecified"
+    ]
+  },
+  {
+    "stayId": "31970687",
+    "subjectId": "10015860",
+    "patientName": "Rajesh Mehta",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919855114543",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "R FOOT PAIN",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 96,
+      "heartRate": 115,
+      "respiratoryRate": 18,
+      "systolicBp": 178,
+      "diastolicBp": 105,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R FOOT PAIN",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERCHOLESTEROLEMIA",
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL ADULT",
+      "ULCER OF OTHER PART OF FOOT",
+      "LONG-TERM (CURRENT) USE OF INSULIN"
+    ]
+  },
+  {
+    "stayId": "38687872",
+    "subjectId": "10012853",
+    "patientName": "Anita Mehta",
+    "age": 80,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919832151928",
+    "existingDiseases": [
+      "HYPERTENSION NOS"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Hypertension",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 96,
+      "heartRate": 65,
+      "respiratoryRate": 18,
+      "systolicBp": 218,
+      "diastolicBp": 72,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Hypertension",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS"
+    ]
+  },
+  {
+    "stayId": "32034003",
+    "subjectId": "10040025",
+    "patientName": "Preeti Singh",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919893517915",
+    "existingDiseases": [
+      "HYPERTENSION NOS"
+    ],
+    "medications": [
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "HYPERTENSION",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 96,
+      "heartRate": 66,
+      "respiratoryRate": 16,
+      "systolicBp": 154,
+      "diastolicBp": 47,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "HYPERTENSION",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERTENSION NOS"
+    ]
+  },
+  {
+    "stayId": "31579293",
+    "subjectId": "10002930",
+    "patientName": "Preeti Mehta",
+    "age": 37,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919889442503",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "ETOH, Hypoglycemia",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 35.3,
+      "oxygenSaturation": 100,
+      "heartRate": 89,
+      "respiratoryRate": 16,
+      "systolicBp": 106,
+      "diastolicBp": 65,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ETOH",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hypoglycemia",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ASYMPTOMATIC HIV INFECTION",
+      "HYPOGLYCEMIA NOS",
+      "UNSPECIFIED VIRAL HEPATITIS C WITHOUT HEPATIC COMA"
+    ]
+  },
+  {
+    "stayId": "37206743",
+    "subjectId": "10020306",
+    "patientName": "Priya Verma",
+    "age": 58,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919896268397",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "L Eye pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "LEFT AGAINST MEDICAL ADVICE",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 100,
+      "heartRate": 85,
+      "respiratoryRate": 18,
+      "systolicBp": 133,
+      "diastolicBp": 77,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Eye pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Ocular pain, right eye",
+      "Dyspnea, unspecified"
+    ]
+  },
+  {
+    "stayId": "35353291",
+    "subjectId": "10040025",
+    "patientName": "Rekha Joshi",
+    "age": 82,
+    "gender": "FEMALE",
+    "bloodGroup": "A_NEGATIVE",
+    "phone": "+919834391257",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 1 diabetes mellitus with foot ulcer"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "L Foot pain, Wound eval",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 100,
+      "heartRate": 72,
+      "respiratoryRate": 20,
+      "systolicBp": 147,
+      "diastolicBp": 55,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Foot pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Wound eval",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Long term (current) use of insulin",
+      "Type 1 diabetes mellitus with foot ulcer",
+      "Non-pressure chronic ulcer oth prt left foot w unsp severity"
+    ]
+  },
+  {
+    "stayId": "39962121",
+    "subjectId": "10015860",
+    "patientName": "Arjun Kumar",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919838408562",
+    "existingDiseases": [
+      "Type 1 diabetes mellitus with hyperglycemia",
+      "Type 1 diabetes mellitus with foot ulcer"
+    ],
+    "medications": [
+      "Metformin / Insulin"
+    ],
+    "allergies": [],
+    "chiefComplaint": "R Foot pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 100,
+      "heartRate": 117,
+      "respiratoryRate": 20,
+      "systolicBp": 107,
+      "diastolicBp": 64,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "R Foot pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Long term (current) use of insulin",
+      "Type 1 diabetes mellitus with hyperglycemia",
+      "Type 1 diabetes mellitus with foot ulcer",
+      "Non-prs chronic ulcer oth prt right foot w unsp severity"
+    ]
+  },
+  {
+    "stayId": "33693488",
+    "subjectId": "10001725",
+    "patientName": "Meera Deshmukh",
+    "age": 67,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919860885459",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Eye pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.4,
+      "oxygenSaturation": 100,
+      "heartRate": 73,
+      "respiratoryRate": 18,
+      "systolicBp": 137,
+      "diastolicBp": 91,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Eye pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unspecified corneal ulcer, right eye",
+      "Visual discomfort, bilateral"
+    ]
+  },
+  {
+    "stayId": "35203396",
+    "subjectId": "10014354",
+    "patientName": "Suresh Mehta",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919843859311",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Toe pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 100,
+      "heartRate": 95,
+      "respiratoryRate": 16,
+      "systolicBp": 158,
+      "diastolicBp": 71,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Toe pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Long term (current) use of insulin",
+      "Cellulitis of right toe"
+    ]
+  },
+  {
+    "stayId": "30390242",
+    "subjectId": "10014354",
+    "patientName": "Deepak Sharma",
+    "age": 86,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919882399599",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "Abd pain, Back pain",
+    "arrivalTransport": "UNKNOWN",
+    "disposition": "LEFT WITHOUT BEING SEEN",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 37.1,
+      "oxygenSaturation": 100,
+      "heartRate": 78,
+      "respiratoryRate": 19,
+      "systolicBp": 151,
+      "diastolicBp": 75,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Back pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unspecified abdominal pain"
+    ]
+  },
+  {
+    "stayId": "30193781",
+    "subjectId": "10002930",
+    "patientName": "Meera Gupta",
+    "age": 37,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919897260863",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin"
+    ],
+    "chiefComplaint": "ETOH, Hallucinations",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 100,
+      "heartRate": 88,
+      "respiratoryRate": 16,
+      "systolicBp": 150,
+      "diastolicBp": 98,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "ETOH",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Hallucinations",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Oth psych disorder not due to a sub or known physiol cond",
+      "Elevated white blood cell count, unspecified",
+      "Alcohol dependence with withdrawal, unspecified"
+    ]
+  },
+  {
+    "stayId": "39747335",
+    "subjectId": "10039708",
+    "patientName": "Kavita Sharma",
+    "age": 25,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919814164775",
+    "existingDiseases": [
+      "Chronic kidney disease, unspecified"
+    ],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "L Knee pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.9,
+      "oxygenSaturation": 100,
+      "heartRate": 84,
+      "respiratoryRate": 17,
+      "systolicBp": 116,
+      "diastolicBp": 83,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "L Knee pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Chronic kidney disease, unspecified",
+      "Pain in left knee"
+    ]
+  },
+  {
+    "stayId": "36316394",
+    "subjectId": "10015860",
+    "patientName": "Sunil Das",
+    "age": 32,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919812735359",
+    "existingDiseases": [
+      "HYPERTENSION NOS",
+      "DIABETES UNCOMPL ADULT"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Foot laceration",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 100,
+      "heartRate": 105,
+      "respiratoryRate": 16,
+      "systolicBp": 136,
+      "diastolicBp": 81,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Foot laceration",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "HYPERCHOLESTEROLEMIA",
+      "HYPERTENSION NOS",
+      "OPEN WOUND OF FOOT",
+      "DIABETES UNCOMPL ADULT",
+      "ACCIDENT NOS"
+    ]
+  },
+  {
+    "stayId": "31806264",
+    "subjectId": "10005866",
+    "patientName": "Sunil Singh",
+    "age": 48,
+    "gender": "MALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919873560289",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain, Right sided abdominal pain",
+    "arrivalTransport": "WALK IN",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.8,
+      "oxygenSaturation": 100,
+      "heartRate": 84,
+      "respiratoryRate": 18,
+      "systolicBp": 175,
+      "diastolicBp": 80,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      },
+      {
+        "name": "Right sided abdominal pain",
+        "severity": "MODERATE",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Unsp intestnl obst, unsp as to partial versus complete obst"
+    ]
+  },
+  {
+    "stayId": "36200931",
+    "subjectId": "10020740",
+    "patientName": "Kabir Gupta",
+    "age": 37,
+    "gender": "MALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919872415804",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Abd pain",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "HOME",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 100,
+      "heartRate": 95,
+      "respiratoryRate": 20,
+      "systolicBp": 117,
+      "diastolicBp": 73,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Abd pain",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "ABDOMINAL PAIN OTHER SPECIED"
+    ]
+  },
+  {
+    "stayId": "31612436",
+    "subjectId": "10039708",
+    "patientName": "Anita Kumar",
+    "age": 25,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_POSITIVE",
+    "phone": "+919832520277",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Dyspnea",
+    "arrivalTransport": "AMBULANCE",
+    "disposition": "ADMITTED",
+    "groundTruthEsi": 3,
+    "groundTruthSeverity": "MODERATE",
+    "vitals": {
+      "temperatureC": 36.7,
+      "oxygenSaturation": 100,
+      "heartRate": 86,
+      "respiratoryRate": 16,
+      "systolicBp": 133,
+      "diastolicBp": 82,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Dyspnea",
+        "severity": "MODERATE",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Anemia, unspecified",
+      "Dyspnea, unspecified"
+    ]
+  },
+  {
+    "stayId": "38074673",
+    "subjectId": "10012853",
+    "patientName": "Pooja Mehta",
+    "age": 80,
+    "gender": "FEMALE",
+    "bloodGroup": "AB_NEGATIVE",
+    "phone": "+919854058573",
+    "existingDiseases": [],
+    "medications": [],
+    "allergies": [],
+    "chiefComplaint": "Clogged foley",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 4,
+    "groundTruthSeverity": "LOW",
+    "vitals": {
+      "temperatureC": 36.6,
+      "oxygenSaturation": 99,
+      "heartRate": 66,
+      "respiratoryRate": 14,
+      "systolicBp": 165,
+      "diastolicBp": 51,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Clogged foley",
+        "severity": "MILD",
+        "isPrimary": true
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Urinary tract infection, site not specified",
+      "Form of external stoma cause abn react/compl, w/o misadvnt",
+      "Other cystostomy complication"
+    ]
+  },
+  {
+    "stayId": "37321464",
+    "subjectId": "10020306",
+    "patientName": "Anjali Deshmukh",
+    "age": 58,
+    "gender": "FEMALE",
+    "bloodGroup": "B_POSITIVE",
+    "phone": "+919847463522",
+    "existingDiseases": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications"
+    ],
+    "medications": [
+      "Metformin / Insulin",
+      "Amlodipine"
+    ],
+    "allergies": [],
+    "chiefComplaint": "Lower back pain, s/p Fall",
+    "arrivalTransport": "WALK IN",
+    "disposition": "HOME",
+    "groundTruthEsi": 4,
+    "groundTruthSeverity": "LOW",
+    "vitals": {
+      "temperatureC": 36.1,
+      "oxygenSaturation": 98,
+      "heartRate": 102,
+      "respiratoryRate": 18,
+      "systolicBp": 121,
+      "diastolicBp": 79,
+      "glasgowComaScale": 15,
+      "isUnconscious": false
+    },
+    "symptoms": [
+      {
+        "name": "Lower back pain",
+        "severity": "MILD",
+        "isPrimary": true
+      },
+      {
+        "name": "s",
+        "severity": "MILD",
+        "isPrimary": false
+      },
+      {
+        "name": "p Fall",
+        "severity": "MILD",
+        "isPrimary": false
+      }
+    ],
+    "confirmedDiagnoses": [
+      "Essential (primary) hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Low back pain",
+      "Long term (current) use of oral hypoglycemic drugs",
+      "Striking against oth object w subsequent fall, init encntr"
+    ]
+  }
+]

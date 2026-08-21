@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { getGenAiUsageLogs } from '../../lib/genaiLogger.js';
 
-export const genaiRouter = Router();
+export const genaiRouter: Router = Router();
 
 genaiRouter.get('/usage', (req: Request, res: Response) => {
   const logs = getGenAiUsageLogs();
@@ -36,20 +36,22 @@ genaiRouter.get('/usage', (req: Request, res: Response) => {
       byFeature[log.feature] = { count: 0, success: 0, failed: 0, totalTokens: 0, avgLatencyMs: 0 };
     }
     const feat = byFeature[log.feature];
-    feat.count++;
-    if (log.status === 'SUCCESS') {
-      feat.success++;
-      feat.avgLatencyMs += log.latencyMs;
-    } else {
-      feat.failed++;
+    if (feat) {
+      feat.count++;
+      if (log.status === 'SUCCESS') {
+        feat.success++;
+        feat.avgLatencyMs += log.latencyMs;
+      } else {
+        feat.failed++;
+      }
+      feat.totalTokens += log.totalTokens || 0;
     }
-    feat.totalTokens += log.totalTokens || 0;
   });
 
   // Calculate averages per feature
   Object.keys(byFeature).forEach((key) => {
     const feat = byFeature[key];
-    if (feat.success > 0) {
+    if (feat && feat.success > 0) {
       feat.avgLatencyMs = feat.avgLatencyMs / feat.success;
     }
   });
@@ -77,3 +79,4 @@ genaiRouter.get('/usage', (req: Request, res: Response) => {
     logs,
   });
 });
+

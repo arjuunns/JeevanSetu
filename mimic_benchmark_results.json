@@ -1,0 +1,122 @@
+{
+  "benchmarkInfo": {
+    "cohortSize": 3,
+    "provider": "ollama",
+    "model": "llama3.1:8b",
+    "timestamp": "2026-08-21T19:13:19.468Z",
+    "exactConcordanceRate": "66.7%",
+    "clinicallyAcceptableRate": "100.0%",
+    "underTriageRate": "33.3%",
+    "overTriageRate": "0.0%",
+    "avgLatencyMs": 20097
+  },
+  "confusionMatrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "patients": [
+    {
+      "patientId": "cmt3btarv0002ru5tatzls2kl",
+      "visitId": "cmt3btarv0007ru5tqpfbw8dj",
+      "stayId": "37887480",
+      "patientName": "Preeti Singh",
+      "chiefComplaint": "FEVER",
+      "groundTruthEsi": 1,
+      "predictedEsi": 1,
+      "groundTruthSeverity": "CRITICAL",
+      "predictedSeverity": "CRITICAL",
+      "isExactMatch": true,
+      "isWithinOneLevel": true,
+      "isUnderTriaged": false,
+      "isOverTriaged": false,
+      "safetyTriggered": true,
+      "recommendedDepartment": "Emergency Department",
+      "latencyMs": 19770,
+      "reasoning": "The safety engine has flagged the patient CRITICAL due to severe hypotension/shock. The patient's systolic BP is 86 mmHg, which is below the danger zone threshold (systolic < 90 mmHg). Additionally, the patient's respiratory rate is 26, which is above the danger zone threshold (respiratory rate > 20). Refer to guideline excerpt [1] for emergency signs requiring immediate treatment."
+    },
+    {
+      "patientId": "cmt3btq1b000oru5tptyv26m5",
+      "visitId": "cmt3btq1b000sru5to033vbxe",
+      "stayId": "39430108",
+      "patientName": "Manoj Reddy",
+      "chiefComplaint": "SDH/SAH",
+      "groundTruthEsi": 1,
+      "predictedEsi": 2,
+      "groundTruthSeverity": "CRITICAL",
+      "predictedSeverity": "MODERATE",
+      "isExactMatch": false,
+      "isWithinOneLevel": true,
+      "isUnderTriaged": true,
+      "isOverTriaged": false,
+      "safetyTriggered": false,
+      "recommendedDepartment": "Neurosurgery",
+      "latencyMs": 21741,
+      "reasoning": "The patient presents with a subdural hematoma (SDH) and subarachnoid hemorrhage (SAH), which are neurological emergencies. The patient's Glasgow Coma Scale (GCS) is 10, indicating a moderate brain injury. According to Guideline Excerpt [3], a GCS of 9-12 indicates moderate brain injury. Guideline Excerpt [4] also mentions clinical features of neurological emergencies, including altered consciousness, which is present in this patient. However, the patient does not exhibit any critical red flags, and the safety engine verdict is not critical."
+    },
+    {
+      "patientId": "cmt3bu6tk001aru5t1g6c01z4",
+      "visitId": "cmt3bu6tk001cru5t77a1cyrf",
+      "stayId": "30272878",
+      "patientName": "Rahul Gupta",
+      "chiefComplaint": "Transfer",
+      "groundTruthEsi": 1,
+      "predictedEsi": 1,
+      "groundTruthSeverity": "CRITICAL",
+      "predictedSeverity": "CRITICAL",
+      "isExactMatch": true,
+      "isWithinOneLevel": true,
+      "isUnderTriaged": false,
+      "isOverTriaged": false,
+      "safetyTriggered": true,
+      "recommendedDepartment": "Emergency Department",
+      "latencyMs": 18780,
+      "reasoning": "The safety engine has flagged the patient CRITICAL due to critically low oxygen saturation (SpO2 86%). This is in line with the WHO ETAT guidelines (Excerpt [2]) which recommend giving oxygen if SpO2 < 90%. Additionally, the patient's high heart rate (135 bpm) and respiratory rate (16) may indicate respiratory distress, which is also a critical condition (Excerpt [2])."
+    }
+  ]
+}

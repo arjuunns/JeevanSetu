@@ -32,7 +32,11 @@ export async function routeVisit(req: RoutingRequest, context: AuditContext): Pr
   if (!visit) throw new NotFoundError('Visit');
 
   const useGraph = await isNeo4jAvailable();
-  const raw = useGraph ? await candidatesFromGraph(req) : await candidatesFromPostgres(req);
+  let raw = useGraph ? await candidatesFromGraph(req) : await candidatesFromPostgres(req);
+  if (raw.length === 0 && useGraph) {
+    logger.warn('Neo4j returned 0 candidate hospitals, falling back to PostgreSQL');
+    raw = await candidatesFromPostgres(req);
+  }
 
   const weights = weightsForSeverity(req.severity);
   const candidates: HospitalRouteCandidate[] = rankCandidates(raw, weights, req.maxResults);
@@ -225,5 +229,26 @@ export async function syncHospitalToGraph(hospitalId: string): Promise<void> {
     );
   } catch (err) {
     logger.error({ err, hospitalId }, 'Failed to sync hospital to Neo4j graph');
+  }
+}
+
+/** Sync all existing active hospitals in PostgreSQL into Neo4j graph. */
+export async function syncAllHospitalsToGraph(): Promise<number> {
+  if (!(await isNeo4jAvailable())) return 0;
+  try {
+    const hospitals = await prisma.hospital.findMany({
+      where: { deletedAt: null, isActive: true },
+      select: { id: true },
+    });
+    let synced = 0;
+    for (const h of hospitals) {
+      await syncHospitalToGraph(h.id);
+      synced++;
+    }
+    logger.info({ count: synced }, 'Synced hospitals to Neo4j graph');
+    return synced;
+  } catch (err) {
+    logger.error({ err }, 'Failed to batch sync hospitals to Neo4j graph');
+    return 0;
   }
 }

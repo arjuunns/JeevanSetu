@@ -1,0 +1,313 @@
+[
+  {
+    "id": "ti5azvwr0",
+    "timestamp": "2026-08-21T19:18:45.156Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 18977,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "mippqqxib",
+    "timestamp": "2026-08-21T19:18:26.127Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 20707,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "xe217dq2u",
+    "timestamp": "2026-08-21T19:18:05.380Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 26194,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "so2kaa06p",
+    "timestamp": "2026-08-21T19:17:39.153Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 28564,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "8rbp8u0s2",
+    "timestamp": "2026-08-21T19:17:10.553Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 31528,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "jyanv96aw",
+    "timestamp": "2026-08-21T19:16:38.972Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 21175,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "x0m3ubxei",
+    "timestamp": "2026-08-21T19:16:17.740Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 21698,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "omn2a84sc",
+    "timestamp": "2026-08-21T19:15:55.974Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 23647,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "kponbg5tb",
+    "timestamp": "2026-08-21T19:15:32.274Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 11157,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "67h4d9ueg",
+    "timestamp": "2026-08-21T19:15:21.079Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 18043,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "ai9pp5mj8",
+    "timestamp": "2026-08-21T19:15:02.951Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 13671,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "zmmdlcoax",
+    "timestamp": "2026-08-21T19:13:19.449Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 18755,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "s2e852ac5",
+    "timestamp": "2026-08-21T19:13:00.655Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 21715,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "he7w9vbzy",
+    "timestamp": "2026-08-21T19:12:38.880Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 19705,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "c2hpf7p9n",
+    "timestamp": "2026-08-21T19:10:51.605Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 22980,
+    "status": "FAILED",
+    "errorMessage": "[\n  {\n    \"received\": \"EMERGENT\",\n    \"code\": \"invalid_enum_value\",\n    \"options\": [\n      \"CRITICAL\",\n      \"HIGH\",\n      \"MODERATE\",\n      \"LOW\"\n    ],\n    \"path\": [\n      \"severity\"\n    ],\n    \"message\": \"Invalid enum value. Expected 'CRITICAL' | 'HIGH' | 'MODERATE' | 'LOW', received 'EMERGENT'\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"esiLevel\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"reasoning\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"possibleConditions\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"recommendedDepartment\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  },
+  {
+    "id": "9o6ei0789",
+    "timestamp": "2026-08-21T19:10:28.563Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 17496,
+    "status": "FAILED",
+    "errorMessage": "[\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"esiLevel\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"reasoning\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"possibleConditions\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"recommendedDepartment\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  },
+  {
+    "id": "cl9ptpasb",
+    "timestamp": "2026-08-21T19:10:11.066Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 10868,
+    "status": "FAILED",
+    "errorMessage": "[\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"esiLevel\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"reasoning\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"possibleConditions\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"recommendedDepartment\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  },
+  {
+    "id": "k76llww2d",
+    "timestamp": "2026-08-21T19:10:00.191Z",
+    "feature": "TRIAGE",
+    "model": "llama3.1:8b",
+    "latencyMs": 24429,
+    "status": "FAILED",
+    "errorMessage": "[\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"esiLevel\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"reasoning\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"possibleConditions\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"recommendedDepartment\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  },
+  {
+    "id": "detdjsjc5",
+    "timestamp": "2026-08-21T19:07:24.299Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2116,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "ito82s8u8",
+    "timestamp": "2026-08-21T19:07:22.136Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 1820,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "h0sm5v0yk",
+    "timestamp": "2026-08-21T19:07:20.258Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2279,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "4cr4fuj7y",
+    "timestamp": "2026-08-21T19:01:27.615Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2218,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "pej5ms56p",
+    "timestamp": "2026-08-21T19:01:25.389Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2123,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "wicefryy5",
+    "timestamp": "2026-08-21T19:01:23.255Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 1958,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "mkgkhoxhk",
+    "timestamp": "2026-08-21T19:01:21.290Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 1884,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "fs5j4qpd5",
+    "timestamp": "2026-08-21T19:01:19.395Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2190,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "96b78465f",
+    "timestamp": "2026-08-21T19:00:55.918Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2028,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "9cxd4vhc6",
+    "timestamp": "2026-08-21T19:00:53.876Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 1865,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
+    "id": "a2ox6a413",
+    "timestamp": "2026-08-21T19:00:51.999Z",
+    "feature": "TRIAGE",
+    "model": "gemini-3.5-flash-lite",
+    "latencyMs": 2742,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  }
+]

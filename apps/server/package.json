@@ -16,7 +16,11 @@
     "db:migrate": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "mimic:ingest": "tsx scripts/ingest_mimic.ts",
+    "mimic:eval": "tsx scripts/evaluate_mimic.ts",
+    "benchmark:100": "tsx scripts/run_100_patients_ollama_benchmark.ts --limit=100 --provider=ollama --model=llama3.1:8b",
+    "benchmark:100:gemini": "tsx scripts/run_100_patients_ollama_benchmark.ts --limit=100 --provider=gemini"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -29,6 +33,7 @@
     "@langchain/core": "^0.3.30",
     "@langchain/google-genai": "^0.1.4",
     "@langchain/langgraph": "^0.2.39",
+    "@langchain/ollama": "^1.3.0",
     "@pinecone-database/pinecone": "^4.0.0",
     "@prisma/client": "^6.2.1",
     "cors": "^2.8.5",

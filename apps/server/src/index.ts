@@ -5,6 +5,7 @@ import { env } from './config/env.js';
 import { logger } from './config/logger.js';
 import { disconnectPrisma } from './lib/prisma.js';
 import { closeNeo4j } from './modules/routing/neo4j.js';
+import { syncAllHospitalsToGraph } from './modules/routing/routing.service.js';
 import { attachRealtime } from './realtime/socket.js';
 
 /**
@@ -21,6 +22,11 @@ async function main(): Promise<void> {
       { port: env.PORT, env: env.NODE_ENV },
       `JeevanSetu API listening on http://localhost:${env.PORT}`,
     );
+
+    // Synchronize PostgreSQL hospitals to Neo4j graph in background
+    void syncAllHospitalsToGraph().catch((err) => {
+      logger.warn({ err }, 'Background Neo4j hospital sync failed');
+    });
   });
 
   const shutdown = (signal: string): void => {

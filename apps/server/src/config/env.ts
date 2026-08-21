@@ -22,12 +22,18 @@ const envSchema = z.object({
 
   DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
 
-  // AI stack (optional — triage degrades gracefully without it)
+  // AI provider ('gemini' | 'ollama')
+  LLM_PROVIDER: z.enum(['gemini', 'ollama']).default('gemini'),
+
+  // Gemini AI stack
   GEMINI_API_KEY: z.string().default('DUMMY_GEMINI_KEY'),
-  GEMINI_TRIAGE_MODEL: z.string().default('gemini-2.0-flash'),
-  // text-embedding-004 was retired by Google; gemini-embedding-001 vectors
-  // are truncated to EMBEDDING_DIMENSION (1024) to match the Pinecone index.
+  GEMINI_TRIAGE_MODEL: z.string().default('gemini-3.5-flash-lite'),
   GEMINI_EMBEDDING_MODEL: z.string().default('gemini-embedding-001'),
+
+  // Ollama local AI stack
+  OLLAMA_BASE_URL: z.string().default('http://localhost:11434'),
+  OLLAMA_MODEL: z.string().default('llama3.1:8b'),
+  OLLAMA_EMBEDDING_MODEL: z.string().default('nomic-embed-text'),
 
   // RAG
   PINECONE_API_KEY: z.string().optional(),
@@ -84,12 +90,15 @@ export const isProd = env.NODE_ENV === 'production';
 export const isDev = env.NODE_ENV === 'development';
 export const isTest = env.NODE_ENV === 'test';
 
+const isConfigured = (val?: string): boolean =>
+  Boolean(val && !val.includes('your_') && !val.includes('dummy') && val !== 'DUMMY_GEMINI_KEY');
+
 /** Feature flags derived from which credentials are present. */
 export const features = {
-  ai: Boolean(env.GEMINI_API_KEY),
-  rag: Boolean(env.GEMINI_API_KEY && env.PINECONE_API_KEY),
-  auth: Boolean(env.CLERK_SECRET_KEY) && !env.AUTH_DISABLED,
-  storage: Boolean(env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY),
-  email: Boolean(env.RESEND_API_KEY),
-  sms: Boolean(env.TWILIO_ACCOUNT_SID && env.TWILIO_AUTH_TOKEN),
+  ai: env.LLM_PROVIDER === 'ollama' || isConfigured(env.GEMINI_API_KEY),
+  rag: (env.LLM_PROVIDER === 'ollama' || isConfigured(env.GEMINI_API_KEY)) && isConfigured(env.PINECONE_API_KEY),
+  auth: isConfigured(env.CLERK_SECRET_KEY) && isConfigured(env.CLERK_PUBLISHABLE_KEY) && !env.AUTH_DISABLED,
+  storage: isConfigured(env.AWS_ACCESS_KEY_ID) && isConfigured(env.AWS_SECRET_ACCESS_KEY),
+  email: isConfigured(env.RESEND_API_KEY),
+  sms: isConfigured(env.TWILIO_ACCOUNT_SID) && isConfigured(env.TWILIO_AUTH_TOKEN),
 } as const;
