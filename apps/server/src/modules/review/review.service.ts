@@ -27,16 +27,16 @@ export const reviewActionSchema = z
   .object({
     action: z.enum(REVIEW_ACTIONS),
     justification: z.preprocess(
-      (val) => (val === null || val === '' ? undefined : val),
-      z.string().trim().min(10).max(2000).optional()
+      (val) => (val === null || val === '' || typeof val !== 'string' ? undefined : val.trim()),
+      z.string().min(1, 'Please provide a clinical justification note').max(2000).optional()
     ),
     overrideSeverity: z.preprocess(
-      (val) => (val === null || val === '' ? undefined : val),
+      (val) => (val === null || val === '' || val === undefined ? undefined : val),
       z.enum(SEVERITY_LEVELS).optional()
     ),
     overrideDepartment: z.preprocess(
-      (val) => (val === null || val === '' ? undefined : val),
-      z.string().trim().min(2).max(120).optional()
+      (val) => (val === null || val === '' || typeof val !== 'string' ? undefined : val.trim()),
+      z.string().min(1).max(120).optional()
     ),
   })
   .superRefine((val, ctx) => {
@@ -51,7 +51,7 @@ export const reviewActionSchema = z
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: ['overrideSeverity'],
-        message: 'An override must change at least the severity or the department',
+        message: 'Please select a new severity level or department for this override',
       });
     }
   });

@@ -24,6 +24,11 @@ const envSchema = z.object({
 
   // AI provider ('gemini' | 'ollama')
   LLM_PROVIDER: z.enum(['gemini', 'ollama']).default('gemini'),
+  LLM_TEMPERATURE: z.coerce.number().min(0).max(2).default(0.1),
+  LLM_SEED: z.coerce.number().int().optional(),
+  // Query embeddings must come from the model that built the Pinecone index
+  // (gemini-embedding-001 @ 1024 dims), independent of the chat provider.
+  EMBEDDING_PROVIDER: z.enum(['gemini', 'ollama']).default('gemini'),
 
   // Gemini AI stack
   GEMINI_API_KEY: z.string().default('DUMMY_GEMINI_KEY'),
@@ -34,6 +39,8 @@ const envSchema = z.object({
   OLLAMA_BASE_URL: z.string().default('http://localhost:11434'),
   OLLAMA_MODEL: z.string().default('llama3.1:8b'),
   OLLAMA_EMBEDDING_MODEL: z.string().default('nomic-embed-text'),
+  // Ollama silently truncates prompts beyond the context window, so set it explicitly.
+  OLLAMA_NUM_CTX: z.coerce.number().int().positive().default(8192),
 
   // RAG
   PINECONE_API_KEY: z.string().optional(),
@@ -96,7 +103,8 @@ const isConfigured = (val?: string): boolean =>
 /** Feature flags derived from which credentials are present. */
 export const features = {
   ai: env.LLM_PROVIDER === 'ollama' || isConfigured(env.GEMINI_API_KEY),
-  rag: (env.LLM_PROVIDER === 'ollama' || isConfigured(env.GEMINI_API_KEY)) && isConfigured(env.PINECONE_API_KEY),
+  rag:
+    (env.EMBEDDING_PROVIDER === 'ollama' || isConfigured(env.GEMINI_API_KEY)) && isConfigured(env.PINECONE_API_KEY),
   auth: isConfigured(env.CLERK_SECRET_KEY) && isConfigured(env.CLERK_PUBLISHABLE_KEY) && !env.AUTH_DISABLED,
   storage: isConfigured(env.AWS_ACCESS_KEY_ID) && isConfigured(env.AWS_SECRET_ACCESS_KEY),
   email: isConfigured(env.RESEND_API_KEY),

@@ -20,7 +20,8 @@ import type {
 
 export interface SafetyInput {
   vitals: VitalSigns;
-  symptoms: Pick<Symptom, 'name' | 'severity'>[];
+  /** Rules read symptom names only; severity is accepted for callers that have it. */
+  symptoms: (Pick<Symptom, 'name'> & Partial<Pick<Symptom, 'severity'>>)[];
 }
 
 /** Keyword groups used to detect red-flag presentations from free-text symptoms. */
@@ -77,10 +78,23 @@ function normalize(symptoms: SafetyInput['symptoms']): string[] {
   return symptoms.map((s) => s.name.trim().toLowerCase());
 }
 
+/**
+ * A keyword matches only where a word starts, so "rta" does not fire inside
+ * "aorta"; suffixes are allowed so plurals ("stab wounds") still match.
+ */
+function containsKeyword(term: string, needle: string): boolean {
+  let from = term.indexOf(needle);
+  while (from !== -1) {
+    if (from === 0 || !/[a-z0-9]/.test(term[from - 1]!)) return true;
+    from = term.indexOf(needle, from + 1);
+  }
+  return false;
+}
+
 function anyMatch(haystack: string[], needles: readonly string[]): string | null {
   for (const term of haystack) {
     for (const needle of needles) {
-      if (term.includes(needle)) return term;
+      if (containsKeyword(term, needle)) return term;
     }
   }
   return null;

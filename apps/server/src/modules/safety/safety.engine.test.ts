@@ -66,6 +66,18 @@ describe('runSafetyScreen — symptom red flags', () => {
     expect(r.isCritical).toBe(true);
     expect(r.triggeredRules.map((x) => x.ruleId)).toContain(ruleId);
   });
+
+  it('matches keywords only at word starts ("rta" does not fire inside "aorta")', () => {
+    expect(screen({ symptoms: [{ name: 'dilated aorta on prior scan' }] }).isCritical).toBe(false);
+    expect(screen({ symptoms: [{ name: 'RTA, pillion rider' }] }).triggeredRules.map((x) => x.ruleId)).toContain(
+      'SEVERE_TRAUMA',
+    );
+  });
+
+  it('still matches plural forms', () => {
+    const r = screen({ symptoms: [{ name: 'multiple stab wounds' }] });
+    expect(r.triggeredRules.map((x) => x.ruleId)).toContain('SEVERE_TRAUMA');
+  });
 });
 
 describe('runSafetyScreen — vital thresholds', () => {

@@ -151,17 +151,17 @@ JeevanSetu solves these problems by providing:
 JeevanSetu utilizes a monorepo setup running a clean layered architecture.
 
 ```mermaid
-graph TD
-    Client[Next.js Web App] <-->|HTTP / Socket.IO| API[Express API Server]
-    API -->|Auth Guard| Clerk[Clerk Auth Service]
-    API -->|ORM| Prisma[Prisma Client]
-    Prisma -->|Primary Store| PG[(Postgres DB)]
-    API -->|Graph Scorer| Neo4j[(Neo4j Graph DB)]
-    API -->|Vector Query| PC[(Pinecone Index)]
-    API -->|Multi-Agent| LG[LangGraph Orchestrator]
-    API -->|Pub/Sub| Redis[(Redis Queue & Cache)]
-    API -->|Notifications| NS[Resend / Twilio]
-    API -->|Object Storage| S3[(AWS S3 / Local)]
+flowchart TD
+    Client["Next.js Web App"] <-->|"HTTP / Socket.IO"| API["Express API Server"]
+    API -->|"Auth Guard"| Clerk["Clerk Auth Service"]
+    API -->|"ORM"| Prisma["Prisma Client"]
+    Prisma -->|"Primary Store"| PG[("Postgres DB")]
+    API -->|"Graph Scorer"| Neo4j[("Neo4j Graph DB")]
+    API -->|"Vector Query"| PC[("Pinecone Index")]
+    API -->|"Multi-Agent"| LG["LangGraph Orchestrator"]
+    API -->|"Pub/Sub"| Redis[("Redis Queue & Cache")]
+    API -->|"Notifications"| NS["Resend / Twilio"]
+    API -->|"Object Storage"| S3[("AWS S3 / Local")]
 ```
 
 ## Request Flow

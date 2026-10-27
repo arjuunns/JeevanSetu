@@ -5,7 +5,7 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
  * authenticated session; the marketing/auth pages are public. When Clerk keys
  * are absent (local dev) the middleware is a no-op pass-through.
  */
-const isPublicRoute = createRouteMatcher(['/', '/sign-in(.*)', '/sign-up(.*)', '/referrals/verify(.*)']);
+const isPublicRoute = createRouteMatcher(['/', '/sign-in(.*)', '/sign-up(.*)', '/referrals/verify(.*)', '/design(.*)', '/design-styles(.*)']);
 
 const hasClerk = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
 

@@ -1,0 +1,645 @@
+{
+  "bootstrapSamples": 2000,
+  "seed": 42,
+  "runs": [
+    {
+      "run": "qwen2.5-7b__rag-off__safety-off",
+      "config": {
+        "run": "qwen2.5-7b__rag-off__safety-off",
+        "mode": "llm",
+        "provider": "ollama",
+        "model": "qwen2.5:7b",
+        "useRag": false,
+        "useSafety": false,
+        "useGuide": false,
+        "temperature": 0,
+        "seed": 42,
+        "dataset": "data/mimic_ed_cohort.json",
+        "retrievalCache": null,
+        "retrievalCacheCreatedAt": null,
+        "esiGuideSha256": null,
+        "systemPromptSha256": "87295fd016286c01"
+      },
+      "complete": true,
+      "total": 207,
+      "done": 207,
+      "ok": 207,
+      "fallback": 0,
+      "error": 0,
+      "meanLatencyMs": 34266,
+      "retrievalBackends": {
+        "disabled": 207
+      },
+      "metrics": {
+        "exact": {
+          "value": 0.42028985507246375,
+          "ci95": [
+            0.3526570048309179,
+            0.48792270531400966
+          ]
+        },
+        "withinOne": {
+          "value": 0.9033816425120773,
+          "ci95": [
+            0.8599033816425121,
+            0.9420289855072463
+          ]
+        },
+        "underTriage": {
+          "value": 0.30917874396135264,
+          "ci95": [
+            0.2463768115942029,
+            0.3719806763285024
+          ]
+        },
+        "overTriage": {
+          "value": 0.27053140096618356,
+          "ci95": [
+            0.21256038647342995,
+            0.3333333333333333
+          ]
+        },
+        "quadraticKappa": {
+          "value": 0.3348091548541434,
+          "ci95": [
+            0.2082832477324884,
+            0.4485212288807203
+          ]
+        },
+        "severeUnderTriage": {
+          "value": 0.014492753623188406,
+          "ci95": [
+            0.0,
+            0.033816425120772944
+          ]
+        },
+        "highAcuitySensitivity": {
+          "value": 0.4434782608695652,
+          "ci95": [
+            0.35454545454545455,
+            0.5354330708661418
+          ]
+        },
+        "highAcuitySpecificity": {
+          "value": 0.8043478260869565,
+          "ci95": [
+            0.7209302325581395,
+            0.8837209302325582
+          ]
+        },
+        "highAcuityPPV": {
+          "value": 0.7391304347826086,
+          "ci95": [
+            0.6285714285714286,
+            0.8382352941176471
+          ]
+        },
+        "highAcuityNPV": {
+          "value": 0.5362318840579711,
+          "ci95": [
+            0.4485294117647059,
+            0.6212121212121212
+          ]
+        }
+      },
+      "perLevel": {
+        "1": {
+          "n": 18,
+          "exact": 0.8333333333333334,
+          "underTriage": 0.16666666666666666
+        },
+        "2": {
+          "n": 97,
+          "exact": 0.0,
+          "underTriage": 0.6288659793814433
+        },
+        "3": {
+          "n": 90,
+          "exact": 0.8,
+          "underTriage": 0.0
+        },
+        "4": {
+          "n": 2,
+          "exact": 0.0,
+          "underTriage": 0.0
+        }
+      },
+      "admitted": {
+        "n": 139,
+        "underTriage": 0.34532374100719426,
+        "missedHighAcuity": 48
+      },
+      "calibration": {
+        "ece": 0.45193236714975815,
+        "meanConfidence": 0.8722222222222227,
+        "accuracy": 0.42028985507246375,
+        "n": 207
+      }
+    },
+    {
+      "run": "qwen2.5-7b__rag-off__safety-off__guide-on",
+      "config": {
+        "run": "qwen2.5-7b__rag-off__safety-off__guide-on",
+        "mode": "llm",
+        "provider": "ollama",
+        "model": "qwen2.5:7b",
+        "useRag": false,
+        "useSafety": false,
+        "useGuide": true,
+        "temperature": 0,
+        "seed": 42,
+        "dataset": "data/mimic_ed_cohort.json",
+        "retrievalCache": null,
+        "retrievalCacheCreatedAt": null,
+        "esiGuideSha256": "9af38a8f91481c6b",
+        "systemPromptSha256": "87295fd016286c01"
+      },
+      "complete": false,
+      "total": 207,
+      "done": 82,
+      "ok": 82,
+      "fallback": 0,
+      "error": 0,
+      "meanLatencyMs": 122527,
+      "retrievalBackends": {
+        "disabled": 82
+      },
+      "metrics": {
+        "exact": {
+          "value": 0.0975609756097561,
+          "ci95": [
+            0.036585365853658534,
+            0.17073170731707318
+          ]
+        },
+        "withinOne": {
+          "value": 0.573170731707317,
+          "ci95": [
+            0.47560975609756095,
+            0.6707317073170732
+          ]
+        },
+        "underTriage": {
+          "value": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "overTriage": {
+          "value": 0.9024390243902439,
+          "ci95": [
+            0.8292682926829268,
+            0.9634146341463414
+          ]
+        },
+        "quadraticKappa": {
+          "value": 0.02704494233063781,
+          "ci95": [
+            0.0,
+            0.06537634408602155
+          ]
+        },
+        "severeUnderTriage": {
+          "value": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "highAcuitySensitivity": {
+          "value": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "highAcuitySpecificity": {
+          "value": 0.02631578947368421,
+          "ci95": [
+            0.0,
+            0.09090909090909091
+          ]
+        },
+        "highAcuityPPV": {
+          "value": 0.5432098765432098,
+          "ci95": [
+            0.43902439024390244,
+            0.65
+          ]
+        },
+        "highAcuityNPV": {
+          "value": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "perLevel": {
+        "1": {
+          "n": 7,
+          "exact": 1.0,
+          "underTriage": 0.0
+        },
+        "2": {
+          "n": 37,
+          "exact": 0.0,
+          "underTriage": 0.0
+        },
+        "3": {
+          "n": 38,
+          "exact": 0.02631578947368421,
+          "underTriage": 0.0
+        }
+      },
+      "admitted": {
+        "n": 58,
+        "underTriage": 0.0,
+        "missedHighAcuity": 0
+      },
+      "calibration": {
+        "ece": 0.8999999999999999,
+        "meanConfidence": 0.9926829268292684,
+        "accuracy": 0.0975609756097561,
+        "n": 82
+      }
+    },
+    {
+      "run": "qwen2.5-7b__rag-off__safety-on",
+      "config": {
+        "run": "qwen2.5-7b__rag-off__safety-on",
+        "mode": "llm",
+        "provider": "ollama",
+        "model": "qwen2.5:7b",
+        "useRag": false,
+        "useSafety": true,
+        "useGuide": false,
+        "temperature": 0,
+        "seed": 42,
+        "dataset": "data/mimic_ed_cohort.json",
+        "retrievalCache": null,
+        "retrievalCacheCreatedAt": null,
+        "esiGuideSha256": null,
+        "systemPromptSha256": "87295fd016286c01"
+      },
+      "complete": true,
+      "total": 207,
+      "done": 207,
+      "ok": 207,
+      "fallback": 0,
+      "error": 0,
+      "meanLatencyMs": 37822,
+      "retrievalBackends": {
+        "disabled": 207
+      },
+      "metrics": {
+        "exact": {
+          "value": 0.463768115942029,
+          "ci95": [
+            0.3961352657004831,
+            0.5314009661835749
+          ]
+        },
+        "withinOne": {
+          "value": 0.9565217391304348,
+          "ci95": [
+            0.927536231884058,
+            0.9806763285024155
+          ]
+        },
+        "underTriage": {
+          "value": 0.391304347826087,
+          "ci95": [
+            0.3285024154589372,
+            0.45893719806763283
+          ]
+        },
+        "overTriage": {
+          "value": 0.14492753623188406,
+          "ci95": [
+            0.10144927536231885,
+            0.19806763285024154
+          ]
+        },
+        "quadraticKappa": {
+          "value": 0.34908626896960304,
+          "ci95": [
+            0.20805246857351067,
+            0.4720670391061452
+          ]
+        },
+        "severeUnderTriage": {
+          "value": 0.024154589371980676,
+          "ci95": [
+            0.004830917874396135,
+            0.04830917874396135
+          ]
+        },
+        "highAcuitySensitivity": {
+          "value": 0.2956521739130435,
+          "ci95": [
+            0.21238938053097345,
+            0.3813559322033898
+          ]
+        },
+        "highAcuitySpecificity": {
+          "value": 0.8478260869565217,
+          "ci95": [
+            0.7708333333333334,
+            0.9183673469387755
+          ]
+        },
+        "highAcuityPPV": {
+          "value": 0.7083333333333334,
+          "ci95": [
+            0.574468085106383,
+            0.8305084745762712
+          ]
+        },
+        "highAcuityNPV": {
+          "value": 0.49056603773584906,
+          "ci95": [
+            0.4129032258064516,
+            0.5696969696969697
+          ]
+        }
+      },
+      "perLevel": {
+        "1": {
+          "n": 18,
+          "exact": 0.7222222222222222,
+          "underTriage": 0.2777777777777778
+        },
+        "2": {
+          "n": 97,
+          "exact": 0.07216494845360824,
+          "underTriage": 0.7835051546391752
+        },
+        "3": {
+          "n": 90,
+          "exact": 0.8444444444444444,
+          "underTriage": 0.0
+        },
+        "4": {
+          "n": 2,
+          "exact": 0.0,
+          "underTriage": 0.0
+        }
+      },
+      "admitted": {
+        "n": 139,
+        "underTriage": 0.460431654676259,
+        "missedHighAcuity": 64
+      },
+      "calibration": {
+        "ece": 0.39734299516908106,
+        "meanConfidence": 0.8562801932367159,
+        "accuracy": 0.463768115942029,
+        "n": 207
+      }
+    },
+    {
+      "run": "rules-only",
+      "config": {
+        "run": "rules-only",
+        "mode": "rules-only",
+        "provider": null,
+        "model": null,
+        "useRag": false,
+        "useSafety": true,
+        "useGuide": false,
+        "temperature": null,
+        "seed": null,
+        "dataset": "data/mimic_ed_cohort.json",
+        "retrievalCache": null,
+        "retrievalCacheCreatedAt": null,
+        "esiGuideSha256": null,
+        "systemPromptSha256": "87295fd016286c01"
+      },
+      "complete": true,
+      "total": 207,
+      "done": 207,
+      "ok": 207,
+      "fallback": 0,
+      "error": 0,
+      "meanLatencyMs": 0,
+      "retrievalBackends": {
+        "disabled": 207
+      },
+      "metrics": {
+        "exact": {
+          "value": 0.30434782608695654,
+          "ci95": [
+            0.24154589371980675,
+            0.3719806763285024
+          ]
+        },
+        "withinOne": {
+          "value": 0.6956521739130435,
+          "ci95": [
+            0.6376811594202898,
+            0.7536231884057971
+          ]
+        },
+        "underTriage": {
+          "value": 0.642512077294686,
+          "ci95": [
+            0.5748792270531401,
+            0.7053140096618358
+          ]
+        },
+        "overTriage": {
+          "value": 0.05314009661835749,
+          "ci95": [
+            0.024154589371980676,
+            0.08695652173913043
+          ]
+        },
+        "quadraticKappa": {
+          "value": 0.17437999955435723,
+          "ci95": [
+            0.07926707827126078,
+            0.2699825817689182
+          ]
+        },
+        "severeUnderTriage": {
+          "value": 0.2946859903381642,
+          "ci95": [
+            0.23671497584541062,
+            0.357487922705314
+          ]
+        },
+        "highAcuitySensitivity": {
+          "value": 0.2956521739130435,
+          "ci95": [
+            0.21551724137931033,
+            0.38317757009345793
+          ]
+        },
+        "highAcuitySpecificity": {
+          "value": 0.9239130434782609,
+          "ci95": [
+            0.8651685393258427,
+            0.972972972972973
+          ]
+        },
+        "highAcuityPPV": {
+          "value": 0.8292682926829268,
+          "ci95": [
+            0.7142857142857143,
+            0.9354838709677419
+          ]
+        },
+        "highAcuityNPV": {
+          "value": 0.5120481927710844,
+          "ci95": [
+            0.43373493975903615,
+            0.5900621118012422
+          ]
+        }
+      },
+      "perLevel": {
+        "1": {
+          "n": 18,
+          "exact": 0.5,
+          "underTriage": 0.5
+        },
+        "2": {
+          "n": 97,
+          "exact": 0.18556701030927836,
+          "underTriage": 0.7835051546391752
+        },
+        "3": {
+          "n": 90,
+          "exact": 0.3888888888888889,
+          "underTriage": 0.5333333333333333
+        },
+        "4": {
+          "n": 2,
+          "exact": 0.5,
+          "underTriage": 0.0
+        }
+      },
+      "admitted": {
+        "n": 139,
+        "underTriage": 0.6474820143884892,
+        "missedHighAcuity": 61
+      },
+      "calibration": null
+    }
+  ],
+  "comparisons": [
+    {
+      "model": "qwen2.5:7b",
+      "a": "LLM only",
+      "b": "LLM + safety",
+      "n": 207,
+      "underTriage": {
+        "a": 0.30917874396135264,
+        "b": 0.391304347826087,
+        "onlyA": 6,
+        "onlyB": 23,
+        "p": 0.002315700054168701
+      },
+      "exact": {
+        "a": 0.42028985507246375,
+        "b": 0.463768115942029,
+        "onlyA": 6,
+        "onlyB": 15,
+        "p": 0.0783538818359375
+      }
+    },
+    {
+      "model": "qwen2.5:7b",
+      "a": "LLM only",
+      "b": "LLM + ESI guide",
+      "n": 82,
+      "underTriage": {
+        "a": 0.3048780487804878,
+        "b": 0.0,
+        "onlyA": 25,
+        "onlyB": 0,
+        "p": 5.960464477539063e-08
+      },
+      "exact": {
+        "a": 0.4634146341463415,
+        "b": 0.0975609756097561,
+        "onlyA": 32,
+        "onlyB": 2,
+        "p": 6.938353180885315e-08
+      }
+    }
+  ],
+  "safety": {
+    "cases": 207,
+    "fired": 14,
+    "precisionEsi1": 0.6428571428571429,
+    "precisionEsi1or2": 0.8571428571428571,
+    "sensitivityEsi1": 0.5,
+    "perRule": {
+      "CARDIAC_ARREST": {
+        "fired": 2,
+        "trueEsi": {
+          "1": 2
+        },
+        "precisionEsi1": 1.0,
+        "precisionEsi1or2": 1.0
+      },
+      "CRITICAL_HYPOXIA": {
+        "fired": 3,
+        "trueEsi": {
+          "1": 1,
+          "2": 2
+        },
+        "precisionEsi1": 0.3333333333333333,
+        "precisionEsi1or2": 1.0
+      },
+      "SEVERE_HYPOTENSION": {
+        "fired": 4,
+        "trueEsi": {
+          "1": 3,
+          "2": 1
+        },
+        "precisionEsi1": 0.75,
+        "precisionEsi1or2": 1.0
+      },
+      "SEVERE_RESPIRATORY_DISTRESS": {
+        "fired": 3,
+        "trueEsi": {
+          "1": 2,
+          "2": 1
+        },
+        "precisionEsi1": 0.6666666666666666,
+        "precisionEsi1or2": 1.0
+      },
+      "SEVERE_TACHYCARDIA": {
+        "fired": 1,
+        "trueEsi": {
+          "1": 1
+        },
+        "precisionEsi1": 1.0,
+        "precisionEsi1or2": 1.0
+      },
+      "SEVERE_TRAUMA": {
+        "fired": 2,
+        "trueEsi": {
+          "3": 2
+        },
+        "precisionEsi1": 0.0,
+        "precisionEsi1or2": 0.0
+      }
+    }
+  },
+  "overrides": [
+    {
+      "run": "qwen2.5-7b__rag-off__safety-on",
+      "okCases": 207,
+      "overrides": 0,
+      "correctedUnderTriage": 0,
+      "nowExact": 0,
+      "nowOverTriaged": 0,
+      "modelEsiBeforeOverride": {}
+    }
+  ]
+}

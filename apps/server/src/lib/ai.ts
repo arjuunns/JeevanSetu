@@ -41,7 +41,14 @@ export class OllamaChatModel implements StructuredChatModel {
     private readonly baseUrl: string,
     private readonly model: string,
     private readonly temperature: number = 0.1,
+    private readonly seed?: number,
+    private readonly numCtx: number = 8192,
   ) {}
+
+  private get options(): { temperature: number; num_ctx: number; seed?: number } {
+    const base = { temperature: this.temperature, num_ctx: this.numCtx };
+    return this.seed === undefined ? base : { ...base, seed: this.seed };
+  }
 
   async invoke(messages: any[], _options?: any): Promise<any> {
     const formattedMessages = (Array.isArray(messages) ? messages : [messages]).map((m) => {
@@ -63,7 +70,7 @@ export class OllamaChatModel implements StructuredChatModel {
         model: this.model,
         messages: formattedMessages,
         stream: false,
-        options: { temperature: this.temperature },
+        options: this.options,
       }),
     });
 
@@ -149,7 +156,7 @@ export class OllamaChatModel implements StructuredChatModel {
             messages: formattedMessages,
             format: jsonSchema,
             stream: false,
-            options: { temperature: this.temperature },
+            options: this.options,
           }),
         });
 
@@ -184,12 +191,19 @@ export class OllamaChatModel implements StructuredChatModel {
 function sanitizeTriageOutput(raw: any): any {
   if (!raw || typeof raw !== 'object') raw = {};
 
-  let esi = raw.esiLevel ?? raw.esi_level ?? raw.esi ?? raw.acuity ?? raw.acuityLevel ?? 3;
+  let esi = raw.esiLevel ?? raw.esi_level ?? raw.esi ?? raw.acuity ?? raw.acuityLevel;
   if (typeof esi === 'string') esi = parseInt(esi, 10);
-  if (isNaN(esi) || esi < 1 || esi > 5) esi = 3;
+  const esiValid = typeof esi === 'number' && Number.isInteger(esi) && esi >= 1 && esi <= 5;
 
-  let sev = (raw.severity ?? raw.severityLevel ?? '').toString().toUpperCase();
-  if (!['CRITICAL', 'HIGH', 'MODERATE', 'LOW'].includes(sev)) {
+  let sev: string = String(raw.severity ?? raw.severityLevel ?? '').toUpperCase();
+  const sevValid = ['CRITICAL', 'HIGH', 'MODERATE', 'LOW'].includes(sev);
+
+  // Never invent an acuity: a silent default could under-triage a critical
+  // patient. With neither field usable, schema validation fails and the engine
+  // retries, then falls back to the labelled heuristic.
+  const severityToEsi: Record<string, number> = { CRITICAL: 1, HIGH: 2, MODERATE: 3, LOW: 4 };
+  if (!esiValid) esi = sevValid ? severityToEsi[sev] : undefined;
+  if (!sevValid && esiValid) {
     sev = esi === 1 ? 'CRITICAL' : esi === 2 ? 'HIGH' : esi === 3 ? 'MODERATE' : 'LOW';
   }
 
@@ -328,7 +342,9 @@ export function getChatModel(overrides?: { temperature?: number; model?: string 
     return new OllamaChatModel(
       baseUrl,
       overrides?.model ?? env.OLLAMA_MODEL,
-      overrides?.temperature ?? 0.1,
+      overrides?.temperature ?? env.LLM_TEMPERATURE,
+      env.LLM_SEED,
+      env.OLLAMA_NUM_CTX,
     );
   }
 
@@ -342,7 +358,7 @@ export function getChatModel(overrides?: { temperature?: number; model?: string 
     const primary = new ChatGoogleGenerativeAI({
       apiKey: env.GEMINI_API_KEY,
       model: primaryModelName,
-      temperature: overrides?.temperature ?? 0.1,
+      temperature: overrides?.temperature ?? env.LLM_TEMPERATURE,
       maxRetries: 1,
     });
 
@@ -350,7 +366,7 @@ export function getChatModel(overrides?: { temperature?: number; model?: string 
       return new ChatGoogleGenerativeAI({
         apiKey: env.GEMINI_API_KEY,
         model: modelName,
-        temperature: overrides?.temperature ?? 0.1,
+        temperature: overrides?.temperature ?? env.LLM_TEMPERATURE,
         maxRetries: 1,
       });
     });
@@ -368,7 +384,7 @@ export function getChatModel(overrides?: { temperature?: number; model?: string 
 export function getEmbeddings(): { embedDocuments: (texts: string[]) => Promise<number[][]>; embedQuery: (text: string) => Promise<number[]> } {
   if (!features.ai) throw new ServiceUnavailableError('AI');
 
-  if (env.LLM_PROVIDER === 'ollama') {
+  if (env.EMBEDDING_PROVIDER === 'ollama') {
     const baseUrl = env.OLLAMA_BASE_URL.replace('host.docker.internal', 'localhost');
     return new OllamaEmbeddingsClient(baseUrl, env.OLLAMA_EMBEDDING_MODEL);
   }

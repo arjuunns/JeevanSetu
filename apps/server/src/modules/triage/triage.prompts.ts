@@ -1,12 +1,24 @@
 import type { GuidelineCitation, SafetyScreenResult } from '@jeevansetu/types';
 
+import { ESI_ALGORITHM_GUIDE } from './esi.guide.js';
+
 export interface TriageContext {
-  patient: { age: number; gender: string; allergies: string[]; existingDiseases: string[]; medications: string[] };
+  /** History fields are `undefined` when the source does not record them (shown as "not recorded"). */
+  patient: { age: number; gender: string; allergies?: string[]; existingDiseases?: string[]; medications?: string[] };
   vitals: Record<string, number | boolean | undefined>;
   primarySymptom: string;
   secondarySymptoms: string[];
   chiefComplaint?: string;
+  arrivalTransport?: string;
   safety: SafetyScreenResult;
+}
+
+/** Which optional evidence sections the user prompt includes (ablation switches). */
+export interface PromptSections {
+  safety: boolean;
+  guidelines: boolean;
+  /** The full curated ESI algorithm summary (research condition; off in production). */
+  algorithm?: boolean;
 }
 
 /**
@@ -26,7 +38,11 @@ NON-NEGOTIABLE RULES:
 
 Return ONLY the structured assessment in the required schema. Confidence must honestly reflect evidence quality (0 = no basis, 1 = unambiguous).`;
 
-export function buildTriageUserPrompt(ctx: TriageContext, citations: GuidelineCitation[]): string {
+export function buildTriageUserPrompt(
+  ctx: TriageContext,
+  citations: GuidelineCitation[],
+  sections: PromptSections = { safety: true, guidelines: true },
+): string {
   const guidelineBlock =
     citations.length > 0
       ? citations
@@ -49,11 +65,20 @@ export function buildTriageUserPrompt(ctx: TriageContext, citations: GuidelineCi
         .join('; ')}. You must not assign a severity below CRITICAL.`
     : 'SAFETY ENGINE VERDICT: no critical red flags detected. Assess normally.';
 
+  const optionalBlocks = [
+    sections.algorithm ? `ESI ALGORITHM REFERENCE\n${ESI_ALGORITHM_GUIDE.replace(/^## /gm, '')}` : null,
+    sections.safety ? safetyBlock : null,
+    sections.guidelines ? `RETRIEVED GUIDELINE EXCERPTS\n${guidelineBlock}` : null,
+  ]
+    .filter(Boolean)
+    .map((block) => `${block}\n\n`)
+    .join('');
+
   return `PATIENT
-Age: ${ctx.patient.age}; Gender: ${ctx.patient.gender}
-Existing conditions: ${ctx.patient.existingDiseases.join(', ') || 'none reported'}
-Allergies: ${ctx.patient.allergies.join(', ') || 'none reported'}
-Current medications: ${ctx.patient.medications.join(', ') || 'none reported'}
+Age: ${ctx.patient.age}; Gender: ${ctx.patient.gender}${ctx.arrivalTransport ? `\nArrival: ${ctx.arrivalTransport}` : ''}
+Existing conditions: ${formatList(ctx.patient.existingDiseases)}
+Allergies: ${formatList(ctx.patient.allergies)}
+Current medications: ${formatList(ctx.patient.medications)}
 
 VITALS
 ${formatVitals(ctx.vitals)}
@@ -63,13 +88,13 @@ Chief complaint: ${ctx.chiefComplaint ?? 'not specified'}
 Primary symptom: ${ctx.primarySymptom}
 Secondary symptoms: ${ctx.secondarySymptoms.join(', ') || 'none'}
 
-${safetyBlock}
-
-RETRIEVED GUIDELINE EXCERPTS
-${guidelineBlock}
-
-TASK
+${optionalBlocks}TASK
 Produce a structured triage assessment: severity, ESI level (1-5), confidence, clinical reasoning (referencing the data and any guideline excerpts by number), the most likely conditions with likelihood, the recommended hospital department, recommended initial tests, risk factors, and red-flag symptoms the reviewing doctor should confirm.`;
+}
+
+function formatList(values?: string[]): string {
+  if (values === undefined) return 'not recorded';
+  return values.join(', ') || 'none reported';
 }
 
 function formatVitals(vitals: Record<string, number | boolean | undefined>): string {
@@ -82,6 +107,7 @@ function formatVitals(vitals: Record<string, number | boolean | undefined>): str
     diastolicBp: 'Diastolic BP (mmHg)',
     glasgowComaScale: 'GCS',
     isUnconscious: 'Unconscious',
+    painScore: 'Pain (0-10)',
   };
   const lines = Object.entries(vitals)
     .filter(([, v]) => v !== undefined)

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "paper-search": {
+      "type": "stdio",
+      "command": "/Users/arjunsingh/.local/bin/paper-search-mcp",
+      "args": [],
+      "env": {}
+    }
+  }
+}

@@ -52,12 +52,15 @@ export default function HospitalsPage() {
   });
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-slate-900 dark:text-white">{t('hospitals')}</h1>
-      <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">{t('hospitalCapacitySubtitle')}</p>
+    <div className="max-w-6xl">
+      <div>
+        <p className="eyebrow mb-2 dark:text-zinc-500">/ Network capacity</p>
+        <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">{t('hospitals')}</h1>
+        <p className="mt-1 text-sm text-neutral-500 dark:text-zinc-400">{t('hospitalCapacitySubtitle')}</p>
+      </div>
 
       {/* Hospital Filters */}
-      <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 border border-slate-100 dark:border-zinc-800 shadow-sm flex flex-wrap gap-4 items-center mt-6 mb-6">
+      <div className="bg-white dark:bg-zinc-900 rounded-md p-4 border border-slate-100 dark:border-zinc-800 shadow-sm flex flex-wrap gap-4 items-center mt-6 mb-6">
         <div className="flex-1 min-w-[200px]">
           <label className="label">Search Hospital</label>
           <input

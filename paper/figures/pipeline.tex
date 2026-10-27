@@ -1,0 +1,29 @@
+% !TEX root = ../main.tex
+% Triage pipeline as implemented in apps/server/src/modules/triage/triage.engine.ts
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  node distance=4mm and 3mm,
+  box/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, minimum height=7mm, inner sep=3pt},
+  rule/.style={box, fill=red!8},
+  llm/.style={box, fill=blue!8},
+  human/.style={box, fill=green!10},
+  arr/.style={-{Stealth[length=2mm]}, thick}
+]
+\node[box] (in) {Vitals +\\symptoms};
+\node[rule, right=of in] (safe) {Deterministic\\safety engine};
+\node[llm, right=of safe] (rag) {Guideline\\retrieval};
+\node[llm, below=of rag] (llm) {LLM triage\\(structured)};
+\node[rule, left=of llm] (rec) {Reconcile:\\never below\\safety verdict};
+\node[human, left=of rec] (doc) {Doctor\\review};
+
+\draw[arr] (in) -- (safe);
+\draw[arr] (safe) -- (rag);
+\draw[arr] (rag) -- (llm);
+\draw[arr] (llm) -- (rec);
+\draw[arr] (rec) -- (doc);
+\draw[arr, dashed] (safe) -- node[right, font=\scriptsize] {verdict} (rec);
+\end{tikzpicture}
+\caption{JeevanSetu triage pipeline. Red: deterministic components; blue: LLM components; green: human-in-the-loop.}
+\label{fig:pipeline}
+\end{figure}

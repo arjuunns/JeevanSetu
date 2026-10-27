@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-/** Metric tile for the dashboards. */
+/** Swiss editorial metric tile: top rule, mono label, tabular figures. */
 export function StatCard({
   label,
   value,
@@ -13,13 +13,13 @@ export function StatCard({
   icon?: ReactNode;
 }) {
   return (
-    <div className="card">
+    <div className="border-t-2 border-neutral-900 pt-4 dark:border-white">
       <div className="flex items-center justify-between">
-        <p className="text-sm font-medium text-slate-500">{label}</p>
-        {icon}
+        <p className="eyebrow dark:text-zinc-500">{label}</p>
+        {icon ? <span className="text-neutral-400 dark:text-zinc-600 [&>svg]:h-3.5 [&>svg]:w-3.5">{icon}</span> : null}
       </div>
-      <p className="mt-2 text-3xl font-bold text-slate-900">{value}</p>
-      {hint ? <p className="mt-1 text-xs text-slate-400">{hint}</p> : null}
+      <p className="mt-2 text-3xl font-semibold tracking-tight tabular text-neutral-900 dark:text-white">{value}</p>
+      {hint ? <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-neutral-400 dark:text-zinc-600">{hint}</p> : null}
     </div>
   );
 }

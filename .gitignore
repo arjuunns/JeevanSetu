@@ -66,3 +66,13 @@ terraform.tfvars.json
 terraform_plan.md
 task.md
 docs/
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Ablation runner temp files
+research/results/*.tmp
+
+# Retrieval embedding cache (regenerable)
+research/.embedding_cache.json
+research/run_ablation.log

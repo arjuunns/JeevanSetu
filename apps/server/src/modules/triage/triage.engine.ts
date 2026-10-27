@@ -11,7 +11,9 @@ import { env, features } from '../../config/env.js';
 import { logger } from '../../config/logger.js';
 import { getChatModel } from '../../lib/ai.js';
 import { logGenAiUsage } from '../../lib/genaiLogger.js';
-import { retrieveGuidelines } from '../rag/rag.service.js';
+import { describeAbnormalVitals, expandClinicalAbbreviations } from '../rag/query.js';
+import { retrieveGuidelinesWithMeta, type RetrievalBackend } from '../rag/rag.service.js';
+
 import {
   buildTriageUserPrompt,
   TRIAGE_SYSTEM_PROMPT,
@@ -35,6 +37,24 @@ import {
 
 const MAX_ATTEMPTS = 3;
 
+/**
+ * Switches used by the research ablation. Production callers pass nothing and
+ * get the full pipeline (safety + RAG).
+ */
+export interface TriageRunOptions {
+  /** Show the safety verdict to the model and enforce it afterwards. Default true. */
+  useSafety?: boolean;
+  /** Include retrieved guideline excerpts. Default true. */
+  useRag?: boolean;
+  /** Include the full curated ESI algorithm summary in the prompt. Default false. */
+  useAlgorithmGuide?: boolean;
+  /** Precomputed citations to use instead of live retrieval, so retrieval is identical across runs. */
+  citations?: GuidelineCitation[];
+}
+
+type ResolvedOptions = Required<Pick<TriageRunOptions, 'useSafety' | 'useRag' | 'useAlgorithmGuide'>> &
+  Pick<TriageRunOptions, 'citations'>;
+
 export interface TriageEngineResult {
   result: TriageResult;
   citations: GuidelineCitation[];
@@ -43,12 +63,20 @@ export interface TriageEngineResult {
   model: string;
   attempts: number;
   usedFallback: boolean;
+  /** ESI the model returned before safety reconciliation; null when the fallback answered. */
+  modelEsiLevel: number | null;
+  safetyOverridden: boolean;
+  retrievalBackend: RetrievalBackend | 'precomputed' | 'disabled';
 }
 
 const TriageState = Annotation.Root({
   context: Annotation<TriageContext>(),
+  options: Annotation<ResolvedOptions>(),
   citations: Annotation<GuidelineCitation[]>({ reducer: (_p, n) => n, default: () => [] }),
+  retrievalBackend: Annotation<TriageEngineResult['retrievalBackend']>({ reducer: (_p, n) => n, default: () => 'none' }),
   result: Annotation<TriageResult | null>({ reducer: (_p, n) => n, default: () => null }),
+  modelEsiLevel: Annotation<number | null>({ reducer: (_p, n) => n, default: () => null }),
+  safetyOverridden: Annotation<boolean>({ reducer: (_p, n) => n, default: () => false }),
   attempts: Annotation<number>({ reducer: (_p, n) => n, default: () => 0 }),
   rawOutput: Annotation<unknown>({ reducer: (_p, n) => n, default: () => null }),
   usedFallback: Annotation<boolean>({ reducer: (_p, n) => n, default: () => false }),
@@ -56,22 +84,50 @@ const TriageState = Annotation.Root({
 
 type State = typeof TriageState.State;
 
+function activeModelName(): string {
+  return env.LLM_PROVIDER === 'ollama' ? env.OLLAMA_MODEL : env.GEMINI_TRIAGE_MODEL;
+}
+
+/**
+ * The text sent to the guideline retriever: age, sex, the presenting problem
+ * with abbreviations expanded, and abnormal vital signs named in words.
+ */
+export function buildRetrievalQuery(ctx: TriageContext): string {
+  const parts: string[] = [];
+  for (const part of [ctx.chiefComplaint, ctx.primarySymptom, ...ctx.secondarySymptoms]) {
+    const text = part?.trim();
+    if (text && !parts.some((p) => p.toLowerCase().includes(text.toLowerCase()))) parts.push(text);
+  }
+  const complaint = expandClinicalAbbreviations(parts.join(', '));
+  const findings = describeAbnormalVitals(ctx.vitals, ctx.patient.age);
+  const patient = `${ctx.patient.age}-year-old ${ctx.patient.gender.toLowerCase()} presenting with ${complaint}`;
+  return findings.length ? `${patient}. Findings: ${findings.join(', ')}.` : `${patient}.`;
+}
+
 async function retrieveNode(state: State): Promise<Partial<State>> {
-  const ctx = state.context;
-  const query = `${ctx.primarySymptom}. ${ctx.secondarySymptoms.join(', ')}. ${ctx.chiefComplaint ?? ''}`;
-  const citations = await retrieveGuidelines(query, 5);
-  return { citations };
+  const { useRag, citations } = state.options;
+  if (!useRag) return { citations: [], retrievalBackend: 'disabled' };
+  if (citations) return { citations, retrievalBackend: 'precomputed' };
+  const retrieved = await retrieveGuidelinesWithMeta(buildRetrievalQuery(state.context), 5);
+  return { citations: retrieved.citations, retrievalBackend: retrieved.backend };
 }
 
 async function assessNode(state: State): Promise<Partial<State>> {
+  const { useSafety, useRag, useAlgorithmGuide } = state.options;
   if (!features.ai) {
-    return { result: heuristicAssessment(state.context), usedFallback: true, attempts: 0 };
+    return { result: heuristicAssessment(state.context, useSafety), usedFallback: true, attempts: 0 };
   }
 
   const model = getChatModel().withStructuredOutput(triageResultSchema, { name: 'triage_assessment' });
   const messages = [
     new SystemMessage(TRIAGE_SYSTEM_PROMPT),
-    new HumanMessage(buildTriageUserPrompt(state.context, state.citations)),
+    new HumanMessage(
+      buildTriageUserPrompt(state.context, state.citations, {
+        safety: useSafety,
+        guidelines: useRag,
+        algorithm: useAlgorithmGuide,
+      }),
+    ),
   ];
 
   let lastError: unknown;
@@ -84,7 +140,7 @@ async function assessNode(state: State): Promise<Partial<State>> {
 
       logGenAiUsage({
         feature: 'TRIAGE',
-        model: env.LLM_PROVIDER === 'ollama' ? env.OLLAMA_MODEL : env.GEMINI_TRIAGE_MODEL,
+        model: activeModelName(),
         latencyMs,
         status: 'SUCCESS',
         promptTokens: usage?.prompt_tokens || usage?.input_tokens || usage?.inputTokens || 0,
@@ -94,12 +150,12 @@ async function assessNode(state: State): Promise<Partial<State>> {
 
       // Structured output already conforms, but we re-validate defensively.
       const parsed = triageResultSchema.parse(raw);
-      return { result: parsed, rawOutput: raw, attempts: attempt, usedFallback: false };
+      return { result: parsed, modelEsiLevel: parsed.esiLevel, rawOutput: raw, attempts: attempt, usedFallback: false };
     } catch (err: any) {
       const latencyMs = Date.now() - startTime;
       logGenAiUsage({
         feature: 'TRIAGE',
-        model: env.LLM_PROVIDER === 'ollama' ? env.OLLAMA_MODEL : env.GEMINI_TRIAGE_MODEL,
+        model: activeModelName(),
         latencyMs,
         status: 'FAILED',
         errorMessage: err.message || String(err),
@@ -116,7 +172,7 @@ async function assessNode(state: State): Promise<Partial<State>> {
   }
 
   logger.error({ err: lastError }, 'Triage AI failed after retries — using heuristic fallback');
-  return { result: heuristicAssessment(state.context), usedFallback: true, attempts: MAX_ATTEMPTS };
+  return { result: heuristicAssessment(state.context, useSafety), usedFallback: true, attempts: MAX_ATTEMPTS };
 }
 
 /**
@@ -125,8 +181,8 @@ async function assessNode(state: State): Promise<Partial<State>> {
  */
 function reconcileNode(state: State): Partial<State> {
   const result = state.result;
-  if (!result) return {};
-  if (state.context.safety.isCritical && result.severity !== 'CRITICAL') {
+  if (!result || !state.options.useSafety) return {};
+  if (state.context.safety.isCritical && (result.severity !== 'CRITICAL' || result.esiLevel !== 1)) {
     const forced: TriageResult = {
       ...result,
       severity: 'CRITICAL',
@@ -136,7 +192,7 @@ function reconcileNode(state: State): Partial<State> {
         .join('; ')}) force CRITICAL severity. Original model reasoning: ${result.reasoning}`,
       redFlags: dedupe([...result.redFlags, ...state.context.safety.triggeredRules.map((r) => r.label)]),
     };
-    return { result: forced };
+    return { result: forced, safetyOverridden: true };
   }
   return {};
 }
@@ -151,42 +207,57 @@ const graph = new StateGraph(TriageState)
   .addEdge('reconcile', END)
   .compile();
 
-export async function runTriage(context: TriageContext): Promise<TriageEngineResult> {
-  const final = await graph.invoke({ context });
-  const result = final.result ?? heuristicAssessment(context);
+export async function runTriage(context: TriageContext, options: TriageRunOptions = {}): Promise<TriageEngineResult> {
+  const resolved: ResolvedOptions = {
+    useSafety: options.useSafety ?? true,
+    useRag: options.useRag ?? true,
+    useAlgorithmGuide: options.useAlgorithmGuide ?? false,
+    citations: options.citations,
+  };
+  const final = await graph.invoke({ context, options: resolved });
+  const result = final.result ?? heuristicAssessment(context, resolved.useSafety);
   return {
     result,
     citations: final.citations,
     reasoningText: result.reasoning,
     rawOutput: final.rawOutput,
-    model: final.usedFallback ? 'deterministic-fallback' : process.env.GEMINI_TRIAGE_MODEL ?? 'gemini-2.0-flash',
+    model: final.usedFallback ? 'deterministic-fallback' : activeModelName(),
     attempts: final.attempts,
     usedFallback: final.usedFallback,
+    modelEsiLevel: final.usedFallback ? null : final.modelEsiLevel,
+    safetyOverridden: final.safetyOverridden,
+    retrievalBackend: final.retrievalBackend,
   };
+}
+
+/** Rules-only baseline (safety engine + vital-sign heuristic), no LLM. */
+export function runRulesOnlyTriage(context: TriageContext): TriageResult {
+  return heuristicAssessment(context, true);
 }
 
 // ── Deterministic fallback ─────────────────────────────────────────────────────
 // Not a placeholder: a transparent, rule-based baseline that keeps the human
 // review loop functional when the LLM is unavailable. Clearly labelled as such.
 
-function heuristicAssessment(ctx: TriageContext): TriageResult {
-  const severity: SeverityLevel = ctx.safety.isCritical ? 'CRITICAL' : deriveHeuristicSeverity(ctx);
+function heuristicAssessment(ctx: TriageContext, useSafety: boolean): TriageResult {
+  const critical = useSafety && ctx.safety.isCritical;
+  const severity: SeverityLevel = critical ? 'CRITICAL' : deriveHeuristicSeverity(ctx);
   const esiLevel = severity === 'CRITICAL' ? 1 : severity === 'HIGH' ? 2 : severity === 'MODERATE' ? 3 : 4;
 
   return {
     severity,
     esiLevel,
     confidence: 0.4,
-    reasoning: ctx.safety.isCritical
+    reasoning: critical
       ? `[HEURISTIC FALLBACK] Safety engine flagged CRITICAL via: ${ctx.safety.triggeredRules
           .map((r) => r.label)
           .join('; ')}. AI model unavailable; doctor review required.`
-      : `[HEURISTIC FALLBACK] AI model unavailable. Severity derived from vital-sign thresholds and reported symptom severity. Treat as provisional pending doctor review.`,
+      : `[HEURISTIC FALLBACK] AI model unavailable. Severity derived from vital-sign thresholds and the presenting complaint. Treat as provisional pending doctor review.`,
     possibleConditions: [{ condition: 'Undetermined — clinical correlation required', likelihood: 'MODERATE' }],
-    recommendedDepartment: ctx.safety.isCritical ? 'Emergency' : 'General Medicine',
+    recommendedDepartment: critical ? 'Emergency' : 'General Medicine',
     recommendedTests: [],
-    riskFactors: ctx.patient.existingDiseases,
-    redFlags: ctx.safety.triggeredRules.map((r) => r.label),
+    riskFactors: ctx.patient.existingDiseases ?? [],
+    redFlags: critical ? ctx.safety.triggeredRules.map((r) => r.label) : [],
   };
 }
 

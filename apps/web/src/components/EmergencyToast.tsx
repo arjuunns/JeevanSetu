@@ -20,20 +20,20 @@ interface EmergencyToastProps {
 
 export function EmergencyToast({ alert, onDismiss }: EmergencyToastProps) {
   return (
-    <div className="fixed bottom-5 right-5 z-50 max-w-md w-full rounded-xl bg-white border border-red-200 shadow-2xl overflow-hidden animate-slide-in">
+    <div className="fixed bottom-5 right-5 z-50 max-w-md w-full rounded-lg bg-white border border-red-200 shadow-xl overflow-hidden animate-slide-in">
       <div className="bg-red-600 px-4 py-2.5 flex items-center justify-between text-white">
         <div className="flex items-center gap-2">
-          <AlertTriangle className="h-5 w-5 animate-pulse" />
-          <span className="font-bold text-xs uppercase tracking-wider">Critical Emergency Broadcast</span>
+          <AlertTriangle className="h-4 w-4 animate-pulse" />
+          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.15em]">Critical Emergency Broadcast</span>
         </div>
         <button onClick={onDismiss} className="text-red-200 hover:text-white transition">
           <X className="h-4 w-4" />
         </button>
       </div>
       <div className="p-4">
-        <h4 className="font-bold text-slate-800 text-sm">{alert.title}</h4>
-        <p className="text-xs text-slate-500 mt-0.5">Dept: <span className="font-semibold text-red-600">{alert.department}</span></p>
-        <p className="text-slate-600 text-xs mt-2 leading-relaxed bg-red-50/50 p-2 rounded-lg border border-red-50/80">
+        <h4 className="font-semibold tracking-tight text-neutral-900 text-sm dark:text-zinc-100">{alert.title}</h4>
+        <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-neutral-400">Dept: <span className="font-semibold text-red-600">{alert.department}</span></p>
+        <p className="text-neutral-600 dark:text-zinc-400 text-xs mt-2 leading-relaxed border-l-2 border-red-200 pl-3 py-1 dark:border-red-900">
           {alert.body}
         </p>
         {alert.visitId && (

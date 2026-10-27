@@ -77,28 +77,31 @@ export default function ReviewPage() {
   });
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-slate-900 dark:text-white">{t('queueTitle')}</h1>
-      <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">{t('queueSubtitle')}</p>
+    <div className="max-w-6xl">
+      <div>
+        <p className="eyebrow mb-2 dark:text-zinc-500">/ Human-in-the-loop</p>
+        <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">{t('queueTitle')}</h1>
+        <p className="mt-1 text-sm text-neutral-500 dark:text-zinc-400">{t('queueSubtitle')}</p>
+      </div>
 
-      {/* Tab Switcher */}
-      <div className="flex bg-slate-100 dark:bg-zinc-900 p-1 rounded-xl max-w-sm mt-6 mb-6 border dark:border-zinc-800">
+      {/* Tab Switcher — underline style */}
+      <div className="flex border-b border-neutral-200 dark:border-zinc-800 max-w-sm mt-8 mb-8 gap-6">
         <button
           onClick={() => setActiveTab('PENDING')}
-          className={`flex-1 py-1.5 text-center text-xs font-bold rounded-lg transition-all duration-200 ${
+          className={`pb-2.5 text-sm border-b-2 -mb-px transition-colors ${
             activeTab === 'PENDING'
-              ? 'bg-white text-slate-900 dark:bg-zinc-800 dark:text-white shadow-sm'
-              : 'text-slate-500 hover:text-slate-800 hover:bg-white/50 dark:text-zinc-400 dark:hover:text-zinc-200 dark:hover:bg-zinc-800/50'
+              ? 'border-neutral-900 font-semibold text-neutral-900 dark:border-white dark:text-white'
+              : 'border-transparent text-neutral-400 hover:text-neutral-800 dark:text-zinc-500 dark:hover:text-zinc-200'
           }`}
         >
           {t('queueTitle')} ({queueData?.length ?? 0})
         </button>
         <button
           onClick={() => setActiveTab('HISTORY')}
-          className={`flex-1 py-1.5 text-center text-xs font-bold rounded-lg transition-all duration-200 ${
+          className={`pb-2.5 text-sm border-b-2 -mb-px transition-colors ${
             activeTab === 'HISTORY'
-              ? 'bg-white text-slate-900 dark:bg-zinc-800 dark:text-white shadow-sm'
-              : 'text-slate-500 hover:text-slate-800 hover:bg-white/50 dark:text-zinc-400 dark:hover:text-zinc-200 dark:hover:bg-zinc-800/50'
+              ? 'border-neutral-900 font-semibold text-neutral-900 dark:border-white dark:text-white'
+              : 'border-transparent text-neutral-400 hover:text-neutral-800 dark:text-zinc-500 dark:hover:text-zinc-200'
           }`}
         >
           Review History ({historyData?.length ?? 0})
@@ -108,7 +111,7 @@ export default function ReviewPage() {
       {activeTab === 'PENDING' ? (
         <div>
           {/* Pending Filters */}
-          <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 border border-slate-100 dark:border-zinc-800 shadow-sm flex flex-wrap gap-4 items-center mb-6">
+          <div className="bg-white dark:bg-zinc-900 rounded-md p-4 border border-slate-100 dark:border-zinc-800 shadow-sm flex flex-wrap gap-4 items-center mb-6">
             <div className="flex-1 min-w-[200px]">
               <label className="label">Search Pending Patients</label>
               <input
@@ -155,7 +158,7 @@ export default function ReviewPage() {
       ) : (
         <div>
           {/* History Filters */}
-          <div className="bg-white dark:bg-zinc-900 rounded-xl p-4 border border-slate-100 dark:border-zinc-800 shadow-sm flex flex-wrap gap-4 items-center mb-6">
+          <div className="bg-white dark:bg-zinc-900 rounded-md p-4 border border-slate-100 dark:border-zinc-800 shadow-sm flex flex-wrap gap-4 items-center mb-6">
             <div className="flex-1 min-w-[200px]">
               <label className="label">Search Patient</label>
               <input
@@ -278,7 +281,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
   const vitals = visit?.vitals?.[0] || {};
 
   return (
-    <div className="relative rounded-2xl bg-slate-55/10 dark:bg-zinc-900/40 border border-slate-200 dark:border-zinc-800/80 p-0 shadow-sm hover:shadow-md transition">
+    <div className="relative rounded-lg bg-slate-55/10 dark:bg-zinc-900/40 border border-slate-200 dark:border-zinc-800/80 p-0 shadow-sm hover:shadow-md transition">
       <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-zinc-850">
         
         {/* Left Demographics column */}
@@ -297,7 +300,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
           </div>
 
           <div className="grid grid-cols-2 gap-2 text-center text-xs">
-            <div className="p-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div className="p-2.5 rounded-md bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
               <span className="block text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase">SpO2 Status</span>
               {vitals.oxygenSaturation != null ? (
                 <span className={`text-sm font-extrabold ${vitals.oxygenSaturation < 92 ? 'text-red-500 animate-pulse' : 'text-green-600 dark:text-green-400'}`}>
@@ -307,7 +310,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
                 <span className="text-sm font-extrabold text-slate-400 dark:text-zinc-550">—</span>
               )}
             </div>
-            <div className="p-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div className="p-2.5 rounded-md bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
               <span className="block text-[9px] font-bold text-slate-450 dark:text-zinc-550 uppercase">Heart Rate</span>
               {vitals.heartRate != null ? (
                 <span className={`text-sm font-extrabold ${vitals.heartRate > 100 || vitals.heartRate < 60 ? 'text-amber-500' : 'text-slate-800 dark:text-zinc-200'}`}>
@@ -339,7 +342,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
               <Clipboard className="h-3.5 w-3.5 text-brand-700 dark:text-brand-500" />
               <span>Intake Info</span>
             </button>
-            <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
+            <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
               <IntakeInfoHoverTooltip visitId={item.visitId} />
               <div className="absolute top-full left-8 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-white dark:border-t-zinc-950 z-30"></div>
               <div className="absolute top-full left-8 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-slate-200 dark:border-t-zinc-800 z-20 mt-[1px]"></div>
@@ -361,7 +364,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
                   </h4>
                   
                   {routingReason && (
-                    <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
+                    <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
                       <p className="text-[10px] font-bold text-slate-455 dark:text-zinc-550 uppercase tracking-wider mb-1.5">Smart Hospital Routing Justification</p>
                       <p className="text-xs text-slate-700 dark:text-zinc-300 leading-normal font-medium">{routingReason}</p>
                       <div className="absolute top-full left-8 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-white dark:border-t-zinc-950 z-30"></div>
@@ -392,7 +395,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
 
             {/* AI Clinical reasoning text */}
             {item.reasoning?.reasoningText ? (
-              <div className="rounded-xl p-3.5 border bg-zinc-50 dark:bg-zinc-950/60 border-zinc-200 dark:border-zinc-800 mt-3">
+              <div className="rounded-md p-3.5 border bg-zinc-50 dark:bg-zinc-950/60 border-zinc-200 dark:border-zinc-800 mt-3">
                 <p className="text-[10px] font-extrabold uppercase tracking-wider mb-1 flex items-center gap-1.5 text-brand-700 dark:text-brand-400">
                   <Activity className="h-3.5 w-3.5" />
                   <span>AI Clinical Reasoning</span>
@@ -421,7 +424,7 @@ function HistoryCard({ item }: { item: ReviewQueueItem }) {
                   </span>
                   
                   {/* Tooltip Popup on Hover */}
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl p-3 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30">
                     <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800/85 pb-1 mb-1.5 text-[9px] text-slate-400 dark:text-zinc-550 font-bold uppercase">
                       <span>Source: {c.source}</span>
                       <span>Match: {Math.round(c.score * 100)}%</span>
@@ -517,7 +520,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
   const routingReason = selectedCandidate?.reasoning;
 
   return (
-    <div className={`transition-all duration-300 ${isDismissing ? 'opacity-0 max-h-0 py-0 overflow-hidden mb-0 border-0 shadow-none' : 'relative mb-4 opacity-100 max-h-[1000px] bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800/80 p-0 rounded-2xl shadow-sm hover:shadow-md'}`}>
+    <div className={`transition-all duration-300 ${isDismissing ? 'opacity-0 max-h-0 py-0 overflow-hidden mb-0 border-0 shadow-none' : 'relative mb-4 opacity-100 max-h-[1000px] bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800/80 p-0 rounded-lg shadow-sm hover:shadow-md'}`}>
       <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-zinc-850">
         
         {/* Left Demographics Panel */}
@@ -536,7 +539,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
           </div>
 
           <div className="grid grid-cols-2 gap-2 text-center text-xs">
-            <div className="p-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div className="p-2.5 rounded-md bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
               <span className="block text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase">SpO2 Status</span>
               {vitals.oxygenSaturation != null ? (
                 <span className={`text-sm font-extrabold ${vitals.oxygenSaturation < 92 ? 'text-red-500 animate-pulse' : 'text-green-600 dark:text-green-400'}`}>
@@ -546,7 +549,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
                 <span className="text-sm font-extrabold text-slate-400 dark:text-zinc-500">—</span>
               )}
             </div>
-            <div className="p-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+            <div className="p-2.5 rounded-md bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
               <span className="block text-[9px] font-bold text-slate-400 dark:text-zinc-500 uppercase">Heart Rate</span>
               {vitals.heartRate != null ? (
                 <span className={`text-sm font-extrabold ${vitals.heartRate > 100 || vitals.heartRate < 60 ? 'text-amber-500' : 'text-slate-800 dark:text-zinc-200'}`}>
@@ -582,7 +585,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
               <Clipboard className="h-3.5 w-3.5 text-brand-700 dark:text-brand-500" />
               <span>Intake Info</span>
             </button>
-            <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
+            <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
               <IntakeInfoHoverTooltip visitId={item.visitId} />
               <div className="absolute top-full left-8 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-white dark:border-t-zinc-950 z-30"></div>
               <div className="absolute top-full left-8 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-slate-200 dark:border-t-zinc-800 z-20 mt-[1px]"></div>
@@ -602,7 +605,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
                     <span>{item.visit.routing?.selectedHospital?.name ?? '— (No routing run)'} — {item.recommendedDepartment ?? '—'}</span>
                   </h4>
                   {routingReason && (
-                    <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
+                    <div className="absolute bottom-full left-0 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3.5 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30 text-left">
                       <p className="text-[10px] font-bold text-slate-455 dark:text-zinc-550 uppercase tracking-wider mb-1.5">Smart Hospital Routing Justification</p>
                       <p className="text-xs text-slate-700 dark:text-zinc-300 leading-normal font-medium">{routingReason}</p>
                       <div className="absolute top-full left-8 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-white dark:border-t-zinc-950 z-30"></div>
@@ -654,7 +657,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
 
             {/* AI Clinical reasoning text */}
             {item.reasoning?.reasoningText ? (
-              <div className={`rounded-xl p-3.5 border ${
+              <div className={`rounded-md p-3.5 border ${
                 item.reasoning.reasoningText.includes('[HEURISTIC FALLBACK]')
                   ? 'bg-amber-50/60 border-amber-200 dark:bg-amber-950/20 dark:border-amber-900/60'
                   : 'bg-zinc-50 dark:bg-zinc-950/60 border-zinc-200 dark:border-zinc-800'
@@ -693,7 +696,7 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
                   </span>
                   
                   {/* Tooltip Popup on Hover */}
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl p-3 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3 shadow-xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-30">
                     <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-1 mb-1.5 text-[9px] text-slate-400 dark:text-zinc-555 font-bold uppercase">
                       <span>Source: {c.source}</span>
                       <span>Match: {Math.round(c.score * 100)}%</span>
@@ -726,10 +729,10 @@ function ReviewCard({ item }: { item: ReviewQueueItem }) {
                 key={opt.id}
                 type="button"
                 onClick={() => setAction(opt.id as any)}
-                className={`px-3 py-1.5 rounded-lg border text-xs font-bold transition-all duration-150 ${
+                className={`px-3 py-1.5 rounded-full border font-mono text-xs uppercase tracking-wider transition-all duration-150 ${
                   action === opt.id
-                    ? 'bg-brand-700 text-white border-brand-700 dark:bg-brand-600 dark:border-brand-600 shadow-sm'
-                    : `border-slate-200 bg-white text-slate-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 ${opt.color}`
+                    ? 'bg-neutral-900 text-white border-neutral-900 dark:bg-white dark:text-neutral-900 dark:border-white'
+                    : `border-neutral-200 bg-white text-neutral-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 ${opt.color}`
                 }`}
               >
                 {opt.label}
@@ -859,7 +862,7 @@ function PipelineAndReferralModal({ visitId, onClose }: { visitId: string; onClo
 
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
           {/* Section 1: Multi-Agent Orchestrator Pipeline */}
-          <div className="bg-white dark:bg-zinc-950 rounded-xl p-5 border border-slate-100 dark:border-zinc-800/80 shadow-sm">
+          <div className="bg-white dark:bg-zinc-950 rounded-md p-5 border border-slate-100 dark:border-zinc-800/80 shadow-sm">
             <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
               <Activity className="h-4 w-4 text-brand-700 dark:text-brand-500 animate-pulse" />
               <span>Multi-Agent Pipeline Steps</span>
@@ -936,7 +939,7 @@ function PipelineAndReferralModal({ visitId, onClose }: { visitId: string; onClo
           </div>
 
           {/* Section 2: HL7 FHIR & PDF Referral Generation */}
-          <div className="bg-white dark:bg-zinc-950 rounded-xl p-5 border border-slate-100 dark:border-zinc-800/80 shadow-sm">
+          <div className="bg-white dark:bg-zinc-950 rounded-md p-5 border border-slate-100 dark:border-zinc-800/80 shadow-sm">
             <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
               <Clipboard className="h-4 w-4 text-brand-700 dark:text-brand-500" />
               <span>FHIR & PDF Referrals</span>
@@ -964,7 +967,7 @@ function PipelineAndReferralModal({ visitId, onClose }: { visitId: string; onClo
                       href={pdfDoc.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-4 border border-slate-200 dark:border-zinc-800 hover:border-brand-500 rounded-xl hover:bg-slate-50 dark:hover:bg-zinc-900 transition text-center"
+                      className="flex flex-col items-center justify-center p-4 border border-slate-200 dark:border-zinc-800 hover:border-brand-500 rounded-md hover:bg-slate-50 dark:hover:bg-zinc-900 transition text-center"
                     >
                       <Download className="h-6 w-6 text-red-600 mb-2" />
                       <span className="text-xs font-bold text-slate-800 dark:text-zinc-200">Printable PDF</span>
@@ -978,7 +981,7 @@ function PipelineAndReferralModal({ visitId, onClose }: { visitId: string; onClo
                       href={fhirDoc.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center p-4 border border-slate-200 dark:border-zinc-800 hover:border-brand-500 rounded-xl hover:bg-slate-50 dark:hover:bg-zinc-900 transition text-center"
+                      className="flex flex-col items-center justify-center p-4 border border-slate-200 dark:border-zinc-800 hover:border-brand-500 rounded-md hover:bg-slate-50 dark:hover:bg-zinc-900 transition text-center"
                     >
                       <FileJson className="h-6 w-6 text-blue-600 mb-2" />
                       <span className="text-xs font-bold text-slate-800 dark:text-zinc-200">HL7 FHIR JSON</span>
@@ -988,7 +991,7 @@ function PipelineAndReferralModal({ visitId, onClose }: { visitId: string; onClo
 
                   {/* QR code doc */}
                   {qrDoc && (
-                    <div className="flex flex-col items-center justify-center p-3 border border-slate-200 dark:border-zinc-800 rounded-xl bg-slate-50 dark:bg-zinc-900">
+                    <div className="flex flex-col items-center justify-center p-3 border border-slate-200 dark:border-zinc-800 rounded-md bg-slate-50 dark:bg-zinc-900">
                       <img src={qrDoc.url} alt="Referral QR Code" className="h-16 w-16 mb-2 border rounded bg-white p-1" />
                       <span className="text-xs font-bold text-slate-800 dark:text-zinc-200">QR Code</span>
                       <span className="text-[10px] text-slate-500 dark:text-zinc-500 mt-0.5">Verification Scan</span>

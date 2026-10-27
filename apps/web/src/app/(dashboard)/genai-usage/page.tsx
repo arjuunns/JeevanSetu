@@ -84,17 +84,18 @@ export default function GenAiUsagePage() {
   return (
     <div className="space-y-6 animate-fade-in max-w-7xl mx-auto">
       {/* Title */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">GenAI Usage Metrics</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">
+          <p className="eyebrow mb-2 dark:text-zinc-500">/ Model telemetry</p>
+          <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">GenAI Usage Metrics</h1>
+          <p className="mt-1 text-sm text-neutral-500 dark:text-zinc-400">
             Real-time telemetry, model latency, token consumption, and API key health.
           </p>
         </div>
         <button
           type="button"
           onClick={() => void refetch()}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-700 dark:text-zinc-200 text-xs font-semibold rounded-lg shadow-sm transition"
+          className="btn-ghost text-xs"
         >
           <RefreshCw className={`h-3.5 w-3.5 ${isFetching ? 'animate-spin' : ''}`} />
           <span>{isFetching ? 'Refreshing...' : 'Refresh'}</span>

@@ -160,6 +160,16 @@ async function retrieveGuidelinesFromDb(query: string, topK = 5): Promise<Guidel
  * Falls back to PostgreSQL search if Pinecone is not configured or unavailable.
  */
 export async function retrieveGuidelines(query: string, topK = 5): Promise<GuidelineCitation[]> {
+  return (await retrieveGuidelinesWithMeta(query, topK)).citations;
+}
+
+export type RetrievalBackend = 'pinecone' | 'database' | 'none';
+
+/** Same as `retrieveGuidelines`, but also reports which backend answered. */
+export async function retrieveGuidelinesWithMeta(
+  query: string,
+  topK = 5,
+): Promise<{ citations: GuidelineCitation[]; backend: RetrievalBackend }> {
   if (features.rag) {
     try {
       const embeddings = getEmbeddings();
@@ -173,7 +183,7 @@ export async function retrieveGuidelines(query: string, topK = 5): Promise<Guide
       });
 
       if (result.matches && result.matches.length > 0) {
-        return result.matches.map((m) => {
+        const citations = result.matches.map((m) => {
           const md = (m.metadata ?? {}) as Record<string, unknown>;
           return {
             guidelineId: String(md.guidelineId ?? ''),
@@ -184,6 +194,7 @@ export async function retrieveGuidelines(query: string, topK = 5): Promise<Guide
             score: m.score ?? 0,
           } satisfies GuidelineCitation;
         });
+        return { citations, backend: 'pinecone' };
       }
     } catch (err) {
       logger.warn({ err }, 'Pinecone retrieval failed — falling back to database guidelines');
@@ -191,10 +202,10 @@ export async function retrieveGuidelines(query: string, topK = 5): Promise<Guide
   }
 
   try {
-    return await retrieveGuidelinesFromDb(query, topK);
+    return { citations: await retrieveGuidelinesFromDb(query, topK), backend: 'database' };
   } catch (err) {
     logger.debug({ err }, 'Database guideline retrieval failed — continuing without citations');
-    return [];
+    return { citations: [], backend: 'none' };
   }
 }
 

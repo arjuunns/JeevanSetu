@@ -414,17 +414,18 @@ export default function IntakePage() {
 
   return (
     <div className="mx-auto max-w-3xl animate-fade-in">
-      <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+      <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">{t('patientIntake')}</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-zinc-400">{t('subtitle')}</p>
+          <p className="eyebrow mb-1 dark:text-zinc-500">/ New admission</p>
+          <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">{t('patientIntake')}</h1>
+          <p className="mt-1 text-sm text-neutral-500 dark:text-zinc-400">{t('subtitle')}</p>
         </div>
         <div className="flex items-center gap-2">
           <button
             type="button"
             disabled={isParsingVoice || isRecording}
             onClick={startVoiceWizard}
-            className="flex items-center gap-2 px-4 py-2 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-lg shadow-sm disabled:opacity-50 transition"
+            className="btn-primary"
           >
             {isParsingVoice ? (
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -437,14 +438,14 @@ export default function IntakePage() {
       </div>
 
       {isParsingVoice && (
-        <div className="mb-6 p-4 rounded-xl border border-brand-200 bg-brand-50/30 flex items-center gap-3 animate-slide-in">
+        <div className="mb-6 p-4 rounded-md border border-brand-200 bg-brand-50/30 flex items-center gap-3 animate-slide-in">
           <Loader2 className="h-5 w-5 animate-spin text-brand-700" />
           <span className="text-sm font-medium text-slate-700">Gemini LLM is extracting clinical data from your speech...</span>
         </div>
       )}
 
       {voiceError && (
-        <div className="mb-6 p-4 rounded-xl border border-red-200 bg-red-50 text-red-700 text-sm flex items-start gap-3 animate-slide-in">
+        <div className="mb-6 p-4 rounded-md border border-red-200 bg-red-50 text-red-700 text-sm flex items-start gap-3 animate-slide-in">
           <AlertTriangle className="h-5 w-5 shrink-0 text-red-600" />
           <div>
             <p className="font-semibold">Voice Processing Failed</p>
@@ -453,20 +454,20 @@ export default function IntakePage() {
         </div>
       )}
 
-      <div className="flex border-b border-slate-200 dark:border-slate-800 mb-6 gap-6">
+      <div className="flex border-b border-neutral-200 dark:border-zinc-800 mb-8 gap-6">
         {[
-          { id: 'DEMO', label: '1. Demographics' },
-          { id: 'VITALS', label: '2. Vitals & Symptoms' },
-          { id: 'HISTORY', label: '3. Clinical History' }
+          { id: 'DEMO', label: '01 · Demographics' },
+          { id: 'VITALS', label: '02 · Vitals & Symptoms' },
+          { id: 'HISTORY', label: '03 · Clinical History' }
         ].map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => setActiveFormTab(tab.id as any)}
-            className={`pb-2.5 text-sm font-bold border-b-2 transition-all ${
+            className={`pb-2.5 text-sm border-b-2 -mb-px transition-colors font-mono uppercase tracking-wide ${
               activeFormTab === tab.id
-                ? 'border-brand-700 text-brand-700 dark:border-brand-500 dark:text-brand-500'
-                : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-350'
+                ? 'border-neutral-900 font-semibold text-neutral-900 dark:border-white dark:text-white'
+                : 'border-transparent text-neutral-400 hover:text-neutral-800 dark:hover:text-zinc-200'
             }`}
           >
             {tab.label}
@@ -477,7 +478,7 @@ export default function IntakePage() {
       <form onSubmit={onSubmit} className="space-y-6">
         {/* Tab 1: Demographics */}
         <fieldset className={activeFormTab === 'DEMO' ? 'card space-y-4 animate-scale-in' : 'hidden'}>
-          <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">{t('patientDemographics')}</legend>
+          <legend className="px-1 eyebrow dark:text-zinc-500">{t('patientDemographics')}</legend>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label={t('fullName')} name="name" required />
             <Field label={t('age')} name="age" type="number" required />
@@ -501,7 +502,7 @@ export default function IntakePage() {
         {/* Tab 2: Vitals & Symptoms */}
         <div className={activeFormTab === 'VITALS' ? 'space-y-6 animate-scale-in' : 'hidden'}>
           <fieldset className="card space-y-4">
-            <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">{t('vitalSigns')}</legend>
+            <legend className="px-1 eyebrow dark:text-zinc-500">{t('vitalSigns')}</legend>
             <div className="grid gap-4 sm:grid-cols-3">
               <Field label={t('temperature')} name="temperatureC" type="number" step="0.1" value={vitals.temperatureC} onChange={handleVitalsChange('temperatureC')} warning={getVitalsWarning('temperatureC', vitals.temperatureC)} />
               <Field label={t('oxygenSaturation')} name="oxygenSaturation" type="number" value={vitals.oxygenSaturation} onChange={handleVitalsChange('oxygenSaturation')} warning={getVitalsWarning('oxygenSaturation', vitals.oxygenSaturation)} />
@@ -516,7 +517,7 @@ export default function IntakePage() {
           </fieldset>
 
           <fieldset className="card space-y-4">
-            <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">{t('symptoms')}</legend>
+            <legend className="px-1 eyebrow dark:text-zinc-500">{t('symptoms')}</legend>
             <Field label={t('chiefComplaint')} name="chiefComplaint" />
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label={t('primarySymptom')} name="primarySymptom" required />
@@ -551,7 +552,7 @@ export default function IntakePage() {
 
         {/* Tab 3: Clinical History */}
         <fieldset className={activeFormTab === 'HISTORY' ? 'card space-y-4 animate-scale-in' : 'hidden'}>
-          <legend className="px-1 text-sm font-semibold text-brand-700 dark:text-brand-500">Clinical History</legend>
+          <legend className="px-1 eyebrow dark:text-zinc-500">Clinical History</legend>
           <div className="space-y-4">
             <Field label={t('allergies')} name="allergies" />
             <Field label={t('existingDiseases')} name="existingDiseases" />
@@ -580,7 +581,7 @@ export default function IntakePage() {
 
       {showVoiceWizard && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm bg-slate-900/60 transition-opacity duration-300">
-          <div className="bg-white dark:bg-zinc-900 border border-slate-200/50 dark:border-zinc-800/80 shadow-2xl rounded-2xl p-6 max-w-lg w-full transform transition-all duration-300 animate-scale-in flex flex-col gap-5">
+          <div className="bg-white dark:bg-zinc-900 border border-slate-200/50 dark:border-zinc-800/80 shadow-2xl rounded-lg p-6 max-w-lg w-full transform transition-all duration-300 animate-scale-in flex flex-col gap-5">
             
             {/* Header */}
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-3">
@@ -613,7 +614,7 @@ export default function IntakePage() {
             </div>
 
             {/* Question Panel */}
-            <div className="bg-slate-50/50 dark:bg-zinc-950/40 rounded-xl p-4 border border-slate-100 dark:border-zinc-900/60 flex flex-col gap-2">
+            <div className="bg-slate-50/50 dark:bg-zinc-950/40 rounded-md p-4 border border-slate-100 dark:border-zinc-900/60 flex flex-col gap-2">
               <h2 className="text-base font-bold text-slate-800 dark:text-zinc-200">
                 {wizardSteps[currentVoiceStep]?.question || ''}
               </h2>
@@ -624,7 +625,7 @@ export default function IntakePage() {
             </div>
 
             {/* Live Transcript Panel */}
-            <div className="min-h-[100px] border border-slate-200 dark:border-zinc-800 rounded-xl p-4 bg-white dark:bg-zinc-955/80 shadow-inner flex flex-col justify-between">
+            <div className="min-h-[100px] border border-slate-200 dark:border-zinc-800 rounded-md p-4 bg-white dark:bg-zinc-955/80 shadow-inner flex flex-col justify-between">
               <p className="text-sm text-slate-700 dark:text-zinc-300 italic leading-relaxed">
                 {voiceStepTranscripts[currentVoiceStep] || transcript || interimText ? (
                   <>

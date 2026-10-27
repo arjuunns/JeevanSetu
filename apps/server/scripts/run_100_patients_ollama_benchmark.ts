@@ -289,14 +289,56 @@ async function main(): Promise<void> {
     console.log(
       `${indexStr} ESI ${actualEsi} -> ${predEsi} (${matchTag.padEnd(16)}) | ${latencyMs}ms | ${c.patientName} (${c.chiefComplaint.slice(0, 24)})`
     );
-  }
 
-  const evaluatedCount = results.length;
-  const exactRate = ((exactMatches / evaluatedCount) * 100).toFixed(1);
-  const withinOneRate = ((withinOneMatches / evaluatedCount) * 100).toFixed(1);
-  const underTriageRate = ((underTriagedCount / evaluatedCount) * 100).toFixed(1);
-  const overTriageRate = ((overTriagedCount / evaluatedCount) * 100).toFixed(1);
-  const avgLatency = Math.round(totalLatency / evaluatedCount);
+    // Live update report files after each patient
+    const runningCount = results.length;
+    const runningExactRate = ((exactMatches / runningCount) * 100).toFixed(1);
+    const runningWithinOneRate = ((withinOneMatches / runningCount) * 100).toFixed(1);
+    const runningUnderTriageRate = ((underTriagedCount / runningCount) * 100).toFixed(1);
+    const runningOverTriageRate = ((overTriagedCount / runningCount) * 100).toFixed(1);
+    const runningAvgLatency = Math.round(totalLatency / runningCount);
+
+    const outJsonPath = path.resolve(__dirname, '../../../mimic_benchmark_results.json');
+    fs.writeFileSync(
+      outJsonPath,
+      JSON.stringify(
+        {
+          benchmarkInfo: {
+            cohortSize: runningCount,
+            targetTotal: cohort.length,
+            provider,
+            model,
+            status: runningCount === cohort.length ? 'COMPLETED' : 'IN_PROGRESS',
+            timestamp: new Date().toISOString(),
+            exactConcordanceRate: `${runningExactRate}%`,
+            clinicallyAcceptableRate: `${runningWithinOneRate}%`,
+            underTriageRate: `${runningUnderTriageRate}%`,
+            overTriageRate: `${runningOverTriageRate}%`,
+            avgLatencyMs: runningAvgLatency,
+          },
+          confusionMatrix,
+          patients: results,
+        },
+        null,
+        2
+      )
+    );
+
+    const outMdPath = path.resolve(__dirname, '../../../mimic_benchmark_report.md');
+    const reportMd = generateMarkdownReport({
+      provider,
+      model,
+      evaluatedCount: runningCount,
+      exactRate: runningExactRate,
+      withinOneRate: runningWithinOneRate,
+      underTriageRate: runningUnderTriageRate,
+      overTriageRate: runningOverTriageRate,
+      avgLatency: runningAvgLatency,
+      confusionMatrix,
+      results,
+    });
+    fs.writeFileSync(outMdPath, reportMd);
+  }
 
   console.log('\n===============================================================');
   console.log('📊 100-PATIENT LIVE BENCHMARK EVALUATION SUMMARY');

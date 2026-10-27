@@ -19,6 +19,7 @@
     "db:studio": "prisma studio",
     "mimic:ingest": "tsx scripts/ingest_mimic.ts",
     "mimic:eval": "tsx scripts/evaluate_mimic.ts",
+    "mimic:retrieval-cache": "tsx scripts/build_retrieval_cache.ts",
     "benchmark:100": "tsx scripts/run_100_patients_ollama_benchmark.ts --limit=100 --provider=ollama --model=llama3.1:8b",
     "benchmark:100:gemini": "tsx scripts/run_100_patients_ollama_benchmark.ts --limit=100 --provider=gemini"
   },
