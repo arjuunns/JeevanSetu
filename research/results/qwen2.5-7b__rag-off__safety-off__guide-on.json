@@ -16,12 +16,12 @@
     "systemPromptSha256": "87295fd016286c01"
   },
   "startedAt": "2026-10-27T13:31:04.729Z",
-  "updatedAt": "2026-10-27T16:25:55.313Z",
+  "updatedAt": "2026-10-27T16:26:19.182Z",
   "complete": false,
   "counts": {
     "total": 207,
-    "done": 94,
-    "ok": 94,
+    "done": 95,
+    "ok": 95,
     "fallback": 0,
     "error": 0
   },
@@ -1732,6 +1732,26 @@
       "confidence": 1,
       "recommendedDepartment": "Orthopedics",
       "reasoning": "The patient presents with a left hip fracture (LEFT HIP FX) and a heart rate of 100 bpm, which is above the danger zone for an 82-year-old (over 8 years, heart rate above 100). This meets the criteria for ESI 1 as per Decision Point D of the ESI algorithm."
+    },
+    {
+      "stayId": "34992024",
+      "groundTruthEsi": 3,
+      "safetyTriggered": true,
+      "safetyRules": [
+        "SEVERE_TRAUMA"
+      ],
+      "status": "ok",
+      "predictedEsi": 1,
+      "modelEsi": 1,
+      "safetyOverridden": false,
+      "retrievalBackend": "disabled",
+      "citationCount": 0,
+      "attempts": 1,
+      "latencyMs": 23867,
+      "model": "qwen2.5:7b",
+      "confidence": 1,
+      "recommendedDepartment": "Neurology",
+      "reasoning": "The patient is a 86-year-old female who has sustained a head injury following a fall. The patient's heart rate is 95 bpm, which is within the normal range for her age. However, the patient is experiencing severe pain (rated 8/10), which is a red flag for a potentially serious condition. The patient's SpO₂ is 98%, which is within the normal range. The systolic blood pressure of 150 mmHg and diastolic blood pressure of 56 mmHg are within the normal range for her age. There are no immediate life-saving interventions required, but the patient's chief complaint and presentation warrant further investigation. The patient's fall and head injury are high-risk situations that could easily deteriorate, and the patient's severe pain is a significant concern. Therefore, the patient should be assigned an ESI 1 level."
     }
   ]
 }

@@ -1,5 +1,16 @@
 [
   {
+    "id": "154xt4mf5",
+    "timestamp": "2026-10-27T16:26:19.181Z",
+    "feature": "TRIAGE",
+    "model": "qwen2.5:7b",
+    "latencyMs": 23863,
+    "status": "SUCCESS",
+    "promptTokens": 0,
+    "responseTokens": 0,
+    "totalTokens": 0
+  },
+  {
     "id": "xl2zjhkdm",
     "timestamp": "2026-10-27T16:25:55.309Z",
     "feature": "TRIAGE",
